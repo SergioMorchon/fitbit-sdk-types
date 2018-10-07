@@ -43,12 +43,12 @@ interface SensorErrorEvent {
 }
 
 interface SensorOptions {
-	readonly frequency?: number | undefined;
-	readonly batch?: number | undefined;
+	readonly frequency?: number;
+	readonly batch?: number;
 }
 
 interface BatchedSensorOptions extends SensorOptions {
-	readonly batch?: number | undefined;
+	readonly batch?: number;
 }
 
 declare module 'accelerometer' {
@@ -287,9 +287,9 @@ declare module 'fs' {
 	export function readSync(
 		fd: FileDescriptor,
 		buffer: ArrayBuffer,
-		offset?: number | undefined,
-		length?: number | undefined,
-		position?: number | undefined,
+		offset?: number,
+		length?: number,
+		position?: number,
 	): void;
 	export function closeSync(fd: FileDescriptor): void;
 	export function openSync(
@@ -297,4 +297,51 @@ declare module 'fs' {
 		flags: 'r' | 'r+' | 'w' | 'w+' | 'a' | 'a+',
 	): FileDescriptor;
 	export function listDirSync(path: string): Iterator<string>;
+}
+
+declare module 'file-transfer' {
+	interface EventMap {
+		newfile: Event;
+	}
+	type FileName = string;
+	interface Inbox extends StrictEventListener<EventMap> {
+		onnewfile: (event: Event) => void;
+		nextFile(): FileName | undefined;
+	}
+
+	export const inbox: Inbox;
+}
+
+declare module 'geolocation' {
+	type WatchId = number;
+	interface Geolocation {
+		clearWatch(watchId: WatchId): void;
+		getCurrentPosition(
+			successCallback: PositionCallback,
+			errorCallback?: PositionErrorCallback,
+			options?: PositionOptions,
+		): void;
+		watchPosition(
+			successCallback: PositionCallback,
+			errorCallback?: PositionErrorCallback,
+			options?: PositionOptions,
+		): WatchId;
+	}
+	interface PositionOptions {
+		enableHighAccuracy?: boolean;
+		maximumAge?: number;
+		timeout?: number;
+	}
+	type PositionErrorCode =
+		| 'PERMISSION_DENIED'
+		| 'POSITION_UNAVAILABLE'
+		| 'TIMEOUT';
+	export const PositionErrorCode: {
+		readonly PERMISSION_DENIED: 'PERMISSION_DENIED';
+		readonly POSITION_UNAVAILABLE: 'POSITION_UNAVAILABLE';
+		readonly TIMEOUT: 'TIMEOUT';
+		readonly code: PositionErrorCode;
+	};
+
+	export const geolocation: Geolocation;
 }

@@ -65,8 +65,8 @@ bar.onreading = () => {
 	for (let index = 0; index < bar.readings.timestamp.length; index++) {
 		console.log(
 			`Barometer Reading: \
-        timestamp=$‌{bar.readings.timestamp[index]}, \
-        [$‌{bar.readings.pressure[index]}]`,
+        timestamp=${bar.readings.timestamp[index]}, \
+        [${bar.readings.pressure[index]}]`,
 		);
 	}
 };
