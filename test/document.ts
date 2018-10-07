@@ -63,12 +63,3 @@ myButton.onmousemove = function(evt) {
 document.onkeypress = function(e) {
 	console.log('Key pressed: ' + e.key);
 };
-// @ts-ignore unused
-function callback(timestamp) {
-	// Perform animation frame logic here
-
-	// Request next frame
-	requestAnimationFrame(callback);
-}
-
-requestAnimationFrame(callback);

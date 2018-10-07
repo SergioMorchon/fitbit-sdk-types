@@ -22,17 +22,25 @@ interface StrictEventListener<EventMap> {
 	): void;
 }
 
-interface Sensor {
-	readonly activated: boolean;
+interface Sensor<Reading extends {}, EventMap = {}>
+	extends StrictEventListener<
+			EventMap & {
+				activate: Event;
+				error: SensorErrorEvent;
+				reading: Event;
+			}
+		> {
 	onactivate: (event: Event) => void;
 	onerror: (event: SensorErrorEvent) => void;
 	onreading: (event: Event) => void;
 	start(): void;
 	stop(): void;
+	readonly activated: boolean;
+	readonly readings: BatchedReading<Reading>;
 }
 
-interface BatchedSensor<Reading> extends Sensor {
-	readonly readings: BatchedReading<Reading>;
+declare class SensorBase {
+	constructor(options?: SensorOptions);
 }
 
 interface SensorErrorEvent {
@@ -60,11 +68,9 @@ declare module 'accelerometer' {
 	}
 
 	interface Accelerometer
-		extends BatchedSensor<AccelerometerReading>,
+		extends Sensor<AccelerometerReading>,
 			AccelerometerReading {}
-	export class Accelerometer {
-		constructor(options?: SensorOptions);
-	}
+	export class Accelerometer extends SensorBase {}
 }
 
 declare module 'appbit' {
@@ -85,18 +91,16 @@ declare module 'barometer' {
 		readonly pressure: number | null;
 		readonly timestamp: number | null;
 	}
-	interface Barometer
-		extends BatchedSensor<BarometerReading>,
-			BarometerReading {}
-	export class Barometer {
-		constructor(options?: SensorOptions);
-	}
+	interface Barometer extends Sensor<BarometerReading>, BarometerReading {}
+	export class Barometer extends SensorBase {}
 }
 
 declare module 'body-presence' {
-	interface BodyPresenceSensor extends Sensor {}
-	export class BodyPresenceSensor {
-		constructor(options?: SensorOptions);
+	interface BodyPresenceReading {
+		readonly present: boolean;
+	}
+	interface BodyPresenceSensor extends Sensor<BodyPresenceReading> {}
+	export class BodyPresenceSensor extends SensorBase {
 		readonly present: boolean;
 	}
 }
@@ -344,4 +348,15 @@ declare module 'geolocation' {
 	};
 
 	export const geolocation: Geolocation;
+}
+
+declare module 'gyroscope' {
+	interface GyroscopeReading {
+		readonly timestamp: number | null;
+		readonly x: number | null;
+		readonly y: number | null;
+		readonly z: number | null;
+	}
+	interface Gyroscope extends Sensor<GyroscopeReading>, GyroscopeReading {}
+	export class Gyroscope extends SensorBase {}
 }
