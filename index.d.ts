@@ -360,3 +360,17 @@ declare module 'gyroscope' {
 	interface Gyroscope extends Sensor<GyroscopeReading>, GyroscopeReading {}
 	export class Gyroscope extends SensorBase {}
 }
+
+declare module 'haptics' {
+	type VibrationPatternName =
+		| 'bump'
+		| 'nudge'
+		| 'nudge-max'
+		| 'ping'
+		| 'confirmation'
+		| 'confirmation-max';
+	interface Vibration {
+		start(pattern: VibrationPatternName): void;
+	}
+	export const vibration: Vibration;
+}
