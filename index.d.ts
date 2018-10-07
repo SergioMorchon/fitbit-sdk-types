@@ -22,7 +22,7 @@ interface StrictEventListener<EventMap> {
 	): void;
 }
 
-interface Sensor<Reading extends {}, EventMap = {}>
+interface Sensor<BatchReading extends {}, EventMap = {}>
 	extends StrictEventListener<
 			EventMap & {
 				activate: Event;
@@ -36,7 +36,7 @@ interface Sensor<Reading extends {}, EventMap = {}>
 	start(): void;
 	stop(): void;
 	readonly activated: boolean;
-	readonly readings: BatchedReading<Reading>;
+	readonly readings: BatchedReading<BatchReading>;
 }
 
 declare class SensorBase {
@@ -415,4 +415,20 @@ declare module 'messaging' {
 		send(data: any): void;
 	}
 	export const peerSocket: MessageSocket;
+}
+
+declare module 'orientation' {
+	type Quaternion = [number, number, number, number];
+	interface BatchReading {
+		readonly i: number;
+		readonly j: number;
+		readonly k: number;
+		readonly scalar: number;
+		readonly timestamp: number;
+	}
+	interface OrientationSensor extends Sensor<BatchReading> {
+		readonly quaternion: Quaternion;
+		readonly timestamp: number;
+	}
+	export class OrientationSensor extends SensorBase {}
 }
