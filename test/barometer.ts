@@ -25,6 +25,7 @@ let floorCounter = 0;
 bar.onreading = function() {
 	if (currentFloorPa !== 0) {
 		// Calculate the difference between the current floor, and the new pressure
+		// @ts-ignore pressure possibly null
 		let diffPa = currentFloorPa - bar.pressure;
 		console.log('Difference: ' + diffPa + ' Pa');
 
@@ -33,6 +34,7 @@ bar.onreading = function() {
 			console.log('Floor change detected');
 
 			// Detect up or down direction
+			// @ts-ignore pressure possibly null
 			if (bar.pressure > currentFloorPa) {
 				console.log('User went downwards');
 			} else {
@@ -40,6 +42,7 @@ bar.onreading = function() {
 			}
 
 			// This is now our current floor
+			// @ts-ignore pressure possibly null
 			currentFloorPa = bar.pressure;
 
 			// Increment floor counter
@@ -48,6 +51,7 @@ bar.onreading = function() {
 		}
 	} else {
 		// The initial starting floor
+		// @ts-ignore pressure possibly null
 		currentFloorPa = bar.pressure;
 	}
 };
