@@ -367,6 +367,7 @@ declare module 'haptics' {
 		| 'nudge'
 		| 'nudge-max'
 		| 'ping'
+		| 'ring'
 		| 'confirmation'
 		| 'confirmation-max';
 	interface Vibration {
