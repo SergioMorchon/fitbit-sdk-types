@@ -12,6 +12,16 @@ interface Permissions {
 
 type BatchedReading<Reading> = { [P in keyof Reading]: Array<Reading[P]> };
 
+interface StrictEventListener<EventMap> {
+	addEventListener<EventName extends keyof EventMap>(
+		type: EventName,
+		listener: (event: EventMap[EventName]) => void,
+	): void;
+	removeEventListener<EventName extends keyof EventMap>(
+		eventName: EventName,
+	): void;
+}
+
 interface Sensor {
 	readonly activated: boolean;
 	onactivate: (event: Event) => void;
@@ -122,12 +132,15 @@ declare module 'device' {
 }
 
 declare module 'display' {
-	interface Display {
+	interface EventMap {
+		change: Event;
+		patata: string;
+	}
+	interface Display extends StrictEventListener<EventMap> {
 		autoOff: boolean;
 		brightnessOverride: number | undefined;
 		on: boolean;
 		onchange: (event: Event) => void;
-		addEventListener(type: 'change', listener: (event: Event) => void): void;
 		poke(): void;
 	}
 
@@ -181,7 +194,7 @@ declare module 'document' {
 		(event: Event): boolean;
 	}
 
-	interface GlobalEvents {
+	interface GlobalEvents extends StrictEventListener<EventMap> {
 		onactivate: (event: Event) => void;
 		onanimationend: (event: AnimationEvent) => void;
 		onanimationiteration: (event: AnimationEvent) => void;
@@ -209,10 +222,6 @@ declare module 'document' {
 		onunhighlight: (event: Event) => void;
 		onunload: (event: Event) => void;
 		onunselect: (event: Event) => void;
-		addEventListener<Type extends keyof EventMap>(
-			type: Type,
-			listener: (event: EventMap[Type]) => void,
-		): void;
 	}
 
 	interface DocumentModule extends GlobalEvents {
