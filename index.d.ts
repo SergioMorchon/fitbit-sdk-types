@@ -12,13 +12,16 @@ interface Permissions {
 
 type BatchedReading<Reading> = { [P in keyof Reading]: Array<Reading[P]> };
 
-interface Sensor<Reading> {
+interface Sensor {
 	readonly activated: boolean;
-	onactivate(event: Event): void;
-	onerror(event: SensorErrorEvent): void;
-	onreading(event: Event): void;
+	onactivate: (event: Event) => void;
+	onerror: (event: SensorErrorEvent) => void;
+	onreading: (event: Event) => void;
 	start(): void;
 	stop(): void;
+}
+
+interface BatchedSensor<Reading> extends Sensor {
 	readonly readings: BatchedReading<Reading>;
 }
 
@@ -27,14 +30,6 @@ interface SensorErrorEvent {
 	readonly error: Error;
 	readonly target: EventTarget;
 	readonly type: string;
-}
-
-interface BatchedSensorReading {
-	readonly timestamp: Float32Array;
-}
-
-interface SensorReading {
-	readonly timestamp: number | null;
 }
 
 interface SensorOptions {
@@ -55,7 +50,7 @@ declare module 'accelerometer' {
 	}
 
 	interface Accelerometer
-		extends Sensor<AccelerometerReading>,
+		extends BatchedSensor<AccelerometerReading>,
 			AccelerometerReading {}
 	export class Accelerometer {
 		constructor(options?: SensorOptions);
@@ -72,7 +67,69 @@ declare module 'appbit' {
 		exit(): void;
 	}
 
-	const me: Appbit;
+	export const me: Appbit;
+}
 
-	export { me };
+declare module 'barometer' {
+	interface BarometerReading {
+		readonly pressure: number | null;
+		readonly timestamp: number | null;
+	}
+	interface Barometer
+		extends BatchedSensor<BarometerReading>,
+			BarometerReading {}
+	export class Barometer {
+		constructor(options?: SensorOptions);
+	}
+}
+
+declare module 'body-presence' {
+	interface BodyPresenceSensor extends Sensor {}
+	export class BodyPresenceSensor {
+		constructor(options?: SensorOptions);
+		readonly present: boolean;
+	}
+}
+
+declare module 'clock' {
+	type Granularity = 'off' | 'seconds' | 'minutes' | 'hours';
+	interface TickEvent extends Event {
+		readonly date: Date;
+	}
+	interface Clock {
+		granularity: Granularity;
+		ontick: (event: TickEvent) => void;
+	}
+
+	const clock: Clock;
+	export default clock;
+}
+
+declare module 'device' {
+	interface Device {
+		readonly firmwareVersion: string;
+		readonly lastSyncTime: Date;
+		readonly modelId: string;
+		readonly modelName: string;
+		readonly screen: {
+			readonly width: number;
+			readonly height: number;
+		};
+		readonly type: 'WATCH' | 'TRACKER';
+	}
+
+	export const me: Device;
+}
+
+declare module 'display' {
+	interface Display {
+		autoOff: boolean;
+		brightnessOverride: number | undefined;
+		on: boolean;
+		onchange: (event: Event) => void;
+		addEventListener(type: 'change', listener: (event: Event) => void): void;
+		poke(): void;
+	}
+
+	export const display: Display;
 }
