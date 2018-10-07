@@ -1,0 +1,15 @@
+{
+  "name": "fitbit-sdk-types",
+  "version": "0.0.1",
+  "description": "Work in progress. Types for Fitbit SDK.",
+  "scripts": {
+    "test": "tsc"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3",
+    "typescript": "^3.1.1"
+  },
+  "types": "./index.d.ts",
+  "author": "Sergio Morchón Poveda",
+  "license": "ISC"
+}
