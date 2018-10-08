@@ -4,7 +4,8 @@
   "description": "Work in progress. Types for Fitbit SDK.",
   "scripts": {
     "test-device": "tsc -p test/device",
-    "test": "npm run test-device"
+    "test-companion": "tsc -p test/companion",
+    "test": "npm run test-device && npm run test-companion"
   },
   "devDependencies": {
     "typescript": "^3.1.1"
