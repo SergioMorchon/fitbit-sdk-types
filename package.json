@@ -1,6 +1,6 @@
 {
   "name": "fitbit-sdk-types",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Work in progress. Types for Fitbit SDK.",
   "scripts": {
     "test-device": "tsc -p test/device",
