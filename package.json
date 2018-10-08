@@ -3,13 +3,13 @@
   "version": "0.0.3",
   "description": "Work in progress. Types for Fitbit SDK.",
   "scripts": {
-    "test": "tsc"
+    "test-device": "tsc -p test/device",
+    "test": "npm run test-device"
   },
   "devDependencies": {
     "prettier": "^1.14.3",
     "typescript": "^3.1.1"
   },
-  "types": "./index.d.ts",
   "author": "Sergio Morchón Poveda",
   "repository": {
     "type": "git",
