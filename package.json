@@ -7,7 +7,6 @@
     "test": "npm run test-device"
   },
   "devDependencies": {
-    "prettier": "^1.14.3",
     "typescript": "^3.1.1"
   },
   "author": "Sergio Morchón Poveda",
