@@ -7,13 +7,20 @@ _This is a work in progress project to add static typing for the FITBIT SDK modu
 ## How to use in your app project
 
 1. Add this project as to your `devDependencies`with `npm install --save-dev fitbit-sdk-types`.
-1. Add a _reference type_ to any of your files, or to a `global.d.ts` one with `/// <reference types="fitbit-sdk-types" />`.
-1. Profit!
-
+2. Add a reference to your target folder's `tsconfig.json` file:
+**app/tsconfig.json**
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": [
+		"./",
+		"../node_modules/fitbit-sdk-types/device"
+	]
+}
+```
+3. And use it:
 **app/index.ts**
 ```typescript
-/// <reference types="fitbit-sdk-types" />
-
 import { Accelerometer } from "accelerometer";
 
 const acc = new Accelerometer();
