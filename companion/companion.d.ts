@@ -15,6 +15,7 @@ declare module 'companion' {
 	interface EventMap {
 		unload: Event;
 		significantlocationchange: SignificantLocationChangeEvent;
+		wakeinterval: Event;
 	}
 	interface Companion extends StrictEventListener<EventMap> {
 		readonly applicationId: string;
@@ -28,6 +29,8 @@ declare module 'companion' {
 		onsignificantlocationchange: (
 			event: SignificantLocationChangeEvent,
 		) => void;
+		onwakeinterval: (event: Event) => void;
+		wakeInterval: number | undefined;
 	}
 	export const me: Companion;
 }

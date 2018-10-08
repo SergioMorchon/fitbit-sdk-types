@@ -13,9 +13,6 @@ declare module 'user-settings' {
 		readonly vibrationEnabled: boolean;
 	}
 	export const device: DeviceSettings;
-	interface LocaleSettings {
-		readonly language: string;
-	}
 	export const locale: LocaleSettings;
 	interface UnitsSettings {
 		readonly bodyWeight: 'metric' | 'us' | 'stone';
