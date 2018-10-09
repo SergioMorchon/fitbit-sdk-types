@@ -4,3 +4,4 @@
 /// <reference path="../shared/geolocation.d.ts" />
 /// <reference path="../shared/messaging.d.ts" />
 /// <reference path="../shared/locale-settings.d.ts" />
+/// <reference path="../shared/cbor.d.ts" />
