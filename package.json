@@ -1,19 +1,23 @@
 {
-  "name": "fitbit-sdk-types",
-  "version": "0.1.0",
-  "description": "Work in progress. Types for Fitbit SDK.",
-  "scripts": {
-    "test-device": "tsc -p test/device",
-    "test-companion": "tsc -p test/companion",
-    "test": "npm run test-device && npm run test-companion"
-  },
-  "devDependencies": {
-    "typescript": "^3.1.1"
-  },
-  "author": "Sergio Morchón Poveda",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SergioMorchon/fitbit-sdk-types"
-  },
-  "license": "ISC"
+	"name": "fitbit-sdk-types",
+	"version": "0.1.0",
+	"description": "Work in progress. Types for Fitbit SDK.",
+	"scripts": {
+		"test-device": "tsc -p test/device",
+		"test-companion": "tsc -p test/companion",
+		"test-settings": "tsc -p test/settings",
+		"test": "npm run test-device && npm run test-companion && npm run test-settings"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.1"
+	},
+	"author": "Sergio Morchón Poveda",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SergioMorchon/fitbit-sdk-types"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"@types/react": "^16.4.16"
+	}
 }
