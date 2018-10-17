@@ -2,7 +2,7 @@ declare module 'power' {
 	interface BatteryEventMap {
 		change: Event;
 	}
-	interface Battery extends StrictEventListener<BatteryEventMap> {
+	interface Battery extends EventTarget<BatteryEventMap> {
 		readonly chargeLevel: number;
 		readonly charging: boolean;
 		onchange: (event: Event) => void;
@@ -13,7 +13,7 @@ declare module 'power' {
 	interface ChargerEventMap {
 		change: Event;
 	}
-	interface Charger extends StrictEventListener<ChargerEventMap> {
+	interface Charger extends EventTarget<ChargerEventMap> {
 		readonly connected: boolean;
 		onchange: (event: Event) => void;
 		powerIsGood: boolean | undefined;

@@ -4,7 +4,7 @@ document.addEventListener('pagescroll', e => {
 	console.log(e.position);
 });
 document.addEventListener('click', e => {
-	console.log(e.buttons);
+	console.log(e.screenX);
 });
 
 var img = document.getElementById('image');
