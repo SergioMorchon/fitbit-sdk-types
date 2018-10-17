@@ -4,6 +4,3 @@ display.on = true;
 display.addEventListener('change', () => {
 	console.log('changed');
 });
-display.addEventListener('patata', e => {
-	e.split('');
-});

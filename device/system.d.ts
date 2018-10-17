@@ -3,7 +3,7 @@ declare module 'system' {
 		memorypressurechange: Event;
 	}
 	interface MemoryPressureMonitor
-		extends StrictEventListener<EventPressureMonitorEventMap> {
+		extends EventTarget<EventPressureMonitorEventMap> {
 		onmemorypressurechange: (event: Event) => void;
 		readonly pressure: 'normal' | 'high' | 'critical';
 	}

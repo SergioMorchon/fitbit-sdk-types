@@ -3,7 +3,7 @@ declare module 'file-transfer' {
 		newfile: Event;
 	}
 	type FileName = string;
-	interface Inbox extends StrictEventListener<EventMap> {
+	interface Inbox extends EventTarget<EventMap> {
 		onnewfile: (event: Event) => void;
 		nextFile(): FileName | undefined;
 	}

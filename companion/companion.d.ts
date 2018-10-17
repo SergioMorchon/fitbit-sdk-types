@@ -17,7 +17,7 @@ declare module 'companion' {
 		significantlocationchange: SignificantLocationChangeEvent;
 		wakeinterval: Event;
 	}
-	interface Companion extends StrictEventListener<EventMap> {
+	interface Companion extends EventTarget<EventMap> {
 		readonly applicationId: string;
 		readonly buildId: string;
 		readonly host: Host;
