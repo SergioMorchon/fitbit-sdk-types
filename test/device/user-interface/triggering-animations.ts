@@ -1,4 +1,3 @@
-// @ts-ignore unused
 function callback(timestamp) {
 	// Perform animation frame logic here
 
