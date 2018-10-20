@@ -6,11 +6,11 @@ orient.onreading = () => {
 	for (let index = 0; index < orient.readings.timestamp.length; index++) {
 		console.log(
 			`OrientationSensor Reading: \
-        timestamp=$‌{orient.readings.timestamp[index]}, \
-        [$‌{orient.readings.scalar[index]}, \
-        $‌{orient.readings.i[index]}, \
-        $‌{orient.readings.j[index]}, \
-        $‌{orient.readings.k[index]}]`,
+        timestamp=${orient.readings.timestamp[index]}, \
+        [${orient.readings.scalar[index]}, \
+        ${orient.readings.i[index]}, \
+        ${orient.readings.j[index]}, \
+        ${orient.readings.k[index]}]`,
 		);
 	}
 };
