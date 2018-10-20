@@ -6,10 +6,10 @@ gyro.onreading = () => {
 	for (let index = 0; index < gyro.readings.timestamp.length; index++) {
 		console.log(
 			`Gyroscope Reading: \
-        timestamp=$‌{gyro.readings.timestamp[index]}, \
-        [$‌{gyro.readings.x[index]}, \
-        $‌{gyro.readings.y[index]}, \
-        $‌{gyro.readings.z[index]}]`,
+        timestamp=${gyro.readings.timestamp[index]}, \
+        [${gyro.readings.x[index]}, \
+        ${gyro.readings.y[index]}, \
+        ${gyro.readings.z[index]}]`,
 		);
 	}
 };
