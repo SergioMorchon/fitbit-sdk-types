@@ -3,7 +3,7 @@ declare module 'peer' {
 		readystatechange: Event;
 	}
 	type ReadyState = 'unknown' | 'started' | 'stopped';
-	interface PeerApp extends StrictEventListener<PeerAppEventMap> {
+	interface PeerApp extends EventTarget<PeerAppEventMap> {
 		onreadystatechange: (event: Event) => void;
 		readonly readyState: ReadyState;
 	}

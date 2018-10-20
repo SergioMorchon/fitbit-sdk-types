@@ -9,7 +9,7 @@ declare module 'file-transfer' {
 		| 'transferred'
 		| 'canceled';
 	interface FileTransferOptions {}
-	interface FileTransfer extends StrictEventListener<FileTransferEventMap> {
+	interface FileTransfer extends EventTarget<FileTransferEventMap> {
 		readonly name: string;
 		onchange: (event: Event) => void;
 		readonly options: FileTransferOptions | undefined;

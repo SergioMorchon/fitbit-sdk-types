@@ -5,7 +5,7 @@ interface StorageChangeEvent extends Event {
 }
 interface LiveStorage
 	extends Storage,
-		StrictEventListener<{
+		EventTarget<{
 			change: StorageChangeEvent;
 		}> {
 	onchange: (event: Event) => void;

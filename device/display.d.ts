@@ -1,9 +1,8 @@
 declare module 'display' {
 	interface EventMap {
 		change: Event;
-		patata: string;
 	}
-	interface Display extends StrictEventListener<EventMap> {
+	interface Display extends EventTarget<EventMap> {
 		autoOff: boolean;
 		brightnessOverride: number | undefined;
 		on: boolean;

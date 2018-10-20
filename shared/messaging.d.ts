@@ -23,7 +23,7 @@ declare module 'messaging' {
 		message: MessageEvent;
 		open: Event;
 	}
-	interface MessageSocket extends StrictEventListener<EventMap> {}
+	interface MessageSocket extends EventTarget<EventMap> {}
 	class MessageSocket {
 		readonly CLOSED: 'CLOSED';
 		readonly OPEN: 'OPEN';

@@ -1,7 +1,7 @@
 type BatchedReading<Reading> = { [P in keyof Reading]: Array<Reading[P]> };
 
 interface Sensor<BatchReading extends {}, EventMap = {}>
-	extends StrictEventListener<
+	extends EventTarget<
 			EventMap & {
 				activate: Event;
 				error: SensorErrorEvent;

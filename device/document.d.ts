@@ -41,11 +41,25 @@ declare module 'document' {
 		readonly position: number;
 		readonly viewSize: number;
 	}
+	interface AnimationEvent extends Event {
+		readonly elapsedTime: number;
+	}
+	interface KeyboardEvent extends Event {
+		readonly key: string;
+	}
+	interface MouseEvent extends Event {
+		readonly screenX: number;
+		readonly screenY: number;
+	}
+	interface ActivateEvent extends Event {
+		readonly command: 'back' | 'exit' | 'home' | 'ok' | 'select';
+		readonly screenX: number;
+		readonly screenY: number;
+	}
 	interface EventHandler {
 		(event: Event): boolean;
 	}
-
-	interface GlobalEvents extends StrictEventListener<EventMap> {
+	interface GlobalEvents extends EventTarget<EventMap> {
 		onactivate: (event: Event) => void;
 		onanimationend: (event: AnimationEvent) => void;
 		onanimationiteration: (event: AnimationEvent) => void;
