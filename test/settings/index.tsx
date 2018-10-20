@@ -3,7 +3,7 @@ function mySettings() {
 		<Page>
 			<Section
 				title={
-					<Text bold align="center">
+					<Text bold align="left">
 						Demo Settings
 					</Text>
 				}
