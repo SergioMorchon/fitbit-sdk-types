@@ -15,12 +15,12 @@ declare global {
 		align?: 'left' | 'center' | 'right' | string;
 	}>;
 	function TextImageRow(): Component<{
-		label: string;
+		label?: string;
 		sublabel?: string;
 		icon?: string;
 	}>;
 	function Button(): Component<{
-		label: string;
+		label?: string;
 		list?: boolean;
 		onClick: (event: SyntheticEvent) => void;
 	}>;
@@ -30,7 +30,7 @@ declare global {
 		onChange?: (newValue: boolean) => void;
 	}>;
 	function Slider(): Component<{
-		label: string;
+		label?: string;
 		settingsKey?: string;
 		min: number | string;
 		max: number | string;
@@ -71,7 +71,7 @@ declare global {
 	function Select(): Component<{
 		title?: string;
 		selectViewTitle?: string;
-		label: string;
+		label?: string;
 		settingsKey?: string;
 		options: Array<SelectOption>;
 		multiple?: boolean;
