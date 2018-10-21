@@ -4,7 +4,7 @@ Add types to your Fitbit project to use safely the SDK, work safely with TypeScr
 
 ## How to use in your app project
 
-1. Add this project as to your `devDependencies`with `npm install --save-dev fitbit-sdk-types`.
+1. Add this project as to your `devDependencies` with `npm install --save-dev fitbit-sdk-types`.
 2. Add a reference in your target folder's `tsconfig.json` file:
    **app/tsconfig.json**
 
