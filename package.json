@@ -1,7 +1,7 @@
 {
 	"name": "fitbit-sdk-types",
 	"version": "0.2.0",
-	"description": "Work in progress. Types for Fitbit SDK.",
+	"description": "Types for Fitbit SDK.",
 	"scripts": {
 		"test-device": "tsc -p test/device",
 		"test-companion": "tsc -p test/companion",
@@ -17,7 +17,10 @@
 		"url": "https://github.com/SergioMorchon/fitbit-sdk-types"
 	},
 	"license": "ISC",
-	"dependencies": {
-		"@types/react": "^16.4.16"
-	}
+	"keywords": [
+		"typescript",
+		"definition",
+		"fitbit",
+		"sdk"
+	]
 }
