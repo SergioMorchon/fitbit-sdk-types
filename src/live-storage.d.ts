@@ -8,5 +8,5 @@ interface LiveStorage
 		EventTarget<{
 			change: StorageChangeEvent;
 		}> {
-	onchange: (event: Event) => void;
+	onchange: (event: StorageChangeEvent) => void;
 }
