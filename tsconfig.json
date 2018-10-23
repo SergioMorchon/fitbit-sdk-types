@@ -3,9 +3,13 @@
     "target": "es5",
     "module": "commonjs",
     "strict": true,
+    "jsx": "preserve",
     "noEmit": true,
     "lib": [
       "es2015"
     ]
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
 }

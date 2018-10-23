@@ -1,8 +1,0 @@
-{
-	"extends": "../tsconfig.json",
-	"compilerOptions": {
-		"jsx": "preserve",
-		"lib": ["es2015"]
-	},
-	"include": ["./", "../../settings"]
-}
