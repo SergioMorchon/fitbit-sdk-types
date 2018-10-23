@@ -11,9 +11,7 @@ Add types to your Fitbit project to use safely the SDK, work safely with TypeScr
 {
 	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
 	"include": [
-		"node_modules/fitbit-sdk-types/device",
-		"node_modules/fitbit-sdk-types/companion",
-		"node_modules/fitbit-sdk-types/settings",
+		"node_modules/fitbit-sdk-types/src",
 		"./**/*.ts",
 		"./**/*.tsx"
 	]
