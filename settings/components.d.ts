@@ -138,3 +138,4 @@ declare const ImagePicker: Component<{
 }>;
 
 declare function registerSettingsPage(element: JSX.Element): void;
+declare const createComponent: Function;
