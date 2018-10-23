@@ -21,3 +21,9 @@ interface Position {
 	readonly coords: Coordinates;
 	readonly timestamp: number;
 }
+//#region device
+declare function cancelAnimationFrame(handle: number): void;
+declare function requestAnimationFrame(
+	handler: (timestamp: number) => void,
+): number;
+//#endregion

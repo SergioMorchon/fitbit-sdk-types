@@ -1,12 +1,10 @@
 {
 	"name": "fitbit-sdk-types",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "Types for Fitbit SDK.",
 	"scripts": {
-		"test-device": "tsc -p test/device",
-		"test-companion": "tsc -p test/companion",
-		"test-settings": "tsc -p test/settings",
-		"test": "npm run test-device && npm run test-companion && npm run test-settings"
+		"build": "tsc",
+		"test": "tsc -p test"
 	},
 	"devDependencies": {
 		"typescript": "^3.1.1"

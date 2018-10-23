@@ -1,7 +1,4 @@
 declare module 'file-transfer' {
-	interface FileTransferEventMap {
-		change: Event;
-	}
 	type ReadyState =
 		| 'error'
 		| 'pending'
@@ -9,13 +6,17 @@ declare module 'file-transfer' {
 		| 'transferred'
 		| 'canceled';
 	interface FileTransferOptions {}
-	interface FileTransfer extends EventTarget<FileTransferEventMap> {
+	interface FileTransfer
+		extends EventTarget<{
+				change: Event;
+			}> {
 		readonly name: string;
 		onchange: (event: Event) => void;
 		readonly options: FileTransferOptions | undefined;
 		readonly readyState: ReadyState;
 		cancel(): void;
 	}
+	//#region companion
 	interface Outbox {
 		enqueue(
 			name: string,
@@ -24,4 +25,17 @@ declare module 'file-transfer' {
 		): Promise<FileTransfer>;
 	}
 	export const outbox: Outbox;
+	//#endregion
+	//#region device
+	type FileName = string;
+	interface Inbox
+		extends EventTarget<{
+				newfile: Event;
+			}> {
+		onnewfile: (event: Event) => void;
+		nextFile(): FileName | undefined;
+	}
+
+	export const inbox: Inbox;
+	//#endregion
 }
