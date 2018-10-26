@@ -3,7 +3,10 @@ declare module 'clock' {
 	interface TickEvent extends Event {
 		readonly date: Date;
 	}
-	interface Clock {
+	interface Clock
+		extends EventTarget<{
+				tick: TickEvent;
+			}> {
 		granularity: Granularity;
 		ontick: (event: TickEvent) => void;
 	}
