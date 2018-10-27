@@ -4,5 +4,5 @@ node_js:
 install:
   - npm install
 script:
-  - npm check-code
+  - npm run check-code
   - npm test
