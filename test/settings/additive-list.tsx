@@ -86,7 +86,7 @@
 					{ name: 'blue', value: '5' },
 					{ name: 'purple', value: '6' },
 				];
-				return autoValues.filter(option => option.name.startsWith(value));
+				return autoValues.filter(option => option.name.indexOf(value) === 0);
 			}}
 		/>
 	}
