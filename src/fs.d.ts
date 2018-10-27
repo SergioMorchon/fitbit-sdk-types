@@ -49,5 +49,12 @@ declare module 'fs' {
 		filename: string,
 		flags: 'r' | 'r+' | 'w' | 'w+' | 'a' | 'a+',
 	): FileDescriptor;
-	export function listDirSync(path: string): Iterator<string>;
+	interface DirectoryIteratorResult {
+		readonly done: boolean;
+		readonly value: string | undefined;
+	}
+	interface DirectoryIterator {
+		next(): DirectoryIteratorResult;
+	}
+	export function listDirSync(path: string): DirectoryIterator;
 }
