@@ -1,6 +1,6 @@
-import {encode, decode} from 'cbor';
+import { encode, decode } from 'cbor';
 
-encode({potato: '🥔'});
+encode({ potato: '🥔' });
 
 const buffer = new ArrayBuffer(1);
 const value = decode(buffer);

@@ -31,9 +31,9 @@ interface Element extends ElementSearch, GlobalEvents {
 	text: string;
 	readonly type: string;
 	value: number | [number, number];
+	enabled: boolean;
 	animate(trigger: string): void;
 	sendEvent(event: Event): void;
-	enabled: boolean;
 }
 interface ScrollIndicatorElement extends ContainerElement {
 	length: number;
