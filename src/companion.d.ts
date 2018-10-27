@@ -24,13 +24,13 @@ declare module 'companion' {
 		readonly permissions: Permissions;
 		readonly launchReasons: LaunchReasons;
 		onunload: (event: Event) => void;
-		yield(): void;
 		monitorSignificantLocationChanges: boolean;
 		onsignificantlocationchange: (
 			event: SignificantLocationChangeEvent,
 		) => void;
 		onwakeinterval: (event: Event) => void;
 		wakeInterval: number | undefined;
+		yield(): void;
 	}
 	export const me: Companion;
 }

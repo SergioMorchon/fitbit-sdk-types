@@ -11,10 +11,10 @@ interface Sensor<BatchReading extends {}, EventMap = {}>
 	onactivate: (event: Event) => void;
 	onerror: (event: SensorErrorEvent) => void;
 	onreading: (event: Event) => void;
-	start(): void;
-	stop(): void;
 	readonly activated: boolean;
 	readonly readings: BatchedReading<BatchReading>;
+	start(): void;
+	stop(): void;
 }
 
 declare class SensorBase {

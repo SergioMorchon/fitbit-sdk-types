@@ -3,8 +3,8 @@ declare module 'appbit' {
 		appTimeoutEnabled: boolean;
 		readonly applicationId: string;
 		readonly buildId: string;
-		onunload(this: Appbit, event: Event): void;
 		readonly permissions: Permissions;
+		onunload(this: Appbit, event: Event): void;
 		exit(): void;
 	}
 
