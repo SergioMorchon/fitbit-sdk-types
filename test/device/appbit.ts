@@ -6,3 +6,6 @@ console.log('Build ID: ' + me.buildId);
 if (!me.permissions.granted('access_heart_rate')) {
 	console.log("We're not allowed to read a users' heart rate!");
 }
+
+const saveSettings = () => console.log('Settings saved');
+me.addEventListener('unload', saveSettings);
