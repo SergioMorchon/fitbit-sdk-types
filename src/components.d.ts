@@ -55,12 +55,13 @@ declare const TextInput: Component<{
 	) => JSX.Element;
 }>;
 declare const ColorSelect: Component<{
-	settingsKey: string;
 	colors: Array<{
 		color: string;
 		value?: any;
 	}>;
 	centered?: boolean;
+	settingsKey?: string;
+	value?: string;
 	onSelection?: (value: string) => void;
 }>;
 type SelectOption = {
@@ -108,7 +109,7 @@ declare const Oauth: Component<{
 declare const StravaLogin: Component<{
 	title?: string;
 	description?: string;
-	settingsKey?: string;
+	settingsKey: string;
 	clientId?: string;
 	clientSecret?: string;
 	onAccessToken?: (accessToken: string, userInfo: any) => void;
@@ -137,5 +138,11 @@ declare const ImagePicker: Component<{
 	) => void;
 }>;
 
-declare function registerSettingsPage(element: JSX.Element): void;
+type SettingsComponentProps = {
+	readonly settings: { [key: string]: string };
+	readonly settingsStorage: LiveStorage;
+};
+type SettingsComponent = (props: SettingsComponentProps) => JSX.Element;
+
+declare function registerSettingsPage(component: SettingsComponent): void;
 declare const createComponent: Function;
