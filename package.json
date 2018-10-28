@@ -3,7 +3,6 @@
 	"version": "1.0.3",
 	"description": "Types for Fitbit SDK.",
 	"scripts": {
-		"build": "tsc",
 		"test": "tsc -p test",
 		"prettier": "prettier **/*.ts **/*.tsx **/*.json **/*.md",
 		"tslint": "tslint src/**/*.ts",
@@ -23,7 +22,6 @@
 	"license": "ISC",
 	"keywords": [
 		"typescript",
-		"definition",
 		"fitbit",
 		"sdk"
 	]

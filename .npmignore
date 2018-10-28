@@ -1,4 +1,6 @@
 test
+doc
 .prettierrc
 .travis.yml
 tsconfig.json
+tslint.json
