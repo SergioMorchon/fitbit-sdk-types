@@ -43,7 +43,8 @@ declare const TextInput: Component<{
 	label?: string;
 	placeholder?: string;
 	action?: string;
-	type?: string;
+	type?: 'text' | 'number' | 'password' | 'search' | 'email' | 'tel' | 'url';
+	value?: string;
 	disabled?: boolean;
 	settingsKey?: string;
 	onChange?: (newValue: string) => void;

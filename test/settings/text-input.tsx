@@ -23,3 +23,10 @@
 		return autoValues.filter(option => option.name.indexOf(value) === 0);
 	}}
 />;
+<TextInput type="text" value="text value" />;
+<TextInput type="number" value="1" />;
+<TextInput type="password" value="password value" />;
+<TextInput type="search" value="search value" />;
+<TextInput type="email" value="email value" />;
+<TextInput type="tel" value="tel value" />;
+<TextInput type="url" value="url value" />;
