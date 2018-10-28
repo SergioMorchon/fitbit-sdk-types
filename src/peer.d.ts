@@ -1,9 +1,9 @@
 declare module 'peer' {
-	interface PeerAppEventMap {
-		readystatechange: Event;
-	}
 	type ReadyState = 'unknown' | 'started' | 'stopped';
-	interface PeerApp extends EventTarget<PeerAppEventMap> {
+	interface PeerApp
+		extends EventTarget<{
+				readystatechange: Event;
+			}> {
 		onreadystatechange: (event: Event) => void;
 		readonly readyState: ReadyState;
 	}

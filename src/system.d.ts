@@ -1,9 +1,8 @@
 declare module 'system' {
-	interface EventPressureMonitorEventMap {
-		memorypressurechange: Event;
-	}
 	interface MemoryPressureMonitor
-		extends EventTarget<EventPressureMonitorEventMap> {
+		extends EventTarget<{
+				memorypressurechange: Event;
+			}> {
 		onmemorypressurechange: (event: Event) => void;
 		readonly pressure: 'normal' | 'high' | 'critical';
 	}

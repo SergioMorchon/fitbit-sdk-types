@@ -1,8 +1,8 @@
 declare module 'display' {
-	interface EventMap {
-		change: Event;
-	}
-	interface Display extends EventTarget<EventMap> {
+	interface Display
+		extends EventTarget<{
+				change: Event;
+			}> {
 		autoOff: boolean;
 		brightnessOverride: number | undefined;
 		on: boolean;

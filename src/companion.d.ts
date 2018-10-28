@@ -12,12 +12,12 @@ declare module 'companion' {
 	interface SignificantLocationChangeEvent {
 		readonly position: Position;
 	}
-	interface EventMap {
-		unload: Event;
-		significantlocationchange: SignificantLocationChangeEvent;
-		wakeinterval: Event;
-	}
-	interface Companion extends EventTarget<EventMap> {
+	interface Companion
+		extends EventTarget<{
+				unload: Event;
+				significantlocationchange: SignificantLocationChangeEvent;
+				wakeinterval: Event;
+			}> {
 		readonly applicationId: string;
 		readonly buildId: string;
 		readonly host: Host;

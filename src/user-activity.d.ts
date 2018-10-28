@@ -2,7 +2,7 @@ declare module 'user-activity' {
 	interface GoalsEventMap {
 		reachgoal: Event;
 	}
-	interface Goals {
+	interface Goals extends EventTarget<{ reachgoal: Event }> {
 		readonly activeMinutes: number | undefined;
 		readonly calories: number | undefined;
 		readonly distance: number | undefined;
