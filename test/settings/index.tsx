@@ -1,4 +1,5 @@
-function mySettings() {
+registerSettingsPage(({ settings, settingsStorage }) => {
+	console.log(settingsStorage.length);
 	return (
 		<Page>
 			<Section
@@ -10,6 +11,7 @@ function mySettings() {
 			>
 				<Toggle settingsKey="toggle" label="Toggle Switch" />
 				<ColorSelect
+					value={settings.color}
 					settingsKey="color"
 					colors={[
 						{ color: 'tomato' },
@@ -25,6 +27,4 @@ function mySettings() {
 			</Section>
 		</Page>
 	);
-}
-
-registerSettingsPage(mySettings);
+});
