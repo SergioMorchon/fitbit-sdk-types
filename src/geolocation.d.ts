@@ -1,7 +1,11 @@
 declare module 'geolocation' {
 	type WatchId = number;
-	interface PositionErrorCallback {}
-	interface PositionCallback {}
+	interface PositionErrorCallback {
+		(error: PositionError): void;
+	}
+	interface PositionCallback {
+		(position: Position): void;
+	}
 	interface Geolocation {
 		clearWatch(watchId: WatchId): void;
 		getCurrentPosition(
