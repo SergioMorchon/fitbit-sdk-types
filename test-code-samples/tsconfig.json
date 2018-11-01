@@ -9,6 +9,5 @@
 		"lib": ["es5", "es2015.promise"],
 		"types": [],
 		"esModuleInterop": true
-	},
-	"include": ["../types/index.d.ts", "./"]
+	}
 }
