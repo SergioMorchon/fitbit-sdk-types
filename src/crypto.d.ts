@@ -8,7 +8,7 @@ declare module 'crypto' {
 		| Int32Array
 		| Uint32Array;
 
-	export function getRandomValues(values: TypedArray): void;
+	function getRandomValues(values: TypedArray): void;
 	//#endregion
 	//#region device
 	interface Algorithm {
@@ -20,6 +20,6 @@ declare module 'crypto' {
 			data: ArrayBuffer | ArrayBufferView,
 		): Promise<string>;
 	}
-	export const subtle: SubtleCrypto;
+	const subtle: SubtleCrypto;
 	//#endregion
 }

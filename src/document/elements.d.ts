@@ -7,10 +7,18 @@ type ElementState =
 	| 'unselected'
 	| 'expanded'
 	| string;
-type ElementSearchMap = {
-	circle: CircleElement;
+interface ElementSearchMap {
+	image: ImageElement;
 	text: TextElement;
-};
+	rect: RectElement;
+	line: LineElement;
+	circle: CircleElement;
+	textarea: TextAreaElement;
+	arc: ArcElement;
+	gradientRect: GradientRectElement;
+	gradientArc: GradientArcElement;
+	[tagName: string]: Element;
+}
 interface ElementSearch {
 	getElementById(id: string): Element;
 	getElementsByClassName(className: string): Element[];

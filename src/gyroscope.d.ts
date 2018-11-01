@@ -6,5 +6,5 @@ declare module 'gyroscope' {
 		readonly z: number | null;
 	}
 	interface Gyroscope extends Sensor<GyroscopeReading>, GyroscopeReading {}
-	export class Gyroscope extends SensorBase {}
+	class Gyroscope extends SensorBase {}
 }

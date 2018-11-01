@@ -4,5 +4,5 @@ declare module 'barometer' {
 		readonly timestamp: number | null;
 	}
 	interface Barometer extends Sensor<BarometerReading>, BarometerReading {}
-	export class Barometer extends SensorBase {}
+	class Barometer extends SensorBase {}
 }

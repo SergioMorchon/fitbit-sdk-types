@@ -9,5 +9,5 @@ declare module 'accelerometer' {
 	interface Accelerometer
 		extends Sensor<AccelerometerReading>,
 			AccelerometerReading {}
-	export class Accelerometer extends SensorBase {}
+	class Accelerometer extends SensorBase {}
 }

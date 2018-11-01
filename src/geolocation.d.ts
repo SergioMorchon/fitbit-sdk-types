@@ -1,11 +1,7 @@
 declare module 'geolocation' {
 	type WatchId = number;
-	interface PositionErrorCallback {
-		(error: PositionError): void;
-	}
-	interface PositionCallback {
-		(position: Position): void;
-	}
+	type PositionErrorCallback = (error: PositionError) => void;
+	type PositionCallback = (position: Position) => void;
 	interface Geolocation {
 		clearWatch(watchId: WatchId): void;
 		getCurrentPosition(
@@ -28,7 +24,7 @@ declare module 'geolocation' {
 		| 'PERMISSION_DENIED'
 		| 'POSITION_UNAVAILABLE'
 		| 'TIMEOUT';
-	export const PositionErrorCode: {
+	const PositionErrorCode: {
 		readonly PERMISSION_DENIED: 'PERMISSION_DENIED';
 		readonly POSITION_UNAVAILABLE: 'POSITION_UNAVAILABLE';
 		readonly TIMEOUT: 'TIMEOUT';
@@ -42,5 +38,5 @@ declare module 'geolocation' {
 		readonly message: string;
 	}
 
-	export const geolocation: Geolocation;
+	const geolocation: Geolocation;
 }

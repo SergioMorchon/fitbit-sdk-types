@@ -3,7 +3,7 @@ declare module 'jpeg' {
 		delete?: boolean;
 		overwrite?: boolean;
 	}
-	export function decodeSync(
+	function decodeSync(
 		filename: string,
 		outputFilename: string,
 		options?: JpegDecodeOptions,

@@ -1,3 +1,4 @@
+// TypeScript Version: 3
 type BatchedReading<Reading> = { [P in keyof Reading]: Array<Reading[P]> };
 
 interface Sensor<BatchReading extends {}, EventMap = {}>

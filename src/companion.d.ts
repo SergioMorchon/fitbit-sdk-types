@@ -32,5 +32,5 @@ declare module 'companion' {
 		wakeInterval: number | undefined;
 		yield(): void;
 	}
-	export const me: Companion;
+	const me: Companion;
 }

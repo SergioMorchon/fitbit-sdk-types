@@ -21,21 +21,20 @@ declare module 'file-transfer' {
 		enqueue(
 			name: string,
 			data: ArrayBuffer | ArrayBufferView,
-			options?: FileTransferOptions | undefined,
+			options?: FileTransferOptions,
 		): Promise<FileTransfer>;
 	}
-	export const outbox: Outbox;
+	const outbox: Outbox;
 	//#endregion
 	//#region device
-	type FileName = string;
 	interface Inbox
 		extends EventTarget<{
 				newfile: Event;
 			}> {
 		onnewfile: (event: Event) => void;
-		nextFile(): FileName | undefined;
+		nextFile(): string | undefined;
 	}
 
-	export const inbox: Inbox;
+	const inbox: Inbox;
 	//#endregion
 }

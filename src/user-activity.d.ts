@@ -1,7 +1,4 @@
 declare module 'user-activity' {
-	interface GoalsEventMap {
-		reachgoal: Event;
-	}
 	interface Goals extends EventTarget<{ reachgoal: Event }> {
 		readonly activeMinutes: number | undefined;
 		readonly calories: number | undefined;
@@ -10,7 +7,7 @@ declare module 'user-activity' {
 		onreachgoal: (event: Event) => void;
 		readonly steps: number | undefined;
 	}
-	export const goals: Goals;
+	const goals: Goals;
 
 	interface Activity {
 		readonly activeMinutes: number | undefined;
@@ -23,5 +20,5 @@ declare module 'user-activity' {
 		readonly adjusted: Activity;
 		readonly local: Activity;
 	}
-	export const today: Today;
+	const today: Today;
 }

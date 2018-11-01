@@ -16,5 +16,5 @@ declare module 'system' {
 		readonly monitor: MemoryPressureMonitor;
 		readonly native: MemoryUsage;
 	}
-	export const memory: Memory;
+	const memory: Memory;
 }

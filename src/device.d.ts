@@ -11,5 +11,5 @@ declare module 'device' {
 		readonly type: 'WATCH' | 'TRACKER';
 	}
 
-	export const me: Device;
+	const me: Device;
 }

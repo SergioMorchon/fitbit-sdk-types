@@ -1,7 +1,7 @@
 declare module 'cbor' {
-	export function encode(data: any): ArrayBuffer;
-	export function decode(data: ArrayBuffer | ArrayBufferView): any;
-	export class Float {
+	function encode(data: any): ArrayBuffer;
+	function decode(data: ArrayBuffer | ArrayBufferView): any;
+	class Float {
 		value: number;
 	}
 }

@@ -3,17 +3,17 @@ declare module 'user-settings' {
 		readonly clockDisplay: '12h' | '24h';
 		readonly firstDayOfWeek: 0 | 1;
 	}
-	export const preferences: Preferences;
+	const preferences: Preferences;
 	interface ExerciseSettings {
 		readonly poolLength: number;
 	}
-	export const exercise: ExerciseSettings;
+	const exercise: ExerciseSettings;
 	interface DeviceSettings {
 		readonly airplaneModeEnabled: boolean;
 		readonly vibrationEnabled: boolean;
 	}
-	export const device: DeviceSettings;
-	export const locale: LocaleSettings;
+	const device: DeviceSettings;
+	const locale: LocaleSettings;
 	interface UnitsSettings {
 		readonly bodyWeight: 'metric' | 'us' | 'stone';
 		readonly distance: 'metric' | 'us';
@@ -23,5 +23,5 @@ declare module 'user-settings' {
 		readonly volume: 'metric' | 'us';
 		readonly weight: 'metric' | 'us';
 	}
-	export const units: UnitsSettings;
+	const units: UnitsSettings;
 }

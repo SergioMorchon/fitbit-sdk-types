@@ -20,7 +20,7 @@ declare module 'image' {
 			options?: JpegExportOptions,
 		): Promise<ArrayBuffer>;
 	}
-	export const Image: {
+	const Image: {
 		from(imageUri: string): Promise<Image>;
 	};
 }

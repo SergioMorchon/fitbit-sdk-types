@@ -7,7 +7,7 @@ declare module 'peer' {
 		onreadystatechange: (event: Event) => void;
 		readonly readyState: ReadyState;
 	}
-	export const app: PeerApp;
+	const app: PeerApp;
 	type BatteryLevel = 'empty' | 'low' | 'medium' | 'high' | 'unknown';
 	interface PeerDevice {
 		readonly batteryLevel: BatteryLevel;
@@ -20,5 +20,5 @@ declare module 'peer' {
 		};
 		readonly type: 'WATCH' | 'TRACKER';
 	}
-	export const device: PeerDevice;
+	const device: PeerDevice;
 }

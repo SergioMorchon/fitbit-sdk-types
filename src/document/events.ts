@@ -1,32 +1,3 @@
-interface EventMap {
-	activate: Event;
-	animationend: AnimationEvent;
-	animationiteration: AnimationEvent;
-	animationstart: AnimationEvent;
-	click: MouseEvent;
-	collapse: Event;
-	disable: Event;
-	enable: Event;
-	expand: Event;
-	highlight: Event;
-	keydown: KeyboardEvent;
-	keypress: KeyboardEvent;
-	keyup: KeyboardEvent;
-	listbackward: ListScrollEvent;
-	listforward: ListScrollEvent;
-	load: LoadEvent;
-	mousedown: MouseEvent;
-	mousemove: MouseEvent;
-	mouseout: MouseEvent;
-	mouseover: MouseEvent;
-	mouseup: MouseEvent;
-	pagescroll: PageScrollEvent;
-	reload: LoadEvent;
-	select: Event;
-	unhighlight: Event;
-	unload: Event;
-	unselect: Event;
-}
 interface ListScrollEvent extends Event {
 	readonly first: number;
 	readonly last: number;
@@ -55,7 +26,36 @@ interface ActivateEvent extends Event {
 	readonly screenX: number;
 	readonly screenY: number;
 }
-interface GlobalEvents extends EventTarget<EventMap> {
+interface GlobalEvents
+	extends EventTarget<{
+			activate: Event;
+			animationend: AnimationEvent;
+			animationiteration: AnimationEvent;
+			animationstart: AnimationEvent;
+			click: MouseEvent;
+			collapse: Event;
+			disable: Event;
+			enable: Event;
+			expand: Event;
+			highlight: Event;
+			keydown: KeyboardEvent;
+			keypress: KeyboardEvent;
+			keyup: KeyboardEvent;
+			listbackward: ListScrollEvent;
+			listforward: ListScrollEvent;
+			load: LoadEvent;
+			mousedown: MouseEvent;
+			mousemove: MouseEvent;
+			mouseout: MouseEvent;
+			mouseover: MouseEvent;
+			mouseup: MouseEvent;
+			pagescroll: PageScrollEvent;
+			reload: LoadEvent;
+			select: Event;
+			unhighlight: Event;
+			unload: Event;
+			unselect: Event;
+		}> {
 	onactivate: (event: Event) => void;
 	onanimationend: (event: AnimationEvent) => void;
 	onanimationiteration: (event: AnimationEvent) => void;

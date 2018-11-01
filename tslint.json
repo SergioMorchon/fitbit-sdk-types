@@ -1,6 +1,14 @@
 {
+	"extends": "dtslint/dtslint.json",
+	"linterOptions": {
+		"exclude": ["./test/**"]
+	},
 	"defaultSeverity": "error",
 	"rules": {
+		"file-name-casing": [true, "kebab-case"],
+		"no-single-declare-module": false,
+		"no-empty-interface": false,
+		"no-unnecessary-class": [true, "allow-constructor-only"],
 		"member-ordering": [
 			true,
 			{

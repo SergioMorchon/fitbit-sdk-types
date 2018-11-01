@@ -10,5 +10,5 @@ declare module 'haptics' {
 	interface Vibration {
 		start(pattern: VibrationPatternName): void;
 	}
-	export const vibration: Vibration;
+	const vibration: Vibration;
 }

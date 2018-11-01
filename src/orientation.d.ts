@@ -11,5 +11,5 @@ declare module 'orientation' {
 		readonly quaternion: Quaternion;
 		readonly timestamp: number;
 	}
-	export class OrientationSensor extends SensorBase {}
+	class OrientationSensor extends SensorBase {}
 }

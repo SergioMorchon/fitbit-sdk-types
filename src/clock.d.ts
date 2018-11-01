@@ -12,5 +12,5 @@ declare module 'clock' {
 	}
 
 	const clock: Clock;
-	export default clock;
+	export = clock;
 }

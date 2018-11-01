@@ -11,5 +11,6 @@ declare module 'appbit' {
 		exit(): void;
 	}
 
-	export const me: Appbit;
+	const me: Appbit;
+	export { me };
 }

@@ -1,51 +1,46 @@
 declare module 'fs' {
-	export function writeFileSync(
+	function writeFileSync(
 		filename: string,
 		data: ArrayBuffer | ArrayBufferView,
 	): void;
-	export function writeFileSync(
+	function writeFileSync(
 		filename: string,
 		data: string,
 		encoding: 'ascii' | 'utf-8',
 	): void;
-	export function writeFileSync(
+	function writeFileSync(
 		filename: string,
 		data: any,
 		encoding: 'cbor' | 'json',
 	): void;
-	export function readFileSync(filename: string): any;
-	export function readFileSync(
-		filename: string,
-		encoding: 'ascii' | 'utf-8',
-	): string;
-	export function readFileSync(
-		filename: string,
-		encoding: 'cbor' | 'json',
-	): any;
-	export function renameSync(oldFilename: string, newFilename: string): void;
-	export function unlinkSync(filename: string): void;
+	function readFileSync(filename: string): any;
+	function readFileSync(filename: string, encoding: 'ascii' | 'utf-8'): string;
+	// tslint:disable-next-line unified-signatures
+	function readFileSync(filename: string, encoding: 'cbor' | 'json'): any;
+	function renameSync(oldFilename: string, newFilename: string): void;
+	function unlinkSync(filename: string): void;
 	interface FileStats {
 		readonly size: number;
 		readonly mtime: any;
 	}
-	export function statSync(filename: string): FileStats;
+	function statSync(filename: string): FileStats;
 	type FileDescriptor = number;
-	export function writeSync(
+	function writeSync(
 		fd: FileDescriptor,
 		buffer: ArrayBuffer,
 		offset?: number,
 		length?: number,
 		position?: number,
 	): void;
-	export function readSync(
+	function readSync(
 		fd: FileDescriptor,
 		buffer: ArrayBuffer,
 		offset?: number,
 		length?: number,
 		position?: number,
 	): void;
-	export function closeSync(fd: FileDescriptor): void;
-	export function openSync(
+	function closeSync(fd: FileDescriptor): void;
+	function openSync(
 		filename: string,
 		flags: 'r' | 'r+' | 'w' | 'w+' | 'a' | 'a+',
 	): FileDescriptor;
@@ -56,5 +51,5 @@ declare module 'fs' {
 	interface DirectoryIterator {
 		next(): DirectoryIteratorResult;
 	}
-	export function listDirSync(path: string): DirectoryIterator;
+	function listDirSync(path: string): DirectoryIterator;
 }

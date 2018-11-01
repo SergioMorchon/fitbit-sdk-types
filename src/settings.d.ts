@@ -1,3 +1,3 @@
 declare module 'settings' {
-	export const settingsStorage: LiveStorage;
+	const settingsStorage: LiveStorage;
 }

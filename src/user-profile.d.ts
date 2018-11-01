@@ -14,5 +14,5 @@ declare module 'user-profile' {
 		readonly weight: number | undefined;
 		heartRateZone(heartRate: number): DefaultZone | UserDefinedZone;
 	}
-	export const user: UserProfile;
+	const user: UserProfile;
 }

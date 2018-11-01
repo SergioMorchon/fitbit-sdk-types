@@ -37,7 +37,10 @@ declare const Slider: Component<{
 	step?: number | string;
 	onChange?: (newValue: number) => void;
 }>;
-type AutocompleteOption = { name: string; [key: string]: any };
+interface AutocompleteOption {
+	name: string;
+	[key: string]: any;
+}
 declare const TextInput: Component<{
 	title?: string;
 	label?: string;
@@ -48,7 +51,7 @@ declare const TextInput: Component<{
 	disabled?: boolean;
 	settingsKey?: string;
 	onChange?: (newValue: string) => void;
-	onAutocomplete?: (newValue: string) => Array<AutocompleteOption>;
+	onAutocomplete?: (newValue: string) => AutocompleteOption[];
 	renderItem?: (autocompleteOption: AutocompleteOption) => JSX.Element;
 	renderAutocomplete?: (
 		autoCompleteOption: AutocompleteOption,
@@ -65,23 +68,21 @@ declare const ColorSelect: Component<{
 	value?: string;
 	onSelection?: (value: string) => void;
 }>;
-type SelectOption = {
+interface SelectOption {
 	name: string;
 	value?: any;
 	[extraProperty: string]: any;
-};
+}
 declare const Select: Component<{
 	title?: string;
 	selectViewTitle?: string;
 	label?: string;
 	settingsKey?: string;
-	options: Array<SelectOption>;
+	options: SelectOption[];
 	multiple?: boolean;
 	disabled?: boolean;
 	renderItem?: (option: SelectOption) => JSX.Element;
-	onSelection?: (
-		selection: { selected: Array<number>; values: Array<any> },
-	) => void;
+	onSelection?: (selection: { selected: number[]; values: any[] }) => void;
 }>;
 declare const AdditiveList: Component<{
 	title?: string;
@@ -91,7 +92,7 @@ declare const AdditiveList: Component<{
 	maxItems?: number | string;
 	renderItem?: (item: SelectOption) => JSX.Element;
 	addAction?: JSX.Element;
-	onListChange?: (elements: Array<SelectOption>) => void;
+	onListChange?: (elements: SelectOption[]) => void;
 }>;
 declare const Oauth: Component<{
 	title?: string;
@@ -139,11 +140,11 @@ declare const ImagePicker: Component<{
 	) => void;
 }>;
 
-type SettingsComponentProps = {
+interface SettingsComponentProps {
 	readonly settings: { [key: string]: string };
 	readonly settingsStorage: LiveStorage;
-};
+}
 type SettingsComponent = (props: SettingsComponentProps) => JSX.Element;
 
 declare function registerSettingsPage(component: SettingsComponent): void;
-declare const createComponent: Function;
+declare const createComponent: any;

@@ -1,4 +1,6 @@
-type HeaderMap = { [key: string]: string };
+interface HeaderMap {
+	[key: string]: string;
+}
 declare class Headers {
 	constructor(headers: HeaderMap);
 	append(name: string, value: string): void;

@@ -1,7 +1,5 @@
 declare module 'document' {
-	interface EventHandler {
-		(event: Event): boolean;
-	}
+	type EventHandler = (event: Event) => boolean;
 	interface DocumentModule extends GlobalEvents {
 		readonly default: DocumentModule;
 		readonly root: Element;

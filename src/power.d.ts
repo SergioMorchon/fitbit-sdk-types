@@ -8,11 +8,7 @@ declare module 'power' {
 		onchange: (event: Event) => void;
 		readonly timeUntilFull: number;
 	}
-	export const battery: Battery;
-
-	interface ChargerEventMap {
-		change: Event;
-	}
+	const battery: Battery;
 	interface Charger
 		extends EventTarget<{
 				change: Event;
@@ -21,5 +17,5 @@ declare module 'power' {
 		onchange: (event: Event) => void;
 		powerIsGood: boolean | undefined;
 	}
-	export const charger: Charger;
+	const charger: Charger;
 }

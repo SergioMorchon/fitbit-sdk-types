@@ -10,5 +10,5 @@ declare module 'display' {
 		poke(): void;
 	}
 
-	export const display: Display;
+	const display: Display;
 }
