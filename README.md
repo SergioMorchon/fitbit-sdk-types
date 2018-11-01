@@ -13,7 +13,7 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 ```json
 {
 	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
-	"include": ["node_modules/fitbit-sdk-types/src", "**/*.ts", "**/*.tsx"]
+	"include": ["node_modules/fitbit-sdk-types", "**/*.ts", "**/*.tsx"]
 }
 ```
 
@@ -60,15 +60,11 @@ You can see a ton of official examples working as tests right here, under the `.
 
 ```json
 {
-	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
+	// ...
 	"compilerOptions": {
 		"strict": true
-	},
-	"include": [
-		"node_modules/fitbit-sdk-types/types/index.d.ts",
-		"**/*.ts",
-		"**/*.tsx"
-	]
+	}
+	// ...
 }
 ```
 
@@ -87,6 +83,6 @@ If you have a question, suggestion or bug report, don't be shy and open an issue
 
 ### 💪 Make a PR with:
 
-1. The use cases you think that must be covered, under a meaningful section inside **tests/**.
-1. The type definition in the appropiate **src/** file.
+1. The use cases you think that must be covered, under a meaningful section inside **test-code-samples/**.
+1. The type definition in the appropiate **types/** file.
 1. If possible, a link to the official documentation or community forum thread.
