@@ -1,15 +1,20 @@
 {
 	"name": "fitbit-sdk-types",
-	"version": "1.0.5",
+	"version": "2.0.0",
 	"description": "Types for Fitbit SDK.",
+	"types": "types",
 	"scripts": {
-		"test": "tsc -p test",
+		"test-app": "tsc -p test-code-samples/app",
+		"test-companion": "tsc -p test-code-samples/companion",
+		"test-settings": "tsc -p test-code-samples/settings",
+		"test": "npm run test-app && npm run test-companion && npm run test-settings",
 		"prettier": "prettier **/*.ts **/*.tsx **/*.json **/*.md",
-		"tslint": "tslint src/**/*.ts",
-		"check-code": "npm run tslint && npm run prettier -- -l",
-		"fix-code": "npm run tslint -- --fix && npm run prettier -- --write"
+		"dtslint": "dtslint types",
+		"check-code": "npm run dtslint && npm run prettier -- -l",
+		"fix-code": "tslint types --fix && npm run prettier -- --write"
 	},
 	"devDependencies": {
+		"dtslint": "^0.3.0",
 		"prettier": "^1.14.3",
 		"tslint": "^5.11.0",
 		"typescript": "^3.1.1"

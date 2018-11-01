@@ -1,6 +1,6 @@
-test
+test-code-samples
 doc
-.prettierrc
-.travis.yml
-tsconfig.json
-tslint.json
+**/.prettierrc
+**/.travis.yml
+**/tsconfig.json
+**/tslint.json

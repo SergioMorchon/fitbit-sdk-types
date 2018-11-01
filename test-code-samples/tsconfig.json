@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"module": "es2015",
+		"moduleResolution": "node",
+		"target": "es5",
+		"jsx": "react",
+		"jsxFactory": "createComponent",
+		"lib": ["es5", "es2015.promise"],
+		"types": [],
+		"esModuleInterop": true
+	}
+}

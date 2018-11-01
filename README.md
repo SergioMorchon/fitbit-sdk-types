@@ -7,13 +7,15 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 
 ## ⚙ How to use in your app project
 
+### Basic configuration
+
 1. Execute `npm install --save-dev fitbit-sdk-types` to add this type definitions.
 2. `include` them in your project's `tsconfig.json` file. It may look like this **tsconfig.json**:
 
 ```json
 {
 	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
-	"include": ["node_modules/fitbit-sdk-types/src", "**/*.ts", "**/*.tsx"]
+	"include": ["node_modules/fitbit-sdk-types", "**/*.ts", "**/*.tsx"]
 }
 ```
 
@@ -25,6 +27,43 @@ import { Accelerometer } from 'accelerometer';
 const acc = new Accelerometer();
 console.log(acc.activated);
 console.log(acc.potato); // error
+```
+
+### Strict configuration
+
+Add the following configurations for each target.
+
+#### app/tsconfig.json
+
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": ["../node_modules/fitbit-sdk-types/types/device.d.ts", "**/*.ts"]
+}
+```
+
+#### companion/tsconfig.json
+
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": [
+		"../node_modules/fitbit-sdk-types/types/companion.d.ts",
+		"**/*.ts"
+	]
+}
+```
+
+#### settings/tsconfig.json
+
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": [
+		"../node_modules/fitbit-sdk-types/types/settings.d.ts",
+		"**/*.tsx"
+	]
+}
 ```
 
 ## Benefits of using types
@@ -60,20 +99,13 @@ You can see a ton of official examples working as tests right here, under the `.
 
 ```json
 {
-	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
+	// ...
 	"compilerOptions": {
 		"strict": true
-	},
-	"include": ["node_modules/fitbit-sdk-types/src", "**/*.ts", "**/*.tsx"]
+	}
+	// ...
 }
 ```
-
-- **Avoid using `any` in callbacks of defined functions**:
-  TypeScript will give it the correct type, but only if you let it be. If you cast them as any other type, you could be hiding errors (either in your code or in this type definition, or even in the official documentation).
-
-- **Be careful about what you import**:
-  Currently, there is only **one** Fitbit build process for **up to 3** different targets -to know: `app`, `companion` and `settings`-.
-  So because of this, I didn't found a way of having one single `tsconfig.json` called from the _fitbit-cli_ and different typings per target. So you will have to declare them all together, knowing that -for example- although there is an ambien module for `accelerometer`, it won't exist inside the `companion` target.
 
 ## Contributing
 
@@ -83,6 +115,6 @@ If you have a question, suggestion or bug report, don't be shy and open an issue
 
 ### 💪 Make a PR with:
 
-1. The use cases you think that must be covered, under a meaningful section inside **tests/**.
-1. The type definition in the appropiate **src/** file.
+1. The use cases you think that must be covered, under a meaningful section inside **test-code-samples/**.
+1. The type definition in the appropiate **types/** file.
 1. If possible, a link to the official documentation or community forum thread.
