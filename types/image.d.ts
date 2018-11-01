@@ -1,6 +1,4 @@
 declare module 'image' {
-	type SourceMimeType = string;
-	type Color = string;
 	interface TxiExportOptions {
 		readonly background: string | undefined;
 	}

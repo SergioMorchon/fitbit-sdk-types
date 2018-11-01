@@ -8,7 +8,10 @@
 		"jsxFactory": "createComponent",
 		"lib": ["es5", "es2015.promise"],
 		"types": [],
-		"esModuleInterop": true
-	},
-	"include": ["src/**/*.ts"]
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true
+	}
 }
