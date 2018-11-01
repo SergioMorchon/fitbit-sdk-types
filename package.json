@@ -4,7 +4,7 @@
 	"description": "Types for Fitbit SDK.",
 	"types": "src",
 	"scripts": {
-		"test": "tsc -p test",
+		"test": "tsc -p test-code-samples",
 		"prettier": "prettier **/*.ts **/*.tsx **/*.json **/*.md",
 		"tslint": "tslint src/**/*.ts",
 		"check-code": "npm run tslint && npm run prettier -- -l",
