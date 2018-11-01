@@ -1,4 +1,7 @@
 declare module 'user-settings' {
+	interface LocaleSettings {
+		readonly language: string;
+	}
 	interface Preferences {
 		readonly clockDisplay: '12h' | '24h';
 		readonly firstDayOfWeek: 0 | 1;

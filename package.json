@@ -2,7 +2,7 @@
 	"name": "fitbit-sdk-types",
 	"version": "1.0.5",
 	"description": "Types for Fitbit SDK.",
-	"types": "src",
+	"types": "types",
 	"scripts": {
 		"test": "tsc -p test-code-samples",
 		"prettier": "prettier **/*.ts **/*.tsx **/*.json **/*.md",

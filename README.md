@@ -64,7 +64,11 @@ You can see a ton of official examples working as tests right here, under the `.
 	"compilerOptions": {
 		"strict": true
 	},
-	"include": ["node_modules/fitbit-sdk-types/src", "**/*.ts", "**/*.tsx"]
+	"include": [
+		"node_modules/fitbit-sdk-types/types/index.d.ts",
+		"**/*.ts",
+		"**/*.tsx"
+	]
 }
 ```
 
