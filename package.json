@@ -9,7 +9,7 @@
 		"sdk",
 		"fitbitdev"
 	],
-	"license": "ISC",
+	"license": "MIT",
 	"homepage": "https://github.com/SergioMorchon/fitbit-sdk-types",
 	"bugs": {
 		"url": "https://github.com/SergioMorchon/fitbit-sdk-types/issues"
