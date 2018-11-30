@@ -14,10 +14,10 @@ declare module 'companion' {
 	}
 	interface Companion
 		extends EventTarget<{
-				unload: Event;
-				significantlocationchange: SignificantLocationChangeEvent;
-				wakeinterval: Event;
-			}> {
+			unload: Event;
+			significantlocationchange: SignificantLocationChangeEvent;
+			wakeinterval: Event;
+		}> {
 		readonly applicationId: string;
 		readonly buildId: string;
 		readonly host: Host;

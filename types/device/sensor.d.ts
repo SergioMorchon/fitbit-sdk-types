@@ -2,12 +2,12 @@ type BatchedReading<Reading> = { [P in keyof Reading]: Array<Reading[P]> };
 
 interface Sensor<BatchReading extends {}, EventMap = {}>
 	extends EventTarget<
-			EventMap & {
-				activate: Event;
-				error: SensorErrorEvent;
-				reading: Event;
-			}
-		> {
+		EventMap & {
+			activate: Event;
+			error: SensorErrorEvent;
+			reading: Event;
+		}
+	> {
 	onactivate: (event: Event) => void;
 	onerror: (event: SensorErrorEvent) => void;
 	onreading: (event: Event) => void;

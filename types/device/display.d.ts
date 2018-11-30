@@ -1,8 +1,8 @@
 declare module 'display' {
 	interface Display
 		extends EventTarget<{
-				change: Event;
-			}> {
+			change: Event;
+		}> {
 		autoOff: boolean;
 		brightnessOverride: number | undefined;
 		on: boolean;

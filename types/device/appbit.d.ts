@@ -1,8 +1,8 @@
 declare module 'appbit' {
 	interface Appbit
 		extends EventTarget<{
-				unload: Event;
-			}> {
+			unload: Event;
+		}> {
 		appTimeoutEnabled: boolean;
 		readonly applicationId: string;
 		readonly buildId: string;

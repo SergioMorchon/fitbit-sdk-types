@@ -11,7 +11,7 @@
 		"prettier": "prettier **/*.ts **/*.tsx **/*.json **/*.md",
 		"dtslint": "dtslint types",
 		"check-code": "npm run dtslint && npm run prettier -- -l",
-		"fix-code": "tslint types --fix && npm run prettier -- --write"
+		"fix-code": "tslint --project types --fix && npm run prettier -- --write"
 	},
 	"devDependencies": {
 		"dtslint": "^0.3.0",

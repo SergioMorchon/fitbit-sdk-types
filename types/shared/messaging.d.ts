@@ -18,12 +18,12 @@ declare module 'messaging' {
 	type ReadyState = 'CLOSED' | 'OPEN';
 	interface MessageSocket
 		extends EventTarget<{
-				bufferedamountdecrease: Event;
-				close: CloseEvent;
-				error: ErrorEvent;
-				message: MessageEvent;
-				open: Event;
-			}> {}
+			bufferedamountdecrease: Event;
+			close: CloseEvent;
+			error: ErrorEvent;
+			message: MessageEvent;
+			open: Event;
+		}> {}
 	class MessageSocket {
 		readonly CLOSED: 'CLOSED';
 		readonly OPEN: 'OPEN';
