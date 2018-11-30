@@ -12,3 +12,8 @@ let circles = document.getElementsByTagName('circle');
 circles.forEach(function(circle) {
 	circle.style.fill = 'blue';
 });
+
+let potatoes = document.getElementsByTagName('potato');
+potatoes.forEach(function(potato) {
+	potato.text = 'potato';
+});

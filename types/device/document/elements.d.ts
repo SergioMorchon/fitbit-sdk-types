@@ -17,14 +17,14 @@ interface ElementSearchMap {
 	arc: ArcElement;
 	gradientRect: GradientRectElement;
 	gradientArc: GradientArcElement;
-	[tagName: string]: Element;
 }
 interface ElementSearch {
 	getElementById(id: string): Element;
 	getElementsByClassName(className: string): Element[];
-	getElementsByTagName<TagName extends keyof ElementSearchMap>(
-		tagName: TagName,
-	): Array<ElementSearchMap[TagName]>;
+	getElementsByTagName(
+		tagName: keyof ElementSearchMap,
+	): Array<ElementSearchMap[typeof tagName]>;
+	getElementsByTagName(tagName: string): Element[];
 }
 interface Element extends ElementSearch, GlobalEvents {
 	readonly class: string;

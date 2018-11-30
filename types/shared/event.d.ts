@@ -1,8 +1,10 @@
 interface EventTarget<EventMap = {}> {
+	// tslint:disable-next-line no-unnecessary-generics
 	addEventListener<EventName extends keyof EventMap>(
-		type: EventName,
-		eventListener: (event: EventMap[EventName]) => void,
+		eventName: EventName,
+		eventListener: (eventName: EventMap[EventName]) => void,
 	): void;
+	// tslint:disable-next-line no-unnecessary-generics
 	removeEventListener<EventName extends keyof EventMap>(
 		eventName: EventName,
 		eventListener: (event: EventMap[EventName]) => void,
