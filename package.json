@@ -15,9 +15,9 @@
 	},
 	"devDependencies": {
 		"dtslint": "^0.3.0",
-		"prettier": "^1.14.3",
+		"prettier": "^1.15.3",
 		"tslint": "^5.11.0",
-		"typescript": "^3.1.1"
+		"typescript": "^3.2.1"
 	},
 	"author": "Sergio Morchón Poveda",
 	"repository": {
@@ -28,6 +28,7 @@
 	"keywords": [
 		"typescript",
 		"fitbit",
-		"sdk"
+		"sdk",
+		"fitbitdev"
 	]
 }
