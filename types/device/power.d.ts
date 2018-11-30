@@ -1,8 +1,8 @@
 declare module 'power' {
 	interface Battery
 		extends EventTarget<{
-				change: Event;
-			}> {
+			change: Event;
+		}> {
 		readonly chargeLevel: number;
 		readonly charging: boolean;
 		onchange: (event: Event) => void;
@@ -11,8 +11,8 @@ declare module 'power' {
 	const battery: Battery;
 	interface Charger
 		extends EventTarget<{
-				change: Event;
-			}> {
+			change: Event;
+		}> {
 		readonly connected: boolean;
 		onchange: (event: Event) => void;
 		powerIsGood: boolean | undefined;

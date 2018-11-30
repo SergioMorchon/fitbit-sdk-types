@@ -8,8 +8,8 @@ declare module 'file-transfer' {
 	interface FileTransferOptions {}
 	interface FileTransfer
 		extends EventTarget<{
-				change: Event;
-			}> {
+			change: Event;
+		}> {
 		readonly name: string;
 		onchange: (event: Event) => void;
 		readonly options: FileTransferOptions | undefined;
@@ -29,8 +29,8 @@ declare module 'file-transfer' {
 	//#region device
 	interface Inbox
 		extends EventTarget<{
-				newfile: Event;
-			}> {
+			newfile: Event;
+		}> {
 		onnewfile: (event: Event) => void;
 		nextFile(): string | undefined;
 	}
