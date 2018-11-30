@@ -1,7 +1,23 @@
 {
 	"name": "fitbit-sdk-types",
 	"version": "2.0.2",
+	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
+	"keywords": [
+		"typescript",
+		"fitbit",
+		"sdk",
+		"fitbitdev"
+	],
+	"license": "ISC",
+	"homepage": "https://github.com/SergioMorchon/fitbit-sdk-types",
+	"bugs": {
+		"url": "https://github.com/SergioMorchon/fitbit-sdk-types/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SergioMorchon/fitbit-sdk-types"
+	},
 	"types": "types",
 	"scripts": {
 		"test-app": "tsc -p test-code-samples/app",
@@ -18,17 +34,5 @@
 		"prettier": "^1.15.3",
 		"tslint": "^5.11.0",
 		"typescript": "^3.2.1"
-	},
-	"author": "Sergio Morchón Poveda",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/SergioMorchon/fitbit-sdk-types"
-	},
-	"license": "ISC",
-	"keywords": [
-		"typescript",
-		"fitbit",
-		"sdk",
-		"fitbitdev"
-	]
+	}
 }
