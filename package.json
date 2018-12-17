@@ -1,6 +1,6 @@
 {
 	"name": "fitbit-sdk-types",
-	"version": "2.0.2",
+	"version": "3.0.0",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
 	"keywords": [
@@ -27,12 +27,13 @@
 		"prettier": "prettier **/*.ts **/*.tsx **/*.json **/*.md",
 		"dtslint": "dtslint types",
 		"check-code": "npm run dtslint && npm run prettier -- -l",
-		"fix-code": "tslint --project types --fix && npm run prettier -- --write"
+		"fix-code": "tslint --project types --fix && npm run prettier -- --write",
+		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"dtslint": "^0.3.0",
+		"dtslint": "^0.4.1",
 		"prettier": "^1.15.3",
 		"tslint": "^5.11.0",
-		"typescript": "^3.2.1"
+		"typescript": "^3.2.2"
 	}
 }

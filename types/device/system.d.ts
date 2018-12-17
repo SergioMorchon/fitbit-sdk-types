@@ -17,4 +17,5 @@ declare module 'system' {
 		readonly native: MemoryUsage;
 	}
 	const memory: Memory;
+	function launchApp(uuid: string, launchArguments?: any): void;
 }

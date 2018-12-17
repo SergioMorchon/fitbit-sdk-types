@@ -16,7 +16,6 @@ declare module 'file-transfer' {
 		readonly readyState: ReadyState;
 		cancel(): void;
 	}
-	//#region companion
 	interface Outbox {
 		enqueue(
 			name: string,
@@ -25,8 +24,6 @@ declare module 'file-transfer' {
 		): Promise<FileTransfer>;
 	}
 	const outbox: Outbox;
-	//#endregion
-	//#region device
 	interface Inbox
 		extends EventTarget<{
 			newfile: Event;
@@ -36,5 +33,4 @@ declare module 'file-transfer' {
 	}
 
 	const inbox: Inbox;
-	//#endregion
 }

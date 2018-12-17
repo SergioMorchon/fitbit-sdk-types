@@ -99,11 +99,9 @@ You can see a ton of official examples working as tests right here, under the `.
 
 ```json
 {
-	// ...
 	"compilerOptions": {
 		"strict": true
 	}
-	// ...
 }
 ```
 
