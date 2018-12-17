@@ -8,6 +8,7 @@
 /// <reference path="./device/document/document.d.ts" />
 /// <reference path="./device/document/elements.d.ts" />
 /// <reference path="./device/document/events.d.ts" />
+/// <reference path="./device/exercise.d.ts" />
 /// <reference path="./device/gyroscope.d.ts" />
 /// <reference path="./device/haptycs.d.ts" />
 /// <reference path="./device/heart-rate.d.ts" />
