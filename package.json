@@ -30,7 +30,7 @@
 		"fix-code": "tslint --project types --fix && npm run prettier -- --write"
 	},
 	"devDependencies": {
-		"dtslint": "^0.3.0",
+		"dtslint": "^0.4.1",
 		"prettier": "^1.15.3",
 		"tslint": "^5.11.0",
 		"typescript": "^3.2.2"
