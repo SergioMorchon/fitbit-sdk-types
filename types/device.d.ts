@@ -13,6 +13,7 @@
 /// <reference path="./device/heart-rate.d.ts" />
 /// <reference path="./device/orientation.d.ts" />
 /// <reference path="./device/power.d.ts" />
+/// <reference path="./device/scientific.d.ts" />
 /// <reference path="./device/sensor.d.ts" />
 /// <reference path="./device/system.d.ts" />
 /// <reference path="./device/user-activity.d.ts" />
