@@ -44,12 +44,12 @@ declare module 'exercise' {
 			swimlength: SwimLengthEvent;
 		}> {
 		readonly currentLapStats: ExerciseStats | undefined;
-		onstatechange(event: Event): void;
-		onswimlength(event: SwimLengthEvent): void;
 		readonly startDate: Date | undefined;
 		readonly state: 'started' | 'paused' | 'stopped';
 		readonly stats: ExerciseStats | undefined;
 		readonly type: string | undefined;
+		onstatechange(event: Event): void;
+		onswimlength(event: SwimLengthEvent): void;
 		pause(): void;
 		resume(): void;
 		splitLap(): ExerciseStats;
