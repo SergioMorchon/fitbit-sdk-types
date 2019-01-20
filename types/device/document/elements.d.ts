@@ -62,19 +62,17 @@ interface ComboButton extends ContainerElement {
 interface VirtualTileListItemUpdateOptions {
 	redraw?: boolean;
 }
-interface VirtualTileListDelegate {
-	configureTile(
-		tile: VirtualTileListItem,
-		tileInfo: VirtualTileListItemInfo,
-	): void;
-	getTileInfo(position: number): VirtualTileListItemInfo;
-}
 interface VirtualTileListItemInfo {
 	type: string;
-	[extraProperties: string]: any;
 }
-interface VirtualTileList extends ContainerElement {
-	delegate: VirtualTileListDelegate;
+interface VirtualTileListDelegate<ItemInfo extends VirtualTileListItemInfo> {
+	configureTile(tile: VirtualTileListItem, tileInfo: ItemInfo): void;
+	getTileInfo(position: number): ItemInfo;
+}
+
+interface VirtualTileList<ItemInfo extends VirtualTileListItemInfo>
+	extends ContainerElement {
+	delegate: VirtualTileListDelegate<ItemInfo>;
 	readonly firstVisibleTile: number;
 	readonly lastVisibleTile: number;
 	length: number;
