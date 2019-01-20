@@ -1,6 +1,10 @@
 import document from 'document';
 
-let VTList = document.getElementById('my-list') as VirtualTileList;
+let VTList = document.getElementById('my-list') as VirtualTileList<{
+	type: string;
+	value: string;
+	index: number;
+}>;
 
 let NUM_ELEMS = 100;
 
