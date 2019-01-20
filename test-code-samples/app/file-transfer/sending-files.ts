@@ -8,3 +8,12 @@ outbox
 	.catch(error => {
 		console.log(`Failed to enqueue ${filename}. Error: ${error}`);
 	});
+
+outbox
+	.enqueueFile('app.txt')
+	.then(ft => {
+		console.log(`Transfer of ${ft.name} successfully queued.`);
+	})
+	.catch(error => {
+		console.log(`Failed to schedule transfer: ${error}`);
+	});

@@ -129,15 +129,13 @@ declare const ImagePicker: Component<{
 	imageHeight?: number | string;
 	showIcon?: boolean;
 	disabled?: boolean;
-	onImagePicked?: (
-		image: {
-			imageUri: string;
-			imageString: string;
-			type: string;
-			width: number;
-			height: number;
-		},
-	) => void;
+	onImagePicked?: (image: {
+		imageUri: string;
+		imageString: string;
+		type: string;
+		width: number;
+		height: number;
+	}) => void;
 }>;
 
 interface SettingsComponentProps {
