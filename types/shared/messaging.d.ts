@@ -15,7 +15,7 @@ declare module 'messaging' {
 	class MessageEvent extends Event {
 		readonly data: any;
 	}
-	type ReadyState = 'CLOSED' | 'OPEN';
+	type ReadyState = number;
 	interface MessageSocket
 		extends EventTarget<{
 			bufferedamountdecrease: Event;
@@ -25,8 +25,8 @@ declare module 'messaging' {
 			open: Event;
 		}> {}
 	class MessageSocket {
-		readonly CLOSED: 'CLOSED';
-		readonly OPEN: 'OPEN';
+		readonly CLOSED: ReadyState;
+		readonly OPEN: ReadyState;
 		readonly MAX_MESSAGE_SIZE: number;
 		readonly bufferedAmount: number;
 		onbufferedamountdecrease: (event: Event) => void;
