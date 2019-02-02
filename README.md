@@ -7,7 +7,15 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 
 ## ⚙ How to use in your app project
 
-### Basic configuration
+### ✨ Automatic configuration
+
+1. First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
+2. Then, from that project root, run `npx fitbit-sdk-types apply` to apply TypeScript to your existing Fitbir project.
+3. Profit!
+
+This is a shortand script that performs step by step the same actions described below.
+
+### ✍ Manual configuration
 
 1. Execute `npm install --save-dev fitbit-sdk-types` to add this type definitions.
 2. `include` them in your project's `tsconfig.json` file. It may look like this **tsconfig.json**:
@@ -29,7 +37,7 @@ console.log(acc.activated);
 console.log(acc.potato); // error
 ```
 
-### Strict configuration
+#### Strict configuration
 
 Add the following configurations for each target.
 

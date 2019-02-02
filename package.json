@@ -3,7 +3,7 @@
 	"version": "3.1.1",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
-	"main": "index.js",
+	"main": "scripts/index.js",
 	"keywords": [
 		"typescript",
 		"fitbit",
@@ -32,11 +32,12 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
+		"@types/glob": "^7.1.1",
 		"@types/node": "^10.12.21",
 		"dtslint": "^0.4.2",
-		"prettier": "^1.16.0",
+		"prettier": "^1.16.3",
 		"tslint": "^5.12.1",
-		"typescript": "^3.2.4"
+		"typescript": "^3.3.1"
 	},
 	"dependencies": {
 		"glob": "^7.1.3"
