@@ -2,10 +2,12 @@ type Component<Props> = (props: Props) => JSX.Element;
 
 declare const Page: Component<{ children: JSX.Element }>;
 declare const Section: Component<{
+	children: JSX.Element;
 	title: JSX.Element;
 	description?: JSX.Element;
 }>;
 declare const Link: Component<{
+	children: JSX.Element;
 	source: string;
 }>;
 declare const Text: Component<{
