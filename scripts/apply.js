@@ -96,7 +96,7 @@ exports.default = () => {
 		readFileSync(projectTsConfigFileName).toString('utf-8'),
 	);
 	projectTsConfig.include = [
-		'node_modules/fitbit-sdk-types',
+		'node_modules/fitbit-sdk-types/types',
 		'**/*.ts',
 		'**/*.tsx',
 	];

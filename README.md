@@ -10,7 +10,7 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 ### ✨ Automatic configuration
 
 1. First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
-2. Then, from that project root, run `npx fitbit-sdk-types apply` to apply TypeScript to your existing Fitbir project.
+2. Then, from that project root, run `npx fitbit-sdk-types apply` to apply TypeScript to your existing Fitbit project.
 3. Profit!
 
 This is a shortand script that performs step by step the same actions described below.
@@ -23,7 +23,7 @@ This is a shortand script that performs step by step the same actions described 
 ```json
 {
 	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
-	"include": ["node_modules/fitbit-sdk-types", "**/*.ts", "**/*.tsx"]
+	"include": ["node_modules/fitbit-sdk-types/types", "**/*.ts", "**/*.tsx"]
 }
 ```
 
@@ -41,7 +41,7 @@ console.log(acc.potato); // error
 
 Add the following configurations for each target.
 
-#### app/tsconfig.json
+**app/tsconfig.json**
 
 ```json
 {
@@ -50,7 +50,7 @@ Add the following configurations for each target.
 }
 ```
 
-#### companion/tsconfig.json
+**companion/tsconfig.json**
 
 ```json
 {
@@ -62,13 +62,14 @@ Add the following configurations for each target.
 }
 ```
 
-#### settings/tsconfig.json
+**settings/tsconfig.json**
 
 ```json
 {
 	"extends": "../tsconfig.json",
 	"include": [
 		"../node_modules/fitbit-sdk-types/types/settings.d.ts",
+		"**/*.ts",
 		"**/*.tsx"
 	]
 }
