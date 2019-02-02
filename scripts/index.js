@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { name: moduleName } = require('../package.json');
 const { default: apply } = require('./apply');
 

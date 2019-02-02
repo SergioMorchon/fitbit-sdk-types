@@ -3,7 +3,7 @@
 	"version": "3.2.0",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
-	"main": "scripts/index.js",
+	"bin": "scripts/index.js",
 	"keywords": [
 		"typescript",
 		"fitbit",
