@@ -9,6 +9,7 @@ declare module 'haptics' {
 		| 'confirmation-max';
 	interface Vibration {
 		start(pattern: VibrationPatternName): void;
+		stop(): void;
 	}
 	const vibration: Vibration;
 }
