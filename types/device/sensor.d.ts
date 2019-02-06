@@ -1,4 +1,8 @@
-type BatchedReading<Reading> = { [P in keyof Reading]: Array<Reading[P]> };
+type BatchedReading<Reading> = {
+	[P in keyof Reading]: Reading[P] extends number
+		? Float32Array
+		: Array<Reading[P]>
+};
 
 interface Sensor<BatchReading extends {}, EventMap = {}>
 	extends EventTarget<
