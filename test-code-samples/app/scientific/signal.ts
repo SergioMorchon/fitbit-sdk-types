@@ -1,4 +1,4 @@
-import * as S from 'scientific';
+import { LinearFilter } from 'scientific/signal';
 
 const numSamples = 4096;
 const sampleFreq = 44100;
@@ -12,7 +12,7 @@ for (let i = 0; i < X.length; i++) {
 	// Corrupt the signal with zero-mean white noise with a variance of 4.
 	X[i] = S + 2 * Math.random();
 }
-const filter50hz = new S.signal.LinearFilter(
+const filter50hz = new LinearFilter(
 	new Float32Array([
 		2.88394643e-9,
 		0.0,
