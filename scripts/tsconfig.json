@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
+		"downlevelIteration": true,
 		"module": "commonjs",
 		"resolveJsonModule": true,
 		"strict": true,

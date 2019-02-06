@@ -2,7 +2,7 @@ const { name: moduleName, version: moduleVersion } = require('../package.json');
 const { execSync } = require('child_process');
 const { existsSync, readFileSync, writeFileSync, renameSync } = require('fs');
 const { join } = require('path');
-const glob = require('glob');
+const {walkFiles} = require('./file-system');
 
 const moduleDependency = `${moduleName}@${moduleVersion}`;
 
@@ -76,7 +76,11 @@ exports.default = () => {
 	fitbitProjects
 		.filter(({ directory }) => existsSync(directory))
 		.forEach(({ directory, tsConfig }) => {
-			glob.sync(`${directory}/**/*.j{s,sx}`).forEach(fileName => {
+			for (const fileName of walkFiles(directory)) {
+				if (!/.*\.j(s|sx)$/.test(fileName)) {
+					continue;
+				}
+
 				const renamedFileName = fileName.replace(/\.js(x)?$/, '.ts$1');
 				tryRun(
 					() => renameSync(fileName, renamedFileName),
@@ -88,7 +92,7 @@ exports.default = () => {
 					() => writeFileSync(tsConfigFileName, stringify(tsConfig)),
 					`creating ${tsConfigFileName}`,
 				);
-			});
+			};
 		});
 
 	const projectTsConfigFileName = './tsconfig.json';
