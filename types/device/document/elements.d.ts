@@ -26,6 +26,26 @@ interface ElementSearch {
 	): Array<ElementSearchMap[typeof tagName]>;
 	getElementsByTagName(tagName: string): Element[];
 }
+type AnimationTrigger =
+	| 'activate'
+	| 'click'
+	| 'collapse'
+	| 'disable'
+	| 'enable'
+	| 'expand'
+	| 'highlight'
+	| 'load'
+	| 'mousedown'
+	| 'mousemove'
+	| 'mouseout'
+	| 'mouseover'
+	| 'mouseup'
+	| 'paint'
+	| 'reload'
+	| 'select'
+	| 'unhighlight'
+	| 'unload'
+	| 'unselect';
 interface Element extends ElementSearch, GlobalEvents {
 	readonly class: string;
 	readonly firstChild: Element | null;
@@ -40,7 +60,7 @@ interface Element extends ElementSearch, GlobalEvents {
 	readonly type: string;
 	value: number | [number, number];
 	enabled: boolean;
-	animate(trigger: string): void;
+	animate(trigger: AnimationTrigger): void;
 	sendEvent(event: Event): void;
 }
 interface ScrollIndicatorElement extends ContainerElement {
