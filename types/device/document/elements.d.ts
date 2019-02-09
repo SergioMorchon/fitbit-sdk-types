@@ -17,14 +17,15 @@ interface ElementSearchMap {
 	arc: ArcElement;
 	gradientRect: GradientRectElement;
 	gradientArc: GradientArcElement;
+	g: GroupElement;
+	[key: string]: Element;
 }
 interface ElementSearch {
-	getElementById(id: string): Element;
+	getElementById(id: string): Element | null;
 	getElementsByClassName(className: string): Element[];
-	getElementsByTagName(
-		tagName: keyof ElementSearchMap,
-	): Array<ElementSearchMap[typeof tagName]>;
-	getElementsByTagName(tagName: string): Element[];
+	getElementsByTagName<TagName extends keyof ElementSearchMap>(
+		tagName: TagName,
+	): Array<ElementSearchMap[TagName]>;
 }
 type AnimationTrigger =
 	| 'activate'

@@ -10,7 +10,7 @@ elements.forEach(function(element) {
 
 let circles = document.getElementsByTagName('circle');
 circles.forEach(function(circle) {
-	circle.style.fill = 'blue';
+	circle.cx = 9;
 });
 
 let potatoes = document.getElementsByTagName('potato');
