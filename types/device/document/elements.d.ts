@@ -1,12 +1,3 @@
-type ElementState =
-	| 'enabled'
-	| 'disabled'
-	| 'highlighted'
-	| 'unhighlighted'
-	| 'selected'
-	| 'unselected'
-	| 'expanded'
-	| string;
 interface ElementSearchMap {
 	image: ImageElement;
 	text: TextElement;
@@ -17,14 +8,15 @@ interface ElementSearchMap {
 	arc: ArcElement;
 	gradientRect: GradientRectElement;
 	gradientArc: GradientArcElement;
+	g: GroupElement;
+	[key: string]: Element;
 }
 interface ElementSearch {
-	getElementById(id: string): Element;
+	getElementById(id: string): Element | null;
 	getElementsByClassName(className: string): Element[];
-	getElementsByTagName(
-		tagName: keyof ElementSearchMap,
-	): Array<ElementSearchMap[typeof tagName]>;
-	getElementsByTagName(tagName: string): Element[];
+	getElementsByTagName<TagName extends keyof ElementSearchMap>(
+		tagName: TagName,
+	): Array<ElementSearchMap[TagName]>;
 }
 type AnimationTrigger =
 	| 'activate'
@@ -55,7 +47,7 @@ interface Element extends ElementSearch, GlobalEvents {
 	mode: number | [number, number];
 	readonly nextSibling: Element | null;
 	readonly parent: Element | null;
-	state: ElementState;
+	state: string;
 	text: string;
 	readonly type: string;
 	value: number | [number, number];
