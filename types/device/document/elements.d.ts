@@ -1,12 +1,3 @@
-type ElementState =
-	| 'enabled'
-	| 'disabled'
-	| 'highlighted'
-	| 'unhighlighted'
-	| 'selected'
-	| 'unselected'
-	| 'expanded'
-	| string;
 interface ElementSearchMap {
 	image: ImageElement;
 	text: TextElement;
@@ -56,7 +47,7 @@ interface Element extends ElementSearch, GlobalEvents {
 	mode: number | [number, number];
 	readonly nextSibling: Element | null;
 	readonly parent: Element | null;
-	state: ElementState;
+	state: string;
 	text: string;
 	readonly type: string;
 	value: number | [number, number];
