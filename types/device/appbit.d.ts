@@ -12,5 +12,4 @@ declare module 'appbit' {
 	}
 
 	const me: Appbit;
-	export { me };
 }
