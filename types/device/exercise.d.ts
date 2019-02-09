@@ -38,7 +38,7 @@ declare module 'exercise' {
 		gps?: boolean;
 		poolLength?: number;
 	}
-	interface Exercise
+	export interface Exercise
 		extends EventTarget<{
 			statechange: Event;
 			swimlength: SwimLengthEvent;
