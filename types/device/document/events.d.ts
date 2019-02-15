@@ -15,7 +15,7 @@ interface AnimationEvent extends Event {
 	readonly elapsedTime: number;
 }
 interface KeyboardEvent extends Event {
-	readonly key: string;
+	readonly key: 'back' | 'top' | 'down';
 }
 interface MouseEvent extends Event {
 	readonly screenX: number;
