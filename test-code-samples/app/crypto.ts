@@ -10,3 +10,6 @@ bytes[2] = 3;
 Crypto.subtle.digest('SHA-256', buffer).then(hash => {
 	console.log(hash);
 });
+Crypto.subtle.digest({ name: 'SHA-256', foo: 'bar' }, buffer).then(hash => {
+	console.log(hash);
+});

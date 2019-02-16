@@ -1,3 +1,17 @@
+interface Coordinates {
+	readonly accuracy: number;
+	readonly altitude: number | null;
+	readonly altitudeAccuracy: number | null;
+	readonly heading: number | null;
+	readonly latitude: number;
+	readonly longitude: number;
+	readonly speed: number | null;
+}
+interface Position {
+	readonly coords: Coordinates;
+	readonly timestamp: number;
+}
+
 declare module 'geolocation' {
 	type WatchId = number;
 	type PositionErrorCallback = (error: PositionError) => void;
@@ -20,21 +34,14 @@ declare module 'geolocation' {
 		maximumAge?: number;
 		timeout?: number;
 	}
-	type PositionErrorCode =
-		| 'PERMISSION_DENIED'
-		| 'POSITION_UNAVAILABLE'
-		| 'TIMEOUT';
-	const PositionErrorCode: {
-		readonly PERMISSION_DENIED: 'PERMISSION_DENIED';
-		readonly POSITION_UNAVAILABLE: 'POSITION_UNAVAILABLE';
-		readonly TIMEOUT: 'TIMEOUT';
-		readonly code: PositionErrorCode;
-	};
 	interface PositionError {
-		readonly PERMISSION_DENIED: typeof PositionErrorCode.PERMISSION_DENIED;
-		readonly POSITION_UNAVAILABLE: typeof PositionErrorCode.POSITION_UNAVAILABLE;
-		readonly TIMEOUT: typeof PositionErrorCode.TIMEOUT;
-		readonly code: PositionErrorCode;
+		readonly PERMISSION_DENIED: any;
+		readonly POSITION_UNAVAILABLE: any;
+		readonly TIMEOUT: any;
+		readonly code:
+			| PositionError['PERMISSION_DENIED']
+			| PositionError['POSITION_UNAVAILABLE']
+			| PositionError['TIMEOUT'];
 		readonly message: string;
 	}
 

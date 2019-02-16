@@ -11,12 +11,14 @@ declare module 'crypto' {
 	function getRandomValues(values: TypedArray): void;
 	//#endregion
 	//#region device
-	interface Algorithm {
-		name: 'SHA-256';
-	}
+	type SHA_256 = 'SHA-256';
+	type Algorithm = {
+		name: SHA_256;
+		[key: string]: any;
+	};
 	interface SubtleCrypto {
 		digest(
-			algorithm: string | Algorithm,
+			algorithm: SHA_256 | Algorithm,
 			data: ArrayBuffer | ArrayBufferView,
 		): Promise<string>;
 	}

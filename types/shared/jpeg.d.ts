@@ -8,4 +8,9 @@ declare module 'jpeg' {
 		outputFilename: string,
 		options?: JpegDecodeOptions,
 	): void;
+	function decode(
+		filename: string,
+		outputFilename: string,
+		options?: JpegDecodeOptions,
+	): void;
 }

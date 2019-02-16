@@ -15,7 +15,7 @@ declare module 'power' {
 		}> {
 		readonly connected: boolean;
 		onchange: (event: Event) => void;
-		powerIsGood: boolean | undefined;
+		readonly powerIsGood: boolean | undefined;
 	}
 	const charger: Charger;
 }

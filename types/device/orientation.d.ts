@@ -7,8 +7,8 @@ declare module 'orientation' {
 		readonly scalar: number;
 	}
 	interface OrientationSensor extends Sensor<BatchReading> {
-		readonly quaternion: Quaternion;
-		readonly timestamp: number;
+		readonly quaternion: Quaternion | null;
+		readonly timestamp: number | null;
 	}
 	class OrientationSensor extends SensorBase {}
 }
