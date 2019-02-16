@@ -1,12 +1,13 @@
 declare module 'haptics' {
 	type VibrationPatternName =
+		| 'alert'
 		| 'bump'
+		| 'confirmation'
+		| 'confirmation-max'
 		| 'nudge'
 		| 'nudge-max'
 		| 'ping'
-		| 'ring'
-		| 'confirmation'
-		| 'confirmation-max';
+		| 'ring';
 	interface Vibration {
 		start(pattern: VibrationPatternName): void;
 		stop(): void;

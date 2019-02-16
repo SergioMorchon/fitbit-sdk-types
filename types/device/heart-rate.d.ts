@@ -1,7 +1,6 @@
 declare module 'heart-rate' {
-	interface HeartRateSensorReading {
+	interface HeartRateSensorReading extends SensorReading {
 		readonly heartRate: number | null;
-		readonly timestamp: number | null;
 	}
 	interface HeartRateSensor
 		extends Sensor<HeartRateSensorReading>,

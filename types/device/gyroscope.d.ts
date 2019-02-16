@@ -1,6 +1,5 @@
 declare module 'gyroscope' {
-	interface GyroscopeReading {
-		readonly timestamp: number | null;
+	interface GyroscopeReading extends SensorReading {
 		readonly x: number | null;
 		readonly y: number | null;
 		readonly z: number | null;

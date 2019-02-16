@@ -1,21 +1,21 @@
 declare module 'messaging' {
-	type CloseCode = 'CONNECTION_LOST' | 'PEER_INITIATED' | 'SOCKET_ERROR';
 	class CloseEvent extends Event {
-		readonly CONNECTION_LOST: 'CONNECTION_LOST';
-		readonly PEER_INITIATED: 'PEER_INITIATED';
-		readonly SOCKET_ERROR: 'SOCKET_ERROR';
-		readonly code: CloseCode;
+		readonly CONNECTION_LOST: any;
+		readonly PEER_INITIATED: any;
+		readonly SOCKET_ERROR: any;
+		readonly code:
+			| CloseEvent['CONNECTION_LOST']
+			| CloseEvent['PEER_INITIATED']
+			| CloseEvent['SOCKET_ERROR'];
 		readonly wasClean: boolean;
 	}
-	type ErrorCode = 'BUFFER_FULL';
 	class ErrorEvent extends Error {
-		readonly BUFFER_FULL: 'BUFFER_FULL';
-		readonly code: ErrorCode;
+		readonly BUFFER_FULL: any;
+		readonly code: ErrorEvent['BUFFER_FULL'];
 	}
 	class MessageEvent extends Event {
 		readonly data: any;
 	}
-	type ReadyState = number;
 	interface MessageSocket
 		extends EventTarget<{
 			bufferedamountdecrease: Event;
@@ -25,8 +25,8 @@ declare module 'messaging' {
 			open: Event;
 		}> {}
 	class MessageSocket {
-		readonly CLOSED: ReadyState;
-		readonly OPEN: ReadyState;
+		readonly CLOSED: any;
+		readonly OPEN: any;
 		readonly MAX_MESSAGE_SIZE: number;
 		readonly bufferedAmount: number;
 		onbufferedamountdecrease: (event: Event) => void;
@@ -34,7 +34,7 @@ declare module 'messaging' {
 		onerror: (event: ErrorEvent) => void;
 		onmessage: (event: MessageEvent) => void;
 		onopen: (event: Event) => void;
-		readonly readyState: ReadyState;
+		readonly readyState: MessageSocket['CLOSED'] | MessageSocket['OPEN'];
 		send(data: any): void;
 	}
 	const peerSocket: MessageSocket;

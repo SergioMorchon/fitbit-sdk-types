@@ -4,7 +4,11 @@ type BatchedReading<Reading> = {
 		: Array<Reading[P]>
 };
 
-interface Sensor<BatchReading extends {}, EventMap = {}>
+interface SensorReading {
+	readonly timestamp: number | null;
+}
+
+interface Sensor<Reading extends SensorReading, EventMap = {}>
 	extends EventTarget<
 		EventMap & {
 			activate: Event;
@@ -15,7 +19,7 @@ interface Sensor<BatchReading extends {}, EventMap = {}>
 	onactivate: (event: Event) => void;
 	onerror: (event: SensorErrorEvent) => void;
 	onreading: (event: Event) => void;
-	readonly readings: BatchedReading<BatchReading>;
+	readonly readings: BatchedReading<Reading>;
 	readonly activated: boolean;
 	start(): void;
 	stop(): void;
