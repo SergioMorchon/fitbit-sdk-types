@@ -11,11 +11,6 @@ declare module 'user-settings' {
 		readonly poolLength: number;
 	}
 	const exercise: ExerciseSettings;
-	interface DeviceSettings {
-		readonly airplaneModeEnabled: boolean;
-		readonly vibrationEnabled: boolean;
-	}
-	const device: DeviceSettings;
 	const locale: LocaleSettings;
 	interface UnitsSettings {
 		readonly bodyWeight: 'metric' | 'us' | 'stone';
