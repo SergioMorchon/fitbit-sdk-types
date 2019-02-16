@@ -12,10 +12,10 @@ declare module 'crypto' {
 	//#endregion
 	//#region device
 	type SHA_256 = 'SHA-256';
-	type Algorithm = {
+	interface Algorithm {
 		name: SHA_256;
 		[key: string]: any;
-	};
+	}
 	interface SubtleCrypto {
 		digest(
 			algorithm: SHA_256 | Algorithm,
