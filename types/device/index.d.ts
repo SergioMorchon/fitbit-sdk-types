@@ -4,7 +4,6 @@
 /// <reference path="../shared/event.d.ts" />
 /// <reference path="../shared/geolocation.d.ts" />
 /// <reference path="../shared/globals.d.ts" />
-/// <reference path="../shared/jpeg.d.ts" />
 /// <reference path="../shared/messaging.d.ts" />
 /// <reference path="../shared/permissions.d.ts" />
 /// <reference path="../shared/user-settings.d.ts" />
