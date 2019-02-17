@@ -1,5 +1,15 @@
 import document from 'document';
 
 document.onkeypress = function(e) {
-	console.log('Key pressed: ' + e.key);
+	switch (e.key) {
+		case 'back':
+			console.log('back');
+			break;
+		case 'down':
+			console.log('down');
+			break;
+		case 'up':
+			console.log('up');
+	}
+	e.preventDefault();
 };
