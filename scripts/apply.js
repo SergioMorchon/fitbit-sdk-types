@@ -1,6 +1,6 @@
 const { name: moduleName, version: moduleVersion } = require('../package.json');
 const { execSync } = require('child_process');
-const { existsSync, readFileSync, writeFileSync, renameSync } = require('fs');
+const { existsSync, writeFileSync, renameSync, unlinkSync } = require('fs');
 const { join } = require('path');
 const { walkFiles } = require('./file-system');
 
@@ -70,6 +70,8 @@ const fitbitProjects = [
 	},
 ];
 
+const defaultTsProjectFile = 'tsconfig.json';
+
 exports.default = () => {
 	tryRun(
 		() =>
@@ -100,4 +102,8 @@ exports.default = () => {
 				);
 			}
 		});
+
+	tryRun(() => {
+		unlinkSync(defaultTsProjectFile);
+	}, `removing unneeded ${defaultTsProjectFile}`);
 };
