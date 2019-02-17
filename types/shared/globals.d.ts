@@ -8,9 +8,3 @@ declare function setTimeout(
 	handler: (...args: any[]) => void,
 	timeout: number,
 ): number;
-//#region device
-declare function cancelAnimationFrame(handle: number): void;
-declare function requestAnimationFrame(
-	handler: (timestamp: number) => void,
-): number;
-//#endregion
