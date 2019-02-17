@@ -6,4 +6,3 @@
 /// <reference path="../shared/globals.d.ts" />
 /// <reference path="../shared/messaging.d.ts" />
 /// <reference path="../shared/permissions.d.ts" />
-/// <reference path="../shared/user-settings.d.ts" />
