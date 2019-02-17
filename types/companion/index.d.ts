@@ -2,7 +2,6 @@
 /// <reference path="../shared/console.d.ts" />
 /// <reference path="../shared/device.d.ts" />
 /// <reference path="../shared/event.d.ts" />
-/// <reference path="../shared/fs.d.ts" />
 /// <reference path="../shared/geolocation.d.ts" />
 /// <reference path="../shared/globals.d.ts" />
 /// <reference path="../shared/jpeg.d.ts" />
