@@ -1,14 +1,17 @@
 {
-	"extends": "dtslint/dtslint.json",
-	"linterOptions": {
-		"exclude": ["./test/**"]
-	},
 	"defaultSeverity": "error",
+	"extends": ["tslint:recommended", "tslint-config-prettier"],
+	"jsRules": {},
 	"rules": {
 		"file-name-casing": [true, "kebab-case"],
 		"no-single-declare-module": false,
 		"no-empty-interface": false,
 		"no-unnecessary-class": [true, "allow-constructor-only"],
+		"interface-name": false, // This project reflects Fitbit namings that don't follow this rule
+		"member-access": false, // This project is definition-only files, so all class mempers will be public
+		"max-classes-per-file": false,
+		"no-reference": false, // Current typings gouping are done with references
+		"no-namespace": false, // Needed for JSX namespace for TypeScript
 		"member-ordering": [
 			true,
 			{
@@ -25,5 +28,9 @@
 				]
 			}
 		]
+	},
+	"rulesDirectory": [],
+	"linterOptions": {
+		"exclude": ["./test/**"]
 	}
 }
