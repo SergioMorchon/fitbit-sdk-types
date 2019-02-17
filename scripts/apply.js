@@ -2,7 +2,7 @@ const { name: moduleName, version: moduleVersion } = require('../package.json');
 const { execSync } = require('child_process');
 const { existsSync, readFileSync, writeFileSync, renameSync } = require('fs');
 const { join } = require('path');
-const {walkFiles} = require('./file-system');
+const { walkFiles } = require('./file-system');
 
 const moduleDependency = `${moduleName}@${moduleVersion}`;
 
@@ -92,24 +92,6 @@ exports.default = () => {
 					() => writeFileSync(tsConfigFileName, stringify(tsConfig)),
 					`creating ${tsConfigFileName}`,
 				);
-			};
+			}
 		});
-
-	const projectTsConfigFileName = './tsconfig.json';
-	const projectTsConfig = JSON.parse(
-		readFileSync(projectTsConfigFileName).toString('utf-8'),
-	);
-	projectTsConfig.include = [
-		'node_modules/fitbit-sdk-types/types',
-		'**/*.ts',
-		'**/*.tsx',
-	];
-	projectTsConfig.compilerOptions = {
-		...projectTsConfig.compilerOptions,
-		strict: true,
-	};
-	tryRun(
-		() => writeFileSync(projectTsConfigFileName, stringify(projectTsConfig)),
-		`adding type references to ${projectTsConfigFileName}`,
-	);
 };
