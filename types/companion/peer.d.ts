@@ -9,16 +9,8 @@ declare module 'peer' {
 	}
 	const app: PeerApp;
 	type BatteryLevel = 'empty' | 'low' | 'medium' | 'high' | 'unknown';
-	interface PeerDevice {
+	interface PeerDevice extends BasicDeviceInfo {
 		readonly batteryLevel: BatteryLevel;
-		readonly lastSyncTime: Date;
-		readonly modelId: string;
-		readonly modelName: string;
-		readonly screen: {
-			readonly width: number;
-			readonly height: number;
-		};
-		readonly type: 'WATCH' | 'TRACKER';
 	}
 	const device: PeerDevice;
 }
