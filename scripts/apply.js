@@ -1,6 +1,6 @@
 const { name: moduleName, version: moduleVersion } = require('../package.json');
 const { execSync } = require('child_process');
-const { existsSync, writeFileSync, renameSync, unlinkSync } = require('fs');
+const { existsSync, writeFileSync, renameSync } = require('fs');
 const { join } = require('path');
 const { walkFiles } = require('./file-system');
 
@@ -32,10 +32,7 @@ const getTypesPathForTarget = target =>
 	`../node_modules/fitbit-sdk-types/types/${target}`;
 
 const commonTsConfig = {
-	extends: '../node_modules/@fitbit/sdk/sdk-tsconfig.json',
-	compilerOptions: {
-		strict: true,
-	},
+	extends: '../tsconfig.json',
 	include: ['**/*.ts'],
 };
 
@@ -44,33 +41,28 @@ const fitbitProjects = [
 		directory: './app',
 		tsConfig: {
 			...commonTsConfig,
-			compilerOptions: {
-				types: [getTypesPathForTarget('device')],
-			},
+			include: [getTypesPathForTarget('device'), ...commonTsConfig.include],
 		},
 	},
 	{
 		directory: './companion',
 		tsConfig: {
 			...commonTsConfig,
-			compilerOptions: {
-				types: [getTypesPathForTarget('companion')],
-			},
+			include: [getTypesPathForTarget('companion'), ...commonTsConfig.include],
 		},
 	},
 	{
 		directory: './settings',
 		tsConfig: {
 			...commonTsConfig,
-			compilerOptions: {
-				types: [getTypesPathForTarget('settings')],
-			},
-			include: [...commonTsConfig.include, '**/*.tsx'],
+			include: [
+				getTypesPathForTarget('settings'),
+				...commonTsConfig.include,
+				'**/*.tsx',
+			],
 		},
 	},
 ];
-
-const defaultTsProjectFile = 'tsconfig.json';
 
 exports.default = () => {
 	tryRun(
@@ -102,8 +94,4 @@ exports.default = () => {
 				);
 			}
 		});
-
-	tryRun(() => {
-		unlinkSync(defaultTsProjectFile);
-	}, `removing unneeded ${defaultTsProjectFile}`);
 };
