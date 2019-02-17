@@ -25,8 +25,17 @@ const tryRun = (fn, action) => {
  */
 const stringify = data => JSON.stringify(data, null, 2);
 
+/**
+ * @param {string} target
+ */
+const getTypesPathForTarget = target =>
+	`../node_modules/fitbit-sdk-types/types/${target}`;
+
 const commonTsConfig = {
-	extends: '../tsconfig.json',
+	extends: '../node_modules/@fitbit/sdk/sdk-tsconfig.json',
+	compilerOptions: {
+		strict: true,
+	},
 	include: ['**/*.ts'],
 };
 
@@ -35,31 +44,28 @@ const fitbitProjects = [
 		directory: './app',
 		tsConfig: {
 			...commonTsConfig,
-			include: [
-				...commonTsConfig.include,
-				'../node_modules/fitbit-sdk-types/types/device.d.ts',
-			],
+			compilerOptions: {
+				types: [getTypesPathForTarget('device')],
+			},
 		},
 	},
 	{
 		directory: './companion',
 		tsConfig: {
 			...commonTsConfig,
-			include: [
-				...commonTsConfig.include,
-				'../node_modules/fitbit-sdk-types/types/companion.d.ts',
-			],
+			compilerOptions: {
+				types: [getTypesPathForTarget('companion')],
+			},
 		},
 	},
 	{
 		directory: './settings',
 		tsConfig: {
 			...commonTsConfig,
-			include: [
-				...commonTsConfig.include,
-				'**/*.tsx',
-				'../node_modules/fitbit-sdk-types/types/settings.d.ts',
-			],
+			compilerOptions: {
+				types: [getTypesPathForTarget('settings')],
+			},
+			include: [...commonTsConfig.include, '**/*.tsx'],
 		},
 	},
 ];
