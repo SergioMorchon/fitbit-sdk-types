@@ -13,7 +13,7 @@ declare module 'fs' {
 		data: any,
 		encoding: 'cbor' | 'json',
 	): void;
-	function readFileSync(filename: string): any;
+	function readFileSync(filename: string): ArrayBuffer;
 	function readFileSync(filename: string, encoding: 'ascii' | 'utf-8'): string;
 	// tslint:disable-next-line unified-signatures
 	function readFileSync(filename: string, encoding: 'cbor' | 'json'): any;
@@ -31,14 +31,14 @@ declare module 'fs' {
 		offset?: number,
 		length?: number,
 		position?: number,
-	): void;
+	): number;
 	function readSync(
 		fd: FileDescriptor,
 		buffer: ArrayBuffer,
 		offset?: number,
 		length?: number,
 		position?: number,
-	): void;
+	): number;
 	function closeSync(fd: FileDescriptor): void;
 	function openSync(
 		filename: string,
