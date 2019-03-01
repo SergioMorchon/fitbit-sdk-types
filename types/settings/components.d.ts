@@ -108,6 +108,8 @@ declare const Oauth: Component<{
 	clientSecret?: string;
 	scope?: string;
 	pkce?: boolean;
+	encodeAsBase64?: boolean;
+	disabled?: boolean;
 	onAccessToken?: (accessToken: string) => void;
 }>;
 declare const StravaLogin: Component<{
