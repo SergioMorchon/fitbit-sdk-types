@@ -54,7 +54,11 @@ You can see a ton of official examples working as tests right here, under the `.
 
 ### ... Or not
 
-You can always place `// @ts-ignode` right above that line of code that you know that _should_ work, and probably needs to have it's typings fixed.
+You can always place `// @ts-ignore` right above that line of code that you know that _should_ work, and probably needs to have it's typings fixed.
+
+## SDK Support
+
+Only the latest SDK version is supported. Also don't expect this project version to match the official SDK version.
 
 ## Contributing
 
