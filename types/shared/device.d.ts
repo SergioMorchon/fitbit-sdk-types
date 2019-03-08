@@ -1,10 +1,10 @@
 interface BasicDeviceInfo {
 	readonly lastSyncTime: Date;
 	readonly modelId: string;
-	readonly modelName: 'Ionic' | 'Versa';
+	readonly modelName: string;
 	readonly screen: {
 		readonly width: number;
 		readonly height: number;
 	};
-	readonly type: 'WATCH' | 'TRACKER';
+	readonly type: string;
 }
