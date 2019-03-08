@@ -18,7 +18,7 @@ declare module 'peer' {
 			readonly width: number;
 			readonly height: number;
 		};
-		readonly type: 'WATCH' | 'TRACKER';
+		readonly type: string;
 	}
 	const device: PeerDevice;
 }

@@ -1,17 +1,15 @@
 declare module 'device' {
-	type IonicColors = undefined;
-	type VersaColors = 'black' | 'rose-gold' | 'silver' | 'graphite';
 	interface Device {
-		readonly bodyColor: IonicColors | VersaColors;
+		readonly bodyColor: string | undefined;
 		readonly firmwareVersion: string;
 		readonly lastSyncTime: Date;
 		readonly modelId: string;
-		readonly modelName: 'Ionic' | 'Versa';
+		readonly modelName: string;
 		readonly screen: {
 			readonly width: number;
 			readonly height: number;
 		};
-		readonly type: 'WATCH' | 'TRACKER';
+		readonly type: string;
 	}
 
 	const me: Device;

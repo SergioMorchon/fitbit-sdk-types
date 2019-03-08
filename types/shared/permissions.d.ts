@@ -1,9 +1,10 @@
 type PermissionName =
 	| 'access_activity'
-	| 'access_user_profile'
+	| 'access_exercise'
 	| 'access_heart_rate'
-	| 'access_location'
 	| 'access_internet'
+	| 'access_location'
+	| 'access_user_profile'
 	| 'run_background';
 
 interface Permissions {
