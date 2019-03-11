@@ -24,3 +24,21 @@
 		console.log(data);
 	}}
 />;
+<Oauth
+	encodeAsBase64
+	settingsKey="settingsKey"
+	title="title"
+	label="label"
+	status="status"
+	url="url"
+	oAuthParams={{
+		response_type: 'code',
+		client_id: 'CLIENT_ID',
+		redirect_uri: 'REDIRECT_URI',
+		scope: 'photos',
+		state: '1234zyx',
+	}}
+	onReturn={data => {
+		console.log(data);
+	}}
+/>;
