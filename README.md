@@ -9,7 +9,47 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 
 1. First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
 2. Then, from that project root, run `npx fitbit-sdk-types apply` to apply TypeScript to your existing Fitbit project.
-3. Profit!
+
+You can also do it manually wit the following basic configuration files:
+
+- `app/tsconfig.json`
+
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": ["**/*.ts", "../node_modules/fitbit-sdk-types/types/device"]
+}
+```
+
+- `companion/tsconfig.json`
+
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": ["**/*.ts", "../node_modules/fitbit-sdk-types/types/companion"]
+}
+```
+
+- `settings/tsconfig.json`
+
+```json
+{
+	"extends": "../tsconfig.json",
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"../node_modules/fitbit-sdk-types/types/settings"
+	]
+}
+```
+
+- `tsconfig.json`:
+
+```json
+{
+	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json"
+}
+```
 
 ## Benefits of using types
 
