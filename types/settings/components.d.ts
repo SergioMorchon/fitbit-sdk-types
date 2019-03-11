@@ -111,11 +111,11 @@ declare const Oauth: Component<{
 	encodeAsBase64?: boolean;
 	disabled?: boolean;
 	oAuthParams?: {
-		redirect_uri: string;
-		client_id: string;
-		state: string;
-		response_type: string;
-		scope: string;
+		redirect_uri?: string;
+		client_id?: string;
+		state?: string;
+		response_type?: string;
+		scope?: string;
 	};
 	url?: string;
 	showError?: true;
