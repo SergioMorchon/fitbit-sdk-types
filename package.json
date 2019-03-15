@@ -1,6 +1,6 @@
 {
 	"name": "fitbit-sdk-types",
-	"version": "3.3.0-1",
+	"version": "4.0.0-0",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
 	"bin": "scripts/index.js",
@@ -19,7 +19,6 @@
 		"type": "git",
 		"url": "https://github.com/SergioMorchon/fitbit-sdk-types"
 	},
-	"types": "types",
 	"scripts": {
 		"test:app": "tsc -p test-code-samples/app",
 		"test:companion": "tsc -p test-code-samples/companion",
@@ -32,9 +31,9 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"@types/node": "^10.12.27",
+		"@types/node": "^11.11.3",
 		"prettier": "^1.16.4",
-		"tslint": "^5.13.0",
+		"tslint": "^5.14.0",
 		"tslint-config-prettier": "^1.18.0",
 		"typescript": "^3.3.3333"
 	}
