@@ -1,16 +1,4 @@
 declare module 'crypto' {
-	//#region companion
-	type TypedArray =
-		| Int8Array
-		| Uint8Array
-		| Int16Array
-		| Uint16Array
-		| Int32Array
-		| Uint32Array;
-
-	function getRandomValues(values: TypedArray): void;
-	//#endregion
-	//#region device
 	type SHA_256 = 'SHA-256';
 	interface Algorithm {
 		name: SHA_256;
@@ -23,5 +11,4 @@ declare module 'crypto' {
 		): Promise<string>;
 	}
 	const subtle: SubtleCrypto;
-	//#endregion
 }

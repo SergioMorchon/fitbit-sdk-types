@@ -1,8 +1,8 @@
 const { name: moduleName, version: moduleVersion } = require('../package.json');
 const { execSync } = require('child_process');
-const { existsSync, readFileSync, writeFileSync, renameSync } = require('fs');
+const { existsSync, writeFileSync, renameSync } = require('fs');
 const { join } = require('path');
-const {walkFiles} = require('./file-system');
+const { walkFiles } = require('./file-system');
 
 const moduleDependency = `${moduleName}@${moduleVersion}`;
 
@@ -25,6 +25,12 @@ const tryRun = (fn, action) => {
  */
 const stringify = data => JSON.stringify(data, null, 2);
 
+/**
+ * @param {string} target
+ */
+const getTypesPathForTarget = target =>
+	`../node_modules/fitbit-sdk-types/types/${target}`;
+
 const commonTsConfig = {
 	extends: '../tsconfig.json',
 	include: ['**/*.ts'],
@@ -35,20 +41,14 @@ const fitbitProjects = [
 		directory: './app',
 		tsConfig: {
 			...commonTsConfig,
-			include: [
-				...commonTsConfig.include,
-				'../node_modules/fitbit-sdk-types/types/device.d.ts',
-			],
+			include: [getTypesPathForTarget('device'), ...commonTsConfig.include],
 		},
 	},
 	{
 		directory: './companion',
 		tsConfig: {
 			...commonTsConfig,
-			include: [
-				...commonTsConfig.include,
-				'../node_modules/fitbit-sdk-types/types/companion.d.ts',
-			],
+			include: [getTypesPathForTarget('companion'), ...commonTsConfig.include],
 		},
 	},
 	{
@@ -56,9 +56,9 @@ const fitbitProjects = [
 		tsConfig: {
 			...commonTsConfig,
 			include: [
+				getTypesPathForTarget('settings'),
 				...commonTsConfig.include,
 				'**/*.tsx',
-				'../node_modules/fitbit-sdk-types/types/settings.d.ts',
 			],
 		},
 	},
@@ -92,24 +92,6 @@ exports.default = () => {
 					() => writeFileSync(tsConfigFileName, stringify(tsConfig)),
 					`creating ${tsConfigFileName}`,
 				);
-			};
+			}
 		});
-
-	const projectTsConfigFileName = './tsconfig.json';
-	const projectTsConfig = JSON.parse(
-		readFileSync(projectTsConfigFileName).toString('utf-8'),
-	);
-	projectTsConfig.include = [
-		'node_modules/fitbit-sdk-types/types',
-		'**/*.ts',
-		'**/*.tsx',
-	];
-	projectTsConfig.compilerOptions = {
-		...projectTsConfig.compilerOptions,
-		strict: true,
-	};
-	tryRun(
-		() => writeFileSync(projectTsConfigFileName, stringify(projectTsConfig)),
-		`adding type references to ${projectTsConfigFileName}`,
-	);
 };

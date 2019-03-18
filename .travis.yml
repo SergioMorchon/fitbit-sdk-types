@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - '10'
+  - '11'
 install:
-  - npm install
+  - npm ci
 script:
-  - npm run check-code
-  - npm test
+  - npm run prepublishOnly
