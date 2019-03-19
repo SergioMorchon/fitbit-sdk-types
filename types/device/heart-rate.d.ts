@@ -2,8 +2,12 @@ declare module 'heart-rate' {
 	interface HeartRateSensorReading extends SensorReading {
 		readonly heartRate: number | null;
 	}
-	interface HeartRateSensor
-		extends Sensor<HeartRateSensorReading>,
-			HeartRateSensorReading {}
-	class HeartRateSensor extends SensorBase {}
+	interface HeartRateSensorConstructor {
+		new (options?: SensorOptions): Sensor<HeartRateSensorReading> &
+			HeartRateSensorReading;
+	}
+
+	const HeartRateSensor: void | HeartRateSensorConstructor;
+
+	export { HeartRateSensorReading, HeartRateSensor };
 }

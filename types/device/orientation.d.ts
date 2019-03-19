@@ -1,14 +1,25 @@
 declare module 'orientation' {
 	type Quaternion = [number, number, number, number];
-	interface OrientationSensorReading extends SensorReading {
+	interface BatchedOrientationSensorReading extends SensorReading {
 		readonly i: number;
 		readonly j: number;
 		readonly k: number;
 		readonly scalar: number;
 	}
-	interface OrientationSensor extends Sensor<OrientationSensorReading> {
+
+	interface OrientationSensorReading extends SensorReading {
 		readonly quaternion: Quaternion | null;
-		readonly timestamp: number | null;
 	}
-	class OrientationSensor extends SensorBase {}
+
+	interface OrientationSensorConstructor {
+		new (options?: SensorOptions): Sensor<BatchedOrientationSensorReading> &
+			OrientationSensorReading;
+	}
+
+	const OrientationSensor: void | OrientationSensorConstructor;
+
+	export {
+		BatchedOrientationSensorReading as OrientationSensorReading,
+		OrientationSensor,
+	};
 }

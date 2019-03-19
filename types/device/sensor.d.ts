@@ -25,10 +25,6 @@ interface Sensor<Reading extends SensorReading, EventMap = {}>
 	stop(): void;
 }
 
-declare class SensorBase {
-	constructor(options?: SensorOptions);
-}
-
 interface SensorErrorEvent {
 	readonly defaultPrevented: boolean;
 	readonly error: Error;
