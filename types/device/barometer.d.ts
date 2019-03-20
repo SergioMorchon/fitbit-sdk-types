@@ -2,6 +2,16 @@ declare module 'barometer' {
 	interface BarometerReading extends SensorReading {
 		readonly pressure: number | null;
 	}
-	interface Barometer extends Sensor<BarometerReading>, BarometerReading {}
-	class Barometer extends SensorBase {}
+
+	interface BatchedBarometerReading
+		extends BatchedSensorReading<BarometerReading> {}
+
+	type BarometerConstructor = new (options?: SensorOptions) => Sensor<
+		BarometerReading,
+		BatchedBarometerReading
+	>;
+
+	const Barometer: void | BarometerConstructor;
+
+	export { BarometerReading, BatchedBarometerReading, Barometer };
 }

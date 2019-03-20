@@ -5,8 +5,15 @@ declare module 'accelerometer' {
 		readonly z: number | null;
 	}
 
-	interface Accelerometer
-		extends Sensor<AccelerometerReading>,
-			AccelerometerReading {}
-	class Accelerometer extends SensorBase {}
+	interface BatchedAccelerometerReading
+		extends BatchedSensorReading<AccelerometerReading> {}
+
+	type AccelerometerConstructor = new (options?: SensorOptions) => Sensor<
+		AccelerometerReading,
+		BatchedAccelerometerReading
+	>;
+
+	const Accelerometer: void | AccelerometerConstructor;
+
+	export { AccelerometerReading, BatchedAccelerometerReading, Accelerometer };
 }

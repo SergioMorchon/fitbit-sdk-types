@@ -1,4 +1,4 @@
-type BatchedReading<Reading> = {
+type BatchedSensorReading<Reading> = {
 	[P in keyof Reading]: Reading[P] extends number
 		? Float32Array
 		: Array<Reading[P]>
@@ -8,26 +8,20 @@ interface SensorReading {
 	readonly timestamp: number | null;
 }
 
-interface Sensor<Reading extends SensorReading, EventMap = {}>
-	extends EventTarget<
-		EventMap & {
-			activate: Event;
-			error: SensorErrorEvent;
-			reading: Event;
-		}
-	> {
-	onactivate: (event: Event) => void;
-	onerror: (event: SensorErrorEvent) => void;
-	onreading: (event: Event) => void;
-	readonly readings: BatchedReading<Reading>;
-	readonly activated: boolean;
-	start(): void;
-	stop(): void;
-}
-
-declare class SensorBase {
-	constructor(options?: SensorOptions);
-}
+type Sensor<Reading extends SensorReading, BatchedReading> = Reading &
+	EventTarget<{
+		activate: Event;
+		error: SensorErrorEvent;
+		reading: Event;
+	}> & {
+		onactivate: (event: Event) => void;
+		onerror: (event: SensorErrorEvent) => void;
+		onreading: (event: Event) => void;
+		readonly readings: BatchedReading;
+		readonly activated: boolean;
+		start(): void;
+		stop(): void;
+	};
 
 interface SensorErrorEvent {
 	readonly defaultPrevented: boolean;
