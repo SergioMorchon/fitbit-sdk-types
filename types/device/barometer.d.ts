@@ -3,11 +3,17 @@ declare module 'barometer' {
 		readonly pressure: number | null;
 	}
 
+	interface BatchedBarometerReading
+		extends BatchedSensorReading<BarometerReading> {}
+
 	interface BarometerConstructor {
-		new (options?: SensorOptions): Sensor<BarometerReading> & BarometerReading;
+		new (options?: SensorOptions): Sensor<
+			BarometerReading,
+			BatchedBarometerReading
+		>;
 	}
 
 	const Barometer: void | BarometerConstructor;
 
-	export { BarometerReading, Barometer };
+	export { BarometerReading, BatchedBarometerReading, Barometer };
 }

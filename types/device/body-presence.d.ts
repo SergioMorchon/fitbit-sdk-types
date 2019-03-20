@@ -4,8 +4,7 @@ declare module 'body-presence' {
 	}
 
 	interface BodyPresenceConstructor {
-		new (options?: SensorOptions): Sensor<BodyPresenceReading> &
-			BodyPresenceReading;
+		new (options?: SensorOptions): Sensor<BodyPresenceReading, never>;
 	}
 
 	const BodyPresenceSensor: void | BodyPresenceConstructor;

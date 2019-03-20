@@ -5,11 +5,17 @@ declare module 'gyroscope' {
 		readonly z: number | null;
 	}
 
+	interface BatchedGyroscopeReading
+		extends BatchedSensorReading<GyroscopeReading> {}
+
 	interface GyroscopeConstructor {
-		new (options?: SensorOptions): Sensor<GyroscopeReading> & GyroscopeReading;
+		new (options?: SensorOptions): Sensor<
+			GyroscopeReading,
+			BatchedGyroscopeReading
+		>;
 	}
 
 	const Gyroscope: void | GyroscopeConstructor;
 
-	export { GyroscopeReading, Gyroscope };
+	export { GyroscopeReading, BatchedGyroscopeReading, Gyroscope };
 }
