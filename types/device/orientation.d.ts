@@ -14,12 +14,10 @@ declare module 'orientation' {
 		readonly quaternion: Quaternion | null;
 	}
 
-	interface OrientationSensorConstructor {
-		new (options?: SensorOptions): Sensor<
-			OrientationSensorReading,
-			BatchedOrientationSensorReading
-		>;
-	}
+	type OrientationSensorConstructor = new (options?: SensorOptions) => Sensor<
+		OrientationSensorReading,
+		BatchedOrientationSensorReading
+	>;
 
 	const OrientationSensor: void | OrientationSensorConstructor;
 

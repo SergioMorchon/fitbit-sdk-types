@@ -8,12 +8,10 @@ declare module 'gyroscope' {
 	interface BatchedGyroscopeReading
 		extends BatchedSensorReading<GyroscopeReading> {}
 
-	interface GyroscopeConstructor {
-		new (options?: SensorOptions): Sensor<
-			GyroscopeReading,
-			BatchedGyroscopeReading
-		>;
-	}
+	type GyroscopeConstructor = new (options?: SensorOptions) => Sensor<
+		GyroscopeReading,
+		BatchedGyroscopeReading
+	>;
 
 	const Gyroscope: void | GyroscopeConstructor;
 

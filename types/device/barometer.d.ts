@@ -6,12 +6,10 @@ declare module 'barometer' {
 	interface BatchedBarometerReading
 		extends BatchedSensorReading<BarometerReading> {}
 
-	interface BarometerConstructor {
-		new (options?: SensorOptions): Sensor<
-			BarometerReading,
-			BatchedBarometerReading
-		>;
-	}
+	type BarometerConstructor = new (options?: SensorOptions) => Sensor<
+		BarometerReading,
+		BatchedBarometerReading
+	>;
 
 	const Barometer: void | BarometerConstructor;
 

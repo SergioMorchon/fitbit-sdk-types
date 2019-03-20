@@ -3,9 +3,10 @@ declare module 'body-presence' {
 		readonly present: boolean;
 	}
 
-	interface BodyPresenceConstructor {
-		new (options?: SensorOptions): Sensor<BodyPresenceReading, never>;
-	}
+	type BodyPresenceConstructor = new (options?: SensorOptions) => Sensor<
+		BodyPresenceReading,
+		never
+	>;
 
 	const BodyPresenceSensor: void | BodyPresenceConstructor;
 
