@@ -14,7 +14,3 @@ inbox.addEventListener('newfile', processAllFiles);
 
 // Also process any files that arrived when the companion wasn’t running
 processAllFiles();
-
-inbox.onnewfile = event => {
-	console.log(`Received ${event.file.length} bytes as ${event.file.name}`);
-};

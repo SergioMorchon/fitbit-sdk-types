@@ -32,14 +32,12 @@ declare module 'file-transfer' {
 		json(): Promise<any>;
 		text(): Promise<string>;
 	}
-	interface NewFileEvent extends Event {
-		readonly file: InboxItem;
-	}
+
 	interface Inbox
 		extends EventTarget<{
-			newfile: NewFileEvent;
+			newfile: Event;
 		}> {
-		onnewfile: (event: NewFileEvent) => void;
+		onnewfile: (event: Event) => void;
 		nextFile(name?: string): string | undefined;
 	}
 
