@@ -23,16 +23,6 @@ declare module 'file-transfer' {
 	}
 	const outbox: Outbox;
 
-	interface InboxItem {
-		readonly bodyUsed: boolean;
-		readonly length: number;
-		readonly name: string;
-		arrayBuffer(): Promise<ArrayBuffer>;
-		cbor(): Promise<any>;
-		json(): Promise<any>;
-		text(): Promise<string>;
-	}
-
 	interface Inbox
 		extends EventTarget<{
 			newfile: Event;
