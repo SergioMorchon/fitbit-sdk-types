@@ -14,7 +14,15 @@
 		/>
 	}
 />;
-<AdditiveList
+type Option = {
+	name: string;
+	required?: boolean;
+	value: {
+		location: string;
+		icon: string;
+	};
+};
+<AdditiveList<Option>
 	title="A list of TextImageRow"
 	settingsKey="select-list"
 	maxItems="5"
@@ -22,7 +30,7 @@
 		<TextImageRow label={name} sublabel={value.location} icon={value.icon} />
 	)}
 	addAction={
-		<Select
+		<Select<Option>
 			label="Add Item"
 			options={[
 				{

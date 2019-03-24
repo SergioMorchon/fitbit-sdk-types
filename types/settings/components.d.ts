@@ -1,49 +1,43 @@
-type Component<Props> = (props: Props) => JSX.Element;
-
-declare const Page: Component<{ children: JSX.Element }>;
-declare const Section: Component<{
+declare const Page: (props: { children: JSX.Element }) => JSX.Element;
+declare const Section: (props: {
 	children: JSX.Element;
 	title: JSX.Element;
 	description?: JSX.Element;
-}>;
-declare const Link: Component<{
+}) => JSX.Element;
+declare const Link: (props: {
 	children: JSX.Element;
 	source: string;
-}>;
-declare const Text: Component<{
+}) => JSX.Element;
+declare const Text: (props: {
 	bold?: boolean;
 	italic?: boolean;
 	align?: 'left' | 'center' | 'right';
 	children: JSX.Element;
-}>;
-declare const TextImageRow: Component<{
+}) => JSX.Element;
+declare const TextImageRow: (props: {
 	label?: string;
 	sublabel?: string;
 	icon?: string;
-}>;
-declare const Button: Component<{
+}) => JSX.Element;
+declare const Button: (props: {
 	label?: string;
 	list?: boolean;
 	onClick: (event: Event) => void;
-}>;
-declare const Toggle: Component<{
+}) => JSX.Element;
+declare const Toggle: (props: {
 	settingsKey: string;
 	label?: string;
 	onChange?: (newValue: boolean) => void;
-}>;
-declare const Slider: Component<{
+}) => JSX.Element;
+declare const Slider: (props: {
 	label?: string;
 	settingsKey?: string;
 	min: number | string;
 	max: number | string;
 	step?: number | string;
 	onChange?: (newValue: number) => void;
-}>;
-interface AutocompleteOption {
-	name: string;
-	[key: string]: any;
-}
-declare const TextInput: Component<{
+}) => JSX.Element;
+declare const TextInput: <Option extends { name: string }>(props: {
 	title?: string;
 	label?: string;
 	placeholder?: string;
@@ -53,50 +47,45 @@ declare const TextInput: Component<{
 	disabled?: boolean;
 	settingsKey?: string;
 	onChange?: (newValue: string) => void;
-	onAutocomplete?: (newValue: string) => AutocompleteOption[];
-	renderItem?: (autocompleteOption: AutocompleteOption) => JSX.Element;
+	onAutocomplete?: (newValue: string) => ReadonlyArray<Option>;
+	renderItem?: (autocompleteOption: Option) => JSX.Element;
 	renderAutocomplete?: (
-		autoCompleteOption: AutocompleteOption,
+		autoCompleteOption: Option,
 		newValue: string,
 	) => JSX.Element;
-}>;
-declare const ColorSelect: Component<{
-	colors: Array<{
-		color: string;
-		value?: any;
-	}>;
+}) => JSX.Element;
+declare const ColorSelect: <Value = string>(props: {
+	colors: ReadonlyArray<{ color: string; value?: Value }>;
 	centered?: boolean;
 	settingsKey?: string;
-	value?: string;
-	onSelection?: (value: string) => void;
-}>;
-interface SelectOption {
-	name: string;
-	value?: any;
-	[extraProperty: string]: any;
-}
-declare const Select: Component<{
+	value?: Value;
+	onSelection?: (value: Value) => void;
+}) => JSX.Element;
+declare const Select: <Option extends { name: string }>(props: {
 	title?: string;
 	selectViewTitle?: string;
 	label?: string;
 	settingsKey?: string;
-	options: SelectOption[];
+	options: ReadonlyArray<Option>;
 	multiple?: boolean;
 	disabled?: boolean;
-	renderItem?: (option: SelectOption) => JSX.Element;
-	onSelection?: (selection: { selected: number[]; values: any[] }) => void;
-}>;
-declare const AdditiveList: Component<{
+	renderItem?: (option: Option) => JSX.Element;
+	onSelection?: (selection: {
+		selected: ReadonlyArray<number>;
+		values: ReadonlyArray<any>;
+	}) => void;
+}) => JSX.Element;
+declare const AdditiveList: <Option extends { name: string }>(props: {
 	title?: string;
 	description?: string;
 	settingsKey?: string;
 	minItems?: number | string;
 	maxItems?: number | string;
-	renderItem?: (item: SelectOption) => JSX.Element;
+	renderItem?: (item: Option) => JSX.Element;
 	addAction?: JSX.Element;
-	onListChange?: (elements: SelectOption[]) => void;
-}>;
-declare const Oauth: Component<{
+	onListChange?: (elements: ReadonlyArray<Option>) => void;
+}) => JSX.Element;
+declare const Oauth: (props: {
 	title?: string;
 	label?: string;
 	status?: string;
@@ -121,16 +110,16 @@ declare const Oauth: Component<{
 	showError?: true;
 	onReturn?: (data: any) => void;
 	onAccessToken?: (accessToken: string) => void;
-}>;
-declare const StravaLogin: Component<{
+}) => JSX.Element;
+declare const StravaLogin: (props: {
 	title?: string;
 	description?: string;
 	settingsKey: string;
 	clientId?: string;
 	clientSecret?: string;
 	onAccessToken?: (accessToken: string, userInfo: any) => void;
-}>;
-declare const ImagePicker: Component<{
+}) => JSX.Element;
+declare const ImagePicker: (props: {
 	title?: string;
 	description?: string;
 	label?: string;
@@ -150,10 +139,10 @@ declare const ImagePicker: Component<{
 		width: number;
 		height: number;
 	}) => void;
-}>;
+}) => JSX.Element;
 
 interface SettingsComponentProps {
-	readonly settings: { [key: string]: string };
+	readonly settings: { [key: string]: string | undefined };
 	readonly settingsStorage: LiveStorage;
 }
 type SettingsComponent = (props: SettingsComponentProps) => JSX.Element;
