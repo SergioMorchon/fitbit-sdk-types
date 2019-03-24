@@ -72,7 +72,7 @@ declare const Select: <Option extends { name: string }>(props: {
 	renderItem?: (option: Option) => JSX.Element;
 	onSelection?: (selection: {
 		selected: ReadonlyArray<number>;
-		values: ReadonlyArray<any>;
+		values: ReadonlyArray<Option>;
 	}) => void;
 }) => JSX.Element;
 declare const AdditiveList: <Option extends { name: string }>(props: {
