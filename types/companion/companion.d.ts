@@ -8,6 +8,7 @@ declare module 'companion' {
 		readonly peerAppLaunched: boolean | undefined;
 		readonly settingsChanged: boolean | undefined;
 		readonly wokenUp: boolean | undefined;
+		readonly fileTransfer: boolean | undefined;
 	}
 	interface SignificantLocationChangeEvent {
 		readonly position: Position;
