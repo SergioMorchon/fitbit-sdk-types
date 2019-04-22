@@ -20,7 +20,7 @@ declare module 'file-transfer' {
 			data: ArrayBuffer | ArrayBufferView,
 			options?: FileTransferOptions,
 		): Promise<FileTransfer>;
-		enumerate(): Promise<FileTransfer>;
+		enumerate(): Promise<FileTransfer[]>;
 	}
 	const outbox: Outbox;
 
