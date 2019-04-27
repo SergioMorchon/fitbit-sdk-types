@@ -6,10 +6,9 @@ declare module 'heart-rate' {
 	interface BatchedHeartRateSensorReading
 		extends BatchedSensorReading<HeartRateSensorReading> {}
 
-	type HeartRateSensorConstructor = new (options?: SensorOptions) => Sensor<
-		HeartRateSensorReading,
-		BatchedHeartRateSensorReading
-	>;
+	type HeartRateSensor = Sensor<HeartRateSensorReading, BatchedHeartRateSensorReading>;
+
+	type HeartRateSensorConstructor = new (options?: SensorOptions) => HeartRateSensor;
 
 	const HeartRateSensor: void | HeartRateSensorConstructor;
 

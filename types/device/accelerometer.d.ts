@@ -8,10 +8,9 @@ declare module 'accelerometer' {
 	interface BatchedAccelerometerReading
 		extends BatchedSensorReading<AccelerometerReading> {}
 
-	type AccelerometerConstructor = new (options?: SensorOptions) => Sensor<
-		AccelerometerReading,
-		BatchedAccelerometerReading
-	>;
+	type Accelerometer = Sensor<AccelerometerReading, BatchedAccelerometerReading>;
+
+	type AccelerometerConstructor = new (options?: SensorOptions) => Accelerometer;
 
 	const Accelerometer: void | AccelerometerConstructor;
 
