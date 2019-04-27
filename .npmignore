@@ -2,5 +2,5 @@ test-code-samples
 doc
 **/.prettierrc
 **/.travis.yml
-**/tsconfig.json
+**/tsconfig*.json
 **/tslint.json
