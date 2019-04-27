@@ -5,7 +5,9 @@ declare module 'body-presence' {
 
 	type BodyPresenceSensor = Sensor<BodyPresenceReading, never>;
 
-	type BodyPresenceConstructor = new (options?: SensorOptions) => BodyPresenceSensor;
+	type BodyPresenceConstructor = new (
+		options?: SensorOptions,
+	) => BodyPresenceSensor;
 
 	const BodyPresenceSensor: void | BodyPresenceConstructor;
 
