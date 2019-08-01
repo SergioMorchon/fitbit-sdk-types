@@ -1,7 +1,7 @@
 type BatchedSensorReading<Reading> = {
 	[P in keyof Reading]: Reading[P] extends number
 		? Float32Array
-		: Array<Reading[P]>
+		: Array<Reading[P]>;
 };
 
 interface SensorReading {
