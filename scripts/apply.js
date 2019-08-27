@@ -35,6 +35,13 @@ const commonTsConfig = {
 	extends: '../tsconfig.json',
 	include: ['**/*.ts'],
 };
+const commonJsConfig = {
+	extends: '../tsconfig.json',
+	compilerOptions: {
+		checkJs: true,
+	},
+	include: ['**/*.js'],
+};
 
 const fitbitProjects = [
 	{
@@ -43,6 +50,10 @@ const fitbitProjects = [
 			...commonTsConfig,
 			include: [getTypesPathForTarget('device'), ...commonTsConfig.include],
 		},
+		jsConfig: {
+			...commonJsConfig,
+			include: [getTypesPathForTarget('device'), ...commonJsConfig.include],
+		}
 	},
 	{
 		directory: './companion',
@@ -50,6 +61,10 @@ const fitbitProjects = [
 			...commonTsConfig,
 			include: [getTypesPathForTarget('companion'), ...commonTsConfig.include],
 		},
+		jsConfig: {
+			...commonJsConfig,
+			include: [getTypesPathForTarget('companion'), ...commonJsConfig.include],
+		}
 	},
 	{
 		directory: './settings',
@@ -61,10 +76,18 @@ const fitbitProjects = [
 				'**/*.tsx',
 			],
 		},
+		jsConfig: {
+			...commonJsConfig,
+			include: [
+				getTypesPathForTarget('settings'),
+				...commonJsConfig.include,
+				'**/*.jsx',
+			],
+		},
 	},
 ];
 
-exports.default = () => {
+exports.default = (/** @type {'ts' | 'js'} */ mode) => {
 	tryRun(
 		() =>
 			execSync(`npm install --save-dev ${moduleDependency}`, {
@@ -75,23 +98,25 @@ exports.default = () => {
 
 	fitbitProjects
 		.filter(({ directory }) => existsSync(directory))
-		.forEach(({ directory, tsConfig }) => {
-			for (const fileName of walkFiles(directory)) {
-				if (!/.*\.j(s|sx)$/.test(fileName)) {
-					continue;
+		.forEach(({ directory, tsConfig, jsConfig }) => {
+			if (mode === 'ts') {
+				for (const fileName of walkFiles(directory)) {
+					if (!/.*\.j(s|sx)$/.test(fileName)) {
+						continue;
+					}
+
+					const renamedFileName = fileName.replace(/\.js(x)?$/, '.ts$1');
+					tryRun(
+						() => renameSync(fileName, renamedFileName),
+						`renaming ${fileName} > ${renamedFileName}`,
+					);
 				}
-
-				const renamedFileName = fileName.replace(/\.js(x)?$/, '.ts$1');
-				tryRun(
-					() => renameSync(fileName, renamedFileName),
-					`renaming ${fileName} > ${renamedFileName}`,
-				);
-
-				const tsConfigFileName = join(directory, 'tsconfig.json');
-				tryRun(
-					() => writeFileSync(tsConfigFileName, stringify(tsConfig)),
-					`creating ${tsConfigFileName}`,
-				);
 			}
+
+			const configFileName = join(directory, mode === 'ts' ? 'tsconfig.json' : 'jsconfig.json');
+			tryRun(
+				() => writeFileSync(configFileName, stringify(mode === 'ts' ? tsConfig : jsConfig)),
+				`creating ${configFileName}`,
+			);
 		});
 };
