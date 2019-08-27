@@ -4,6 +4,10 @@
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
 	"bin": "scripts/index.js",
+	"files": [
+		"types/**/*.d.ts",
+		"scripts/**/*.js"
+	],
 	"keywords": [
 		"typescript",
 		"fitbit",
