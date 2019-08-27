@@ -1,3 +1,5 @@
+/// <reference lib="es2015.iterable" />
+/// <reference lib="es2015.promise" />
 /// <reference path="../shared/cbor.d.ts" />
 /// <reference path="../shared/console.d.ts" />
 /// <reference path="../shared/device.d.ts" />
