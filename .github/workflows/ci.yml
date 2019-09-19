@@ -9,16 +9,12 @@ on:
       - master
 
 jobs:
-  publish-gpr:
-    needs: build
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@SergioMorchon'
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.github_package_token}}
+      - run: npm ci
+      - run: npm run prepublishOnly
