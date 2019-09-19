@@ -1,13 +1,13 @@
-name: Node.js Package
+name: CI
 
 on:
-  pull_request:
-    branches:
-      - *
+  push:
+    paths:
+      - '*'
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
