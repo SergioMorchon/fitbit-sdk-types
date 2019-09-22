@@ -10,5 +10,5 @@ jobs:
         with:
           node-version: 12
       - run: |
-        npm ci
-        npm run prepublishOnly
+          npm ci
+          npm run prepublishOnly
