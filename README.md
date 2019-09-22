@@ -1,7 +1,7 @@
 # Fitbit SDK Types ✔
 
 [![npm version](https://badge.fury.io/js/fitbit-sdk-types.svg)](https://badge.fury.io/js/fitbit-sdk-types)
-[![Build Status](https://travis-ci.com/SergioMorchon/fitbit-sdk-types.svg?branch=master)](https://travis-ci.com/SergioMorchon/fitbit-sdk-types)
+![CI Status](https://github.com/SergioMorchon/fitbit-sdk-types/workflows/CI/badge.svg)
 
 Add types to your Fitbit CLI project and work safely with TypeScript preventing you of doing stupid mistakes.
 
