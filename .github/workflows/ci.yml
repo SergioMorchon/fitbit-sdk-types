@@ -1,9 +1,5 @@
 name: CI
-
-on:
-  push:
-    paths:
-      - '*'
+on: [push, pull_request]
 
 jobs:
   build:
@@ -13,5 +9,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm run prepublishOnly
+      - run: |
+        npm ci
+        npm run prepublishOnly
