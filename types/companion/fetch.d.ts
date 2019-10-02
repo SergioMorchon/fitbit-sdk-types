@@ -24,6 +24,7 @@ declare class Request {
 	readonly headers: Headers;
 	readonly method: string;
 	readonly url: string;
+	constructor(url: string);
 }
 interface Response extends Body {}
 declare class Response {
