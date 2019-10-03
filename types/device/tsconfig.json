@@ -1,3 +1,7 @@
 {
-	"extends": "../tsconfig-common.json"
+	"extends": "../tsconfig-common.json",
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["es5", "es2015.promise"]
+	}
 }

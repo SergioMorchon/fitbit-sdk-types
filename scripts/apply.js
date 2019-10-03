@@ -31,61 +31,60 @@ const stringify = data => JSON.stringify(data, null, 2);
 const getTypesPathForTarget = target =>
 	`../node_modules/fitbit-sdk-types/types/${target}`;
 
-const commonTsConfig = {
-	extends: '../tsconfig.json',
-	include: ['**/*.ts'],
-};
-const commonJsConfig = {
-	extends: '../tsconfig.json',
-	compilerOptions: {
-		checkJs: true,
-	},
-	include: ['**/*.js'],
+const es2015 = {
+	target: 'es2015',
+	lib: ['es2015'],
 };
 
-const fitbitProjects = [
-	{
-		directory: './app',
+const fitbitProjects = {
+	'./app': {
 		tsConfig: {
-			...commonTsConfig,
-			include: [getTypesPathForTarget('device'), ...commonTsConfig.include],
+			extends: '../tsconfig.json',
+			include: ['**/*.ts', getTypesPathForTarget('device')],
 		},
 		jsConfig: {
-			...commonJsConfig,
-			include: [getTypesPathForTarget('device'), ...commonJsConfig.include],
-		}
+			extends: '../tsconfig.json',
+			compilerOptions: {
+				checkJs: true,
+			},
+			include: ['**/*.js', getTypesPathForTarget('device')],
+		},
 	},
-	{
-		directory: './companion',
+	'./companion': {
 		tsConfig: {
-			...commonTsConfig,
-			include: [getTypesPathForTarget('companion'), ...commonTsConfig.include],
+			extends: '../tsconfig.json',
+			compilerOptions: {
+				...es2015,
+			},
+			include: ['**/*.ts', getTypesPathForTarget('companion')],
 		},
 		jsConfig: {
-			...commonJsConfig,
-			include: [getTypesPathForTarget('companion'), ...commonJsConfig.include],
-		}
+			extends: '../tsconfig.json',
+			compilerOptions: {
+				...es2015,
+				checkJs: true,
+			},
+			include: ['**/*.js', getTypesPathForTarget('companion')],
+		},
 	},
-	{
-		directory: './settings',
+	'./settings': {
 		tsConfig: {
-			...commonTsConfig,
-			include: [
-				getTypesPathForTarget('settings'),
-				...commonTsConfig.include,
-				'**/*.tsx',
-			],
+			extends: '../tsconfig.json',
+			compilerOptions: {
+				...es2015,
+			},
+			include: ['**/*.ts', '**/*.tsx', getTypesPathForTarget('settings')],
 		},
 		jsConfig: {
-			...commonJsConfig,
-			include: [
-				getTypesPathForTarget('settings'),
-				...commonJsConfig.include,
-				'**/*.jsx',
-			],
+			extends: '../tsconfig.json',
+			compilerOptions: {
+				...es2015,
+				checkJs: true,
+			},
+			include: ['**/*.js', '**/*.jsx', getTypesPathForTarget('settings')],
 		},
 	},
-];
+};
 
 exports.default = (/** @type {'ts' | 'js'} */ mode) => {
 	tryRun(
@@ -96,9 +95,9 @@ exports.default = (/** @type {'ts' | 'js'} */ mode) => {
 		`installing the module ${moduleDependency}`,
 	);
 
-	fitbitProjects
-		.filter(({ directory }) => existsSync(directory))
-		.forEach(({ directory, tsConfig, jsConfig }) => {
+	Object.entries(fitbitProjects)
+		.filter(([directory]) => existsSync(directory))
+		.forEach(([directory, { tsConfig, jsConfig }]) => {
 			if (mode === 'ts') {
 				for (const fileName of walkFiles(directory)) {
 					if (!/.*\.j(s|sx)$/.test(fileName)) {
@@ -113,9 +112,16 @@ exports.default = (/** @type {'ts' | 'js'} */ mode) => {
 				}
 			}
 
-			const configFileName = join(directory, mode === 'ts' ? 'tsconfig.json' : 'jsconfig.json');
+			const configFileName = join(
+				directory,
+				mode === 'ts' ? 'tsconfig.json' : 'jsconfig.json',
+			);
 			tryRun(
-				() => writeFileSync(configFileName, stringify(mode === 'ts' ? tsConfig : jsConfig)),
+				() =>
+					writeFileSync(
+						configFileName,
+						stringify(mode === 'ts' ? tsConfig : jsConfig),
+					),
 				`creating ${configFileName}`,
 			);
 		});

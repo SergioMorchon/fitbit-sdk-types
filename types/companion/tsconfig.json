@@ -1,3 +1,7 @@
 {
-	"extends": "../tsconfig-common.json"
+	"extends": "../tsconfig-common.json",
+	"compilerOptions": {
+		"target": "es2016",
+		"lib": ["es2016"]
+	}
 }
