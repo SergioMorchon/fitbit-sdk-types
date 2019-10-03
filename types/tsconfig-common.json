@@ -3,8 +3,6 @@
 		"noEmit": true,
 		"module": "es2015",
 		"moduleResolution": "node",
-		"target": "es5",
-		"lib": ["es5"],
 		"esModuleInterop": true,
 		"noImplicitAny": true,
 		"noImplicitThis": true,
