@@ -29,16 +29,18 @@
 		"test:settings": "tsc -p test-code-samples/settings",
 		"test": "npm run test:app && npm run test:companion && npm run test:settings",
 		"prettier": "prettier \"**/*.ts\" \"**/*.tsx\" \"**/*.json\" \"**/*.yml\" \"**/*.md\"",
-		"tslint": "tslint types/**/*.ts",
-		"check-code": "npm run tslint && npm run prettier -- -l",
-		"fix-code": "tslint types/**/*.ts --fix && npm run prettier -- --write",
+		"lint": "eslint types/**/*.ts",
+		"check-code": "npm run lint && npm run prettier -- -l",
+		"fix-code": "npm run lint -- --fix types/**/*.ts && npm run prettier -- --write",
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
 		"@types/node": "^12.11.7",
+		"@typescript-eslint/eslint-plugin": "^2.5.0",
+		"@typescript-eslint/parser": "^2.5.0",
+		"eslint": "^6.6.0",
+		"eslint-config-prettier": "^6.5.0",
 		"prettier": "^1.18.2",
-		"tslint": "^5.20.0",
-		"tslint-config-prettier": "^1.18.0",
 		"typescript": "^3.7.1-rc"
 	}
 }

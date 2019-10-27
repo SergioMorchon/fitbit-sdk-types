@@ -21,14 +21,16 @@ interface WebSocket
 		error: Event;
 		message: MessageEvent;
 		open: Event;
-	}> {
+	}> {}
+
+declare class WebSocket implements WebSocket {
 	readonly CONNECTING: 0;
 	readonly OPEN: 1;
 	readonly CLOSING: 2;
 	readonly CLOSED: 3;
+	readonly bufferedAmount: number;
 
 	binaryType: BinaryType;
-	readonly bufferedAmount: number;
 	onclose: ((event: CloseEvent) => void) | void;
 	onerror: ((event: Event) => void) | void;
 	onmessage: ((event: MessageEvent) => void) | void;
@@ -40,10 +42,7 @@ interface WebSocket
 		| WebSocket['CLOSING']
 		| WebSocket['CLOSED'];
 	readonly url: string;
+	constructor(url: string, protocols?: string | ReadonlyArray<string>);
 	close(code?: number): void;
 	send(data: string | ArrayBuffer | ArrayBufferView | Blob): void;
-}
-
-declare class WebSocket implements WebSocket {
-	constructor(url: string, protocols?: string | ReadonlyArray<string>);
 }
