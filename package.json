@@ -35,10 +35,10 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"@types/node": "^11.13.22",
+		"@types/node": "^12.11.7",
 		"prettier": "^1.18.2",
 		"tslint": "^5.20.0",
 		"tslint-config-prettier": "^1.18.0",
-		"typescript": "^3.6.4"
+		"typescript": "^3.7.1-rc"
 	}
 }
