@@ -21,4 +21,18 @@ declare module 'user-activity' {
 		readonly local: Activity;
 	}
 	const today: Today;
+	interface ActivityHistoryRecord {
+		readonly averageHeartRate: number | void;
+		readonly calories: number | void;
+		readonly distance: number | void;
+		readonly elevationGain: number | void;
+		readonly restingHeartRate: number | void;
+		readonly steps: number | void;
+	}
+	interface ActivityHistory {
+		readonly maxRecordCount: number;
+		query(options?: { limit?: number | undefined }): ActivityHistoryRecord[];
+	}
+	const dayHistory: ActivityHistory;
+	const minuteHistory: ActivityHistory;
 }
