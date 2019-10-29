@@ -16,11 +16,12 @@ declare module 'orientation' {
 
 	type OrientationSensor = Sensor<
 		OrientationSensorReading,
-		BatchedOrientationSensorReading
+		BatchedOrientationSensorReading,
+		BatchedSensorOptions
 	>;
 
 	type OrientationSensorConstructor = new (
-		options?: SensorOptions,
+		options?: BatchedSensorOptions,
 	) => OrientationSensor;
 
 	const OrientationSensor: void | OrientationSensorConstructor;

@@ -8,7 +8,7 @@ interface SensorReading {
 	readonly timestamp: number | null;
 }
 
-type Sensor<Reading extends SensorReading, BatchedReading> = Reading &
+type Sensor<Reading extends SensorReading, BatchedReading, Options> = Reading &
 	EventTarget<{
 		activate: Event;
 		error: SensorErrorEvent;
@@ -21,6 +21,7 @@ type Sensor<Reading extends SensorReading, BatchedReading> = Reading &
 		readonly activated: boolean;
 		start(): void;
 		stop(): void;
+		setOptions(options: SensorOptions): void;
 	};
 
 interface SensorErrorEvent {
@@ -32,7 +33,6 @@ interface SensorErrorEvent {
 
 interface SensorOptions {
 	readonly frequency?: number;
-	readonly batch?: number;
 }
 
 interface BatchedSensorOptions extends SensorOptions {

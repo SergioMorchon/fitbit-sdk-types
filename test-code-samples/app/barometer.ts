@@ -1,7 +1,7 @@
 import { Barometer } from 'barometer';
 
 if (Barometer) {
-	let bar = new Barometer({ frequency: 1 });
+	let bar = new Barometer({ frequency: 1, batch: 10 });
 	bar.onreading = function() {
 		console.log(
 			'ts:',
