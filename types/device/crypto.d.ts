@@ -73,5 +73,5 @@ declare module 'crypto' {
 		): Promise<boolean>;
 	}
 	const subtle: SubtleCrypto;
-	const getRandomValues: (values: TypedArray) => void;
+	function getRandomValues(values: TypedArray): void;
 }
