@@ -8,11 +8,12 @@ declare module 'heart-rate' {
 
 	type HeartRateSensor = Sensor<
 		HeartRateSensorReading,
-		BatchedHeartRateSensorReading
+		BatchedHeartRateSensorReading,
+		BatchedSensorOptions
 	>;
 
 	type HeartRateSensorConstructor = new (
-		options?: SensorOptions,
+		options?: BatchedSensorOptions,
 	) => HeartRateSensor;
 
 	const HeartRateSensor: void | HeartRateSensorConstructor;

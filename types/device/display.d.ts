@@ -4,7 +4,7 @@ declare module 'display' {
 			change: Event;
 		}> {
 		autoOff: boolean;
-		brightnessOverride: number | undefined;
+		brightnessOverride: 'dim' | 'normal' | 'max' | void;
 		on: boolean;
 		onchange: (event: Event) => void;
 		poke(): void;

@@ -1,4 +1,5 @@
 declare module 'fs' {
+	function existsSync(filename: string): boolean;
 	function writeFileSync(
 		filename: string,
 		data: ArrayBuffer | ArrayBufferView,

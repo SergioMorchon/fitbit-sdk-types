@@ -32,5 +32,9 @@ if (Accelerometer) {
 		}
 	};
 
-	acc.stop();
+	setTimeout(() => {
+		// change sampling rate to 100Hz
+		accel.setOptions({ frequency: 100 });
+		accel.stop();
+	}, 5000);
 }
