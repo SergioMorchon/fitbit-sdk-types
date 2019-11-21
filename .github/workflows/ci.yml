@@ -11,8 +11,8 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest]
-        node_version: [12]
+        os: [windows-latest, ubuntu-latest]
+        node_version: [12, 13]
     name: CI on NodeJS v${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
