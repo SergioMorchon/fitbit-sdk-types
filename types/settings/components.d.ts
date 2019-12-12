@@ -26,7 +26,7 @@ declare const Button: (props: {
 	onClick: (event: Event) => void;
 }) => JSX.Element;
 declare const Toggle: (props: {
-	settingsKey?: string;
+	settingsKey: string;
 	label?: string;
 	onChange?: (newValue: boolean) => void;
 }) => JSX.Element;
