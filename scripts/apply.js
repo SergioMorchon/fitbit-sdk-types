@@ -112,10 +112,7 @@ exports.default = (/** @type {'ts' | 'js'} */ mode) => {
 				}
 			}
 
-			const configFileName = join(
-				directory,
-				mode === 'ts' ? 'tsconfig.json' : 'jsconfig.json',
-			);
+			const configFileName = join(directory, 'tsconfig.json');
 			tryRun(
 				() =>
 					writeFileSync(
