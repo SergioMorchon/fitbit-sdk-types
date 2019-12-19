@@ -18,7 +18,26 @@ interface ElementSearch {
 		tagName: TagName,
 	): Array<ElementSearchMap[TagName]>;
 }
-type EventName = string;
+type EventName =
+	| 'activate'
+	| 'click'
+	| 'collapse'
+	| 'disable'
+	| 'enable'
+	| 'expand'
+	| 'highlight'
+	| 'load'
+	| 'mousedown'
+	| 'mousemove'
+	| 'mouseout'
+	| 'mouseover'
+	| 'mouseup'
+	| 'paint'
+	| 'reload'
+	| 'select'
+	| 'unhighlight'
+	| 'unload'
+	| 'unselect';
 interface Element extends ElementSearch, GlobalEvents {
 	readonly children: readonly Element[];
 	class: string;
