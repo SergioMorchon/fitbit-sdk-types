@@ -1,5 +1,6 @@
 type PermissionName =
 	| 'access_activity'
+	| 'access_aod'
 	| 'access_app_cluster_storage'
 	| 'access_exercise'
 	| 'access_heart_rate'
