@@ -78,7 +78,7 @@ declare module 'calendars' {
 		readonly status: AttendeeStatus;
 	}
 	export interface EventsQuery {
-		calendarIds?: readonly string[] | void;
+		calendarIds?: readonly string[];
 		endDate: Date;
 		startDate: Date;
 	}
