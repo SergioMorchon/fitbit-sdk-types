@@ -35,12 +35,12 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"@types/node": "^12.12.11",
-		"@typescript-eslint/eslint-plugin": "^2.8.0",
-		"@typescript-eslint/parser": "^2.8.0",
-		"eslint": "^6.6.0",
+		"@types/node": "^12.12.21",
+		"@typescript-eslint/eslint-plugin": "^2.12.0",
+		"@typescript-eslint/parser": "^2.12.0",
+		"eslint": "^6.7.2",
 		"eslint-config-prettier": "^6.7.0",
 		"prettier": "^1.19.1",
-		"typescript": "^3.7.2"
+		"typescript": "^3.7.3"
 	}
 }

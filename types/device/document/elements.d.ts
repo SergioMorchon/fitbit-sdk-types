@@ -1,4 +1,5 @@
 interface ElementSearchMap {
+	[key: string]: Element;
 	image: ImageElement;
 	text: TextElement;
 	rect: RectElement;
@@ -9,7 +10,6 @@ interface ElementSearchMap {
 	gradientRect: GradientRectElement;
 	gradientArc: GradientArcElement;
 	g: GroupElement;
-	[key: string]: Element;
 }
 interface ElementSearch {
 	getElementById(id: string): Element | null;
