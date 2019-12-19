@@ -20,7 +20,8 @@ interface ElementSearch {
 }
 type EventName = string;
 interface Element extends ElementSearch, GlobalEvents {
-	readonly class: string;
+	readonly children: readonly Element[];
+	class: string;
 	readonly firstChild: Element | null;
 	readonly id: string;
 	readonly image: string;
@@ -211,6 +212,7 @@ interface Style {
 	fontSize: number | undefined;
 	fontWeight: 'inherit' | 'light' | 'regular' | 'bold';
 	opacity: number | undefined;
+	strokeWidth: number;
 	textDecoration: 'none' | 'inherit' | 'underline';
 	visibility: 'inherit' | 'visible' | 'hidden';
 }
