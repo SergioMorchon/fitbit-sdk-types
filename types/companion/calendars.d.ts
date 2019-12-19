@@ -1,4 +1,23 @@
 declare module 'calendars' {
+	export const enum AttendeeStatus {
+		/** The participant’s attendance status is unknown. */
+		Unknown = 'unknown',
+
+		/** The participant has yet to respond to the event. */
+		Pending = 'pending',
+
+		/** The participant’s attendance status is tentative. */
+		Tentative = 'tentative',
+
+		/** The participant has accepted the event. */
+		Accepted = 'accepted',
+
+		/** The participant has declined the event. */
+		Declined = 'declined',
+
+		/** The participant has delegated attendance to another participant. */
+		Delegated = 'delegated',
+	}
 	export interface Source {
 		readonly id: string;
 		readonly title: string;
@@ -9,9 +28,20 @@ declare module 'calendars' {
 		readonly title: string;
 	}
 
-	export type UserStatus = any;
-	// AttendeeStatus.Unknown | AttendeeStatus.Tentative | AttendeeStatus.Accepted | AttendeeStatus.Decl...
-	export type EventStatus = any;
+	export type UserStatus = AttendeeStatus;
+	export enum EventStatus {
+		/** The event has unknown status. */
+		Unknown = 'unknown',
+
+		/** The event is confirmed. */
+		Confirmed = 'confirmed',
+
+		/** The event is tentative. */
+		Tentative = 'tentative',
+
+		/** The event is canceled. */
+		Canceled = 'canceled',
+	}
 
 	export interface Event {
 		readonly alarms: Alarm[];
@@ -48,12 +78,12 @@ declare module 'calendars' {
 		readonly status: AttendeeStatus;
 	}
 	export interface EventsQuery {
-		calendarIds: readonly string[] | void;
+		calendarIds?: readonly string[] | void;
 		endDate: Date;
 		startDate: Date;
 	}
 	export interface CalendarsQuery {
-		sourceIds: readonly string[] | undefined;
+		sourceIds?: readonly string[] | undefined;
 	}
 	export interface CalendarProvider {
 		searchCalendars(query?: CalendarsQuery): Promise<Calendar[]>;
