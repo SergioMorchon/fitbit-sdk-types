@@ -35,4 +35,5 @@ declare module 'user-activity' {
 	}
 	const dayHistory: ActivityHistory;
 	const minuteHistory: ActivityHistory;
+	const primaryGoal: keyof Activity;
 }
