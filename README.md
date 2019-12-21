@@ -8,50 +8,7 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 ## ⚙ How to use in your app project
 
 1. First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
-2. Then, from that project root, you can run:
-   - `npx fitbit-sdk-types apply-js` to enhance your existing Fitbit project with autocomplete and soft checks.
-   - Or `npx fitbit-sdk-types apply-ts` to convert your project to TypeScript and have all the features.
-
-You can also do it manually wit the following basic configuration files:
-
-- `app/tsconfig.json`
-
-```json
-{
-	"extends": "../tsconfig.json",
-	"include": ["**/*.ts", "../node_modules/fitbit-sdk-types/types/device"]
-}
-```
-
-- `companion/tsconfig.json`
-
-```json
-{
-	"extends": "../tsconfig.json",
-	"include": ["**/*.ts", "../node_modules/fitbit-sdk-types/types/companion"]
-}
-```
-
-- `settings/tsconfig.json`
-
-```json
-{
-	"extends": "../tsconfig.json",
-	"include": [
-		"**/*.ts",
-		"**/*.tsx",
-		"../node_modules/fitbit-sdk-types/types/settings"
-	]
-}
-```
-
-- `tsconfig.json`:
-
-```json
-{
-	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json"
-}
-```
+2. Then, from that project root, run `npx fitbit-sdk-types` to enhance your existing Fitbit project with autocomplete and code checks.
 
 ## Benefits of using types
 

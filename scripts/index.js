@@ -1,16 +1,44 @@
 #!/usr/bin/env node
 
-const { name: moduleName } = require('../package.json');
-const { default: apply } = require('./apply');
+const { name: moduleName, version: moduleVersion } = require('../package.json');
+const { execSync } = require('child_process');
+const { existsSync, writeFileSync, readFileSync } = require('fs');
+const { join } = require('path');
 
-const APPLY_TS_COMMAND = 'apply-ts';
-const APPLY_JS_COMMAND = 'apply-js';
-const [, , command] = process.argv;
-if (command !== APPLY_JS_COMMAND && command !== APPLY_TS_COMMAND) {
-	console.log(
-		`Run '${moduleName} ${APPLY_JS_COMMAND}' to enhance your JavaScript project, or '${moduleName} ${APPLY_TS_COMMAND}' to move your project to the full TypeScript experience.`,
+const moduleDependency = `${moduleName}@${moduleVersion}`;
+
+/**
+ * @param {() => void} fn
+ * @param {string} action
+ */
+const tryRun = (fn, action) => {
+	try {
+		console.log(`Start ${action}`);
+		fn();
+		console.log('Done');
+	} catch (error) {
+		console.error(`Error while ${action}: ${error}`);
+	}
+};
+
+tryRun(
+	() =>
+		execSync(`npm install --save-dev ${moduleDependency}`, {
+			stdio: 'inherit',
+		}),
+	`Adding ${moduleDependency}`,
+);
+
+const tsconfigFileName = 'tsconfig.json';
+for (const folder of ['app', 'companion', 'settings']) {
+	if (!existsSync(folder)) {
+		continue;
+	}
+
+	const sourceFile = join(__dirname, 'scaffolding', folder, tsconfigFileName);
+	const targetFile = join(folder, tsconfigFileName);
+	tryRun(
+		() => writeFileSync(targetFile, readFileSync(sourceFile, 'utf-8')),
+		`Adding ${targetFile}`,
 	);
-	process.exit();
 }
-
-apply(command === APPLY_TS_COMMAND ? 'ts' : 'js');
