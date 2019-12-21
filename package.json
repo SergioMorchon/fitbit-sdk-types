@@ -1,6 +1,6 @@
 {
 	"name": "fitbit-sdk-types",
-	"version": "4.3.0",
+	"version": "4.3.1",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
 	"bin": "scripts/index.js",
