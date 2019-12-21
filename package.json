@@ -6,7 +6,8 @@
 	"bin": "scripts/index.js",
 	"files": [
 		"types/**/*.d.ts",
-		"scripts/**/*.js"
+		"scripts/**/*.js",
+		"scripts/scaffolding/**"
 	],
 	"keywords": [
 		"typescript",
