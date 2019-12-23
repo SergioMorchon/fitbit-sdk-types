@@ -16,7 +16,6 @@ declare module 'fs' {
 	): void;
 	function readFileSync(filename: string): ArrayBuffer;
 	function readFileSync(filename: string, encoding: 'ascii' | 'utf-8'): string;
-	// tslint:disable-next-line unified-signatures
 	function readFileSync(filename: string, encoding: 'cbor' | 'json'): any;
 	function renameSync(oldFilename: string, newFilename: string): void;
 	function unlinkSync(filename: string): void;
