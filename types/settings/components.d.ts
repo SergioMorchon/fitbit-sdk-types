@@ -31,7 +31,7 @@ declare const Toggle: (props: {
 	onChange?: (newValue: boolean) => void;
 }) => JSX.Element;
 declare const Slider: (props: {
-	label?: string | JSX.Element;
+	label?: JSX.Element;
 	settingsKey?: string;
 	min: number | string;
 	max: number | string;
