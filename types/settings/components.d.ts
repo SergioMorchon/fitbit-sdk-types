@@ -16,8 +16,8 @@ declare const Text: (props: {
 	children: JSX.Element;
 }) => JSX.Element;
 declare const TextImageRow: (props: {
-	label?: string;
-	sublabel?: string;
+	label?: JSX.Element;
+	sublabel?: JSX.Element;
 	icon?: string;
 }) => JSX.Element;
 declare const Button: (props: {
