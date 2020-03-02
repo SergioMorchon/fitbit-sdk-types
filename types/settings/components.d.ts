@@ -27,7 +27,7 @@ declare const Button: (props: {
 }) => JSX.Element;
 declare const Toggle: (props: {
 	settingsKey: string;
-	label?: string;
+	label?: JSX.Element;
 	onChange?: (newValue: boolean) => void;
 }) => JSX.Element;
 declare const Slider: (props: {
