@@ -2,6 +2,6 @@ import document from 'document';
 
 let marquee = document.getElementById('marquee');
 
-setTimeout(function() {
+setTimeout(function () {
 	marquee.state = 'enabled';
 }, 2000);

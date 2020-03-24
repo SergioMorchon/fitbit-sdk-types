@@ -9,26 +9,26 @@ let destFilename = 'kitten.jpg';
 
 // Fetch the image from the internet
 fetch(srcImage)
-	.then(function(response) {
+	.then(function (response) {
 		// We need an arrayBuffer of the file contents
 		return response.arrayBuffer();
 	})
-	.then(function(data) {
+	.then(function (data) {
 		// Queue the file for transfer
 		outbox
 			.enqueue(destFilename, data)
-			.then(function(ft) {
+			.then(function (ft) {
 				// Queued successfully
 				console.log("Transfer of '" + destFilename + "' successfully queued.");
 			})
-			.catch(function(error) {
+			.catch(function (error) {
 				// Failed to queue
 				throw new Error(
 					"Failed to queue '" + destFilename + "'. Error: " + error,
 				);
 			});
 	})
-	.catch(function(error) {
+	.catch(function (error) {
 		// Log the error
 		console.log('Failure: ' + error);
 	});

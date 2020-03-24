@@ -9,14 +9,14 @@ let VTList = document.getElementById('my-list') as VirtualTileList<{
 let NUM_ELEMS = 100;
 
 VTList.delegate = {
-	getTileInfo: function(index) {
+	getTileInfo: function (index) {
 		return {
 			type: 'my-pool',
 			value: 'Menu item',
 			index: index,
 		};
 	},
-	configureTile: function(tile, info) {
+	configureTile: function (tile, info) {
 		if (info.type == 'my-pool') {
 			tile.getElementById('text').text = `${info.value} ${info.index}`;
 			let touch = tile.getElementById('touch-me');

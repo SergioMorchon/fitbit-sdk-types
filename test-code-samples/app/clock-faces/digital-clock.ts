@@ -5,7 +5,7 @@ let myClock = document.getElementById('myClock');
 
 clock.granularity = 'seconds'; // seconds, minutes, hours
 
-clock.ontick = function(evt) {
+clock.ontick = function (evt) {
 	myClock.text =
 		('0' + evt.date.getHours()).slice(-2) +
 		':' +

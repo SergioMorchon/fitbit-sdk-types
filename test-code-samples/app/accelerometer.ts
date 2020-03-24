@@ -3,7 +3,7 @@ import { Accelerometer } from 'accelerometer';
 if (Accelerometer) {
 	// sampling at 1Hz (once per second)
 	let accel = new Accelerometer({ frequency: 1 });
-	accel.onreading = function() {
+	accel.onreading = function () {
 		console.log(
 			'ts:',
 			accel.timestamp,

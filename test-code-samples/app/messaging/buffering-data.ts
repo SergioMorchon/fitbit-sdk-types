@@ -15,7 +15,7 @@ function sendMoreData() {
 }
 
 // Listen for the onbufferedamountdecrease event
-messaging.peerSocket.onbufferedamountdecrease = function() {
+messaging.peerSocket.onbufferedamountdecrease = function () {
 	// Amount of buffered data has decreased, continue sending data
 	sendMoreData();
 };

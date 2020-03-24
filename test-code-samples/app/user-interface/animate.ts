@@ -4,7 +4,7 @@ import document from 'document';
 var demoinstance = document.getElementById('demoinstance');
 
 // Animate after a 5 second delay
-setTimeout(function() {
+setTimeout(function () {
 	demoinstance.animate('enable'); // Specify the name of the event to trigger
 }, 5000);
 

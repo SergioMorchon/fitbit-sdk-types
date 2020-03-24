@@ -1,6 +1,6 @@
 import document from 'document';
 
-document.onkeypress = function(e) {
+document.onkeypress = function (e) {
 	switch (e.key) {
 		case 'back':
 			console.log('back');

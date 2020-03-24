@@ -2,13 +2,13 @@
 import * as messaging from 'messaging';
 
 // Listen for the onopen event
-messaging.peerSocket.onopen = function() {
+messaging.peerSocket.onopen = function () {
 	// Ready to send messages
 	sendMessage();
 };
 
 // Listen for the onerror event
-messaging.peerSocket.onerror = function(err) {
+messaging.peerSocket.onerror = function (err) {
 	// Handle any errors
 	console.log('Connection error: ' + err.code + ' - ' + err.message);
 };

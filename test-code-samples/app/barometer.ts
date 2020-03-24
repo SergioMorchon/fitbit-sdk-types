@@ -2,7 +2,7 @@ import { Barometer } from 'barometer';
 
 if (Barometer) {
 	let bar = new Barometer({ frequency: 1, batch: 10 });
-	bar.onreading = function() {
+	bar.onreading = function () {
 		console.log(
 			'ts:',
 			bar.timestamp,
@@ -23,7 +23,7 @@ if (Barometer) {
 	let floorCounter = 0;
 
 	// Event occurs when the batched readings are available
-	bar.onreading = function() {
+	bar.onreading = function () {
 		if (currentFloorPa !== 0) {
 			// Calculate the difference between the current floor, and the new pressure
 			// @ts-ignore pressure possibly null

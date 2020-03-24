@@ -2,7 +2,7 @@ import { Gyroscope } from 'gyroscope';
 
 if (Gyroscope) {
 	let gyro = new Gyroscope({ frequency: 1 });
-	gyro.onreading = function() {
+	gyro.onreading = function () {
 		console.log(
 			'ts:',
 			gyro.timestamp,

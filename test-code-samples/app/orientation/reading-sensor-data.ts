@@ -2,7 +2,7 @@ import { OrientationSensor } from 'orientation';
 
 if (OrientationSensor) {
 	let orientation = new OrientationSensor({ frequency: 60 });
-	orientation.onreading = function() {
+	orientation.onreading = function () {
 		console.log(
 			'Orientation Sensor Reading: ' + 'timestamp: ' + orientation.timestamp,
 			'quaternion[0]: ' + orientation.quaternion[0],
