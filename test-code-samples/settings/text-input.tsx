@@ -1,4 +1,5 @@
 <TextInput label="example" settingsKey="text" />;
+<TextInput label="example" settingsKey="text" useSimpleValue />;
 <TextInput
 	label="Example"
 	title="Text Input"
