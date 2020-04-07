@@ -47,6 +47,7 @@ declare const TextInput: <Option extends { name: string }>(props: {
 	value?: string;
 	disabled?: boolean;
 	settingsKey?: string;
+	useSimpleValue?: boolean;
 	onChange?: (newValue: string) => void;
 	onAutocomplete?: (newValue: string) => ReadonlyArray<Option>;
 	renderItem?: (autocompleteOption: Option) => JSX.Element;
