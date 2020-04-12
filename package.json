@@ -41,7 +41,13 @@
 		"@typescript-eslint/parser": "^2.27.0",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.10.1",
+		"husky": "^4.2.5",
 		"prettier": "^2.0.4",
 		"typescript": "^3.8.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run fix-code"
+		}
 	}
 }
