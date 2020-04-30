@@ -1,7 +1,7 @@
 declare const Fragment: (props: { children: JSX.Element }) => JSX.Element;
 declare const Page: (props: { children: JSX.Element }) => JSX.Element;
 declare const Section: (props: {
-	children: JSX.Element;
+	children?: JSX.Element;
 	title: JSX.Element;
 	description?: JSX.Element;
 }) => JSX.Element;
