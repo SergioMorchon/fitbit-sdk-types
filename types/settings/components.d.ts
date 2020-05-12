@@ -77,7 +77,7 @@ declare const Select: <Option extends { name: string }>(props: {
 		values: ReadonlyArray<Option>;
 	}) => void;
 }) => JSX.Element;
-declare const AdditiveList: <Option extends { name: string }>(props: {
+declare const AdditiveList: <Option extends { [k:string]:any; name: string; }>(props: {
 	title?: string;
 	description?: string;
 	settingsKey?: string;
