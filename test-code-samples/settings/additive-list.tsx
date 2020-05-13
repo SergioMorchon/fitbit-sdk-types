@@ -99,3 +99,56 @@ type Option = {
 		/>
 	}
 />;
+<AdditiveList
+	title="A list of TextImageRow"
+	settingsKey="select-list"
+	maxItems="5"
+	renderItem={({ name, value }) => (
+		<TextImageRow label={name} sublabel={value.location} icon={value.icon} />
+	)}
+	addAction={
+		<Select
+			label="Add Item"
+			options={[
+				{
+					name: 'Label1',
+					required: true,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+				{
+					name: 'Label2',
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+				{
+					name: 'Label3',
+					required: true,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+				{
+					name: 'Label4',
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+				{
+					name: 'Label5',
+					required: false,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+			]}
+		/>
+	}
+/>;
