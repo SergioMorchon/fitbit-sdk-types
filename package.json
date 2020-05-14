@@ -36,18 +36,12 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"@types/node": "^13.11.0",
-		"@typescript-eslint/eslint-plugin": "^2.27.0",
-		"@typescript-eslint/parser": "^2.27.0",
-		"eslint": "^6.8.0",
-		"eslint-config-prettier": "^6.10.1",
-		"husky": "^4.2.5",
-		"prettier": "^2.0.4",
-		"typescript": "^3.8.3"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "npm run fix-code"
-		}
+		"@types/node": "^14.0.1",
+		"@typescript-eslint/eslint-plugin": "^2.33.0",
+		"@typescript-eslint/parser": "^2.33.0",
+		"eslint": "^7.0.0",
+		"eslint-config-prettier": "^6.11.0",
+		"prettier": "^2.0.5",
+		"typescript": "^3.9.2"
 	}
 }
