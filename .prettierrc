@@ -1,8 +1,5 @@
 {
 	"useTabs": true,
-	"arrowParens": "avoid",
-	"bracketSpacing": true,
 	"singleQuote": true,
-	"trailingComma": "all",
-	"semi": true
+	"trailingComma": "all"
 }

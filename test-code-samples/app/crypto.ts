@@ -2,7 +2,7 @@ import * as Crypto from 'crypto';
 
 const buffer = new ArrayBuffer(16);
 
-Crypto.subtle.digest('SHA-256', buffer).then(hash => {
+Crypto.subtle.digest('SHA-256', buffer).then((hash) => {
 	const h = new Uint8Array(hash);
 });
 
@@ -18,18 +18,18 @@ Crypto.subtle
 		'verify',
 	])
 
-	.then(secret => {
+	.then((secret) => {
 		console.log(`Secret is: ${secret}`);
 
 		Crypto.subtle
 			.sign('HMAC', secret, buffer)
-			.then(signature => {
+			.then((signature) => {
 				const sgn = new Uint8Array(signature);
 				console.log(`HMAC signature is: ${sgn}`);
 
 				Crypto.subtle
 					.verify('HMAC', secret, signature, buffer)
-					.then(success => {
+					.then((success) => {
 						console.log(success);
 						if (success) {
 							console.log('Signature was successfully verified!');
@@ -38,10 +38,10 @@ Crypto.subtle
 						}
 					});
 			})
-			.catch(e => {
+			.catch((e) => {
 				console.error(e);
 			});
 	})
-	.catch(e => {
+	.catch((e) => {
 		console.error(e);
 	});

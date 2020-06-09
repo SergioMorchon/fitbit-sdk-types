@@ -2,18 +2,18 @@ import { outbox } from 'file-transfer';
 declare const filename: string, data: any;
 outbox
 	.enqueue(filename, data)
-	.then(ft => {
+	.then((ft) => {
 		console.log(`Transfer of ${ft.name} successfully queued.`);
 	})
-	.catch(error => {
+	.catch((error) => {
 		console.log(`Failed to enqueue ${filename}. Error: ${error}`);
 	});
 
 outbox
 	.enqueueFile('app.txt')
-	.then(ft => {
+	.then((ft) => {
 		console.log(`Transfer of ${ft.name} successfully queued.`);
 	})
-	.catch(error => {
+	.catch((error) => {
 		console.log(`Failed to schedule transfer: ${error}`);
 	});

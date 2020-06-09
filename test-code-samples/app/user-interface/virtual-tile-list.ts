@@ -20,7 +20,7 @@ VTList.delegate = {
 		if (info.type == 'my-pool') {
 			tile.getElementById('text').text = `${info.value} ${info.index}`;
 			let touch = tile.getElementById('touch-me');
-			touch.onclick = evt => {
+			touch.onclick = (evt) => {
 				console.log(`touched: ${info.index}`);
 			};
 		}

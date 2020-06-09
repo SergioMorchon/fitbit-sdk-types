@@ -39,7 +39,7 @@ function showStats(stats: ExerciseStats) {
 }
 
 import { geolocation } from 'geolocation';
-const watchId = geolocation.watchPosition(position => {
+const watchId = geolocation.watchPosition((position) => {
 	exercise.start('run', { gps: true });
 	geolocation.clearWatch(watchId);
 });

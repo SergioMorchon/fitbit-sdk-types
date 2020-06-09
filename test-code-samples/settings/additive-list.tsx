@@ -85,7 +85,7 @@ type Option = {
 			label="Item Name"
 			placeholder="Type something"
 			action="Add Item"
-			onAutocomplete={value => {
+			onAutocomplete={(value) => {
 				const autoValues = [
 					{ name: 'red', value: '1' },
 					{ name: 'orange', value: '2' },
@@ -94,7 +94,7 @@ type Option = {
 					{ name: 'blue', value: '5' },
 					{ name: 'purple', value: '6' },
 				];
-				return autoValues.filter(option => option.name.indexOf(value) === 0);
+				return autoValues.filter((option) => option.name.indexOf(value) === 0);
 			}}
 		/>
 	}

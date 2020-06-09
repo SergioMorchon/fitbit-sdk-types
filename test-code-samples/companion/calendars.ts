@@ -4,11 +4,11 @@ import calendars from 'calendars';
 if (me.permissions.granted('access_calendar')) {
 	calendars
 		.searchSources()
-		.then(sources => {
+		.then((sources) => {
 			console.log('All calendar data sources');
 			return calendars.searchCalendars();
 		})
-		.then(results => {
+		.then((results) => {
 			console.log('All calendars');
 			const start = new Date();
 			const end = new Date();
@@ -23,11 +23,11 @@ if (me.permissions.granted('access_calendar')) {
 
 			return calendars.searchEvents(eventsQuery);
 		})
-		.then(eventData => {
+		.then((eventData) => {
 			// All events
 			console.log('All events for the next 48 hours');
 		})
-		.catch(error => {
+		.catch((error) => {
 			// Inform the user about the error
 			console.error(error);
 			console.error(error.stack);

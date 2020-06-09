@@ -14,7 +14,7 @@
 		{ color: 'aquamarine', value: '14' },
 		{ color: 'deepskyblue', value: '15' },
 	]}
-	onSelection={value => console.log(value)}
+	onSelection={(value) => console.log(value)}
 />;
 <ColorSelect
 	settingsKey="color"
@@ -22,7 +22,7 @@
 		{ color: 'tomato', value: { align: 'left', number: '1' } },
 		{ color: 'sandybrown', value: { align: 'right', number: '2' } },
 	]}
-	onSelection={value => {
+	onSelection={(value) => {
 		console.log(`value: ${value.align}, number: ${value.number}`);
 	}}
 />;

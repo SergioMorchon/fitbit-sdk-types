@@ -24,12 +24,12 @@
 		{ name: 'Fourteen', value: '14' },
 		{ name: 'Fifteen', value: '15' },
 	]}
-	renderItem={option => (
+	renderItem={(option) => (
 		<TextImageRow
 			label={option.name}
 			sublabel="Sub-Label"
 			icon="https://tinyurl.com/ybbmpxxq"
 		/>
 	)}
-	onSelection={selection => console.log(selection)}
+	onSelection={(selection) => console.log(selection)}
 />;

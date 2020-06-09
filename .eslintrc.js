@@ -12,7 +12,6 @@ module.exports = {
 				accessibility: 'no-public',
 			},
 		],
-		'@typescript-eslint/interface-name-prefix': 'error',
 		'@typescript-eslint/member-ordering': 'error',
 		'@typescript-eslint/no-extraneous-class': 'error',
 		'@typescript-eslint/no-namespace': 'error',

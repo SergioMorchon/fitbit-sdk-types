@@ -7,7 +7,7 @@ let tileState = {};
 
 tileItems.forEach((element, index) => {
 	tileState[index] = element.firstChild.value; // initial state
-	element.firstChild.onclick = evt => {
+	element.firstChild.onclick = (evt) => {
 		tileState[index] = !tileState[index];
 		console.log(
 			`item ${index} :: ${tileState[index] ? 'checked' : 'unchecked'}`,

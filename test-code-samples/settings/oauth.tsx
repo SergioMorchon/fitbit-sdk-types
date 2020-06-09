@@ -20,7 +20,7 @@
 	clientId="11111"
 	clientSecret="asdfxxx"
 	scope="profile"
-	onAccessToken={async data => {
+	onAccessToken={async (data) => {
 		console.log(data);
 	}}
 />;
@@ -38,7 +38,7 @@
 		scope: 'photos',
 		state: '1234zyx',
 	}}
-	onReturn={data => {
+	onReturn={(data) => {
 		console.log(data);
 	}}
 />;
