@@ -9,6 +9,7 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 
 1. First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
 2. Then, from that project root, run `npx fitbit-sdk-types` to enhance your existing Fitbit project with autocomplete and code checks.
+3. Take a look at the [FAQ](./FAQ.md).
 
 ## Benefits of using types
 
