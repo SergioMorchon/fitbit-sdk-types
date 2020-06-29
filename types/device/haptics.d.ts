@@ -9,7 +9,7 @@ declare module 'haptics' {
 		| 'ping'
 		| 'ring';
 	interface Vibration {
-		start(pattern: VibrationPatternName): void;
+		start(pattern: VibrationPatternName): boolean;
 		stop(): void;
 	}
 	const vibration: Vibration;
