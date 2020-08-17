@@ -1,3 +1,4 @@
-type PickByExtendsValue<T, ValueType> = Pick<T, {
+type PickKeyByExtendsValue<T, ValueType> = {
     [Key in keyof T]-?: ValueType extends T[Key] ? Key : never;
-}[keyof T]>;
+}[keyof T];
+

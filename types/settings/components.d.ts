@@ -27,7 +27,7 @@ declare const Button: (props: {
 }) => JSX.Element;
 declare const Toggle: <SettingsType extends object>(props: {
 	settingsKey: (SettingsType extends object 
-		? keyof PickByExtendsValue<SettingsType, boolean> 
+		? PickKeyByExtendsValue<SettingsType, boolean> 
 		: string);
 	label?: JSX.Element;
 	onChange?: (newValue: boolean) => void;
@@ -35,7 +35,7 @@ declare const Toggle: <SettingsType extends object>(props: {
 declare const Slider: <SettingsType extends object>(props: {
 	label?: JSX.Element;
 	settingsKey: (SettingsType extends object 
-		? keyof PickByExtendsValue<SettingsType, number> 
+		? PickKeyByExtendsValue<SettingsType, number> 
 		: string);
 	min: number | string;
 	max: number | string;
@@ -51,7 +51,7 @@ declare const TextInput: <Option extends { name: string }|string, SettingsType e
 	value?: string;
 	disabled?: boolean;
 	settingsKey?: (SettingsType extends object 
-		? keyof PickByExtendsValue<SettingsType, Option>  // when autocomplete, an Option type can be preserved under the key
+		? PickKeyByExtendsValue<SettingsType, Option>  // when autocomplete, an Option type can be preserved under the key
 		: string);
 	useSimpleValue?: boolean;
 	onChange?: (newValue: string) => void;
@@ -66,7 +66,7 @@ declare const ColorSelect: <Value = string, SettingsType extends object = any>(p
 	colors: ReadonlyArray<{ color: string; value?: Value }>;
 	centered?: boolean;
 	settingsKey?: (SettingsType extends object 
-		? keyof PickByExtendsValue<SettingsType, Value> 
+		? PickKeyByExtendsValue<SettingsType, Value> 
 		: string);
 	value?: Value;
 	onSelection?: (value: Value) => void;
@@ -76,7 +76,7 @@ declare const Select: <Option extends { name: string }, SettingsType extends obj
 	selectViewTitle?: string;
 	label?: string;
 	settingsKey?: (SettingsType extends object 
-		? keyof PickByExtendsValue<SettingsType, {
+		? PickKeyByExtendsValue<SettingsType, {
 			values:Option[],
 			selected:number[]
 		}> 
@@ -97,7 +97,7 @@ declare const AdditiveList: <Option extends {
 	title?: string;
 	description?: string;
 	settingsKey?: (SettingsType extends object 
-		? keyof PickByExtendsValue<SettingsType, Option[]> 
+		? PickKeyByExtendsValue<SettingsType, Option[]> 
 		: string);
 	minItems?: number | string;
 	maxItems?: number | string;
@@ -155,7 +155,7 @@ declare const ImagePicker: <SettingsType extends object = any, ImagePickResult =
 	pickerImageTitle?: string;
 	pickerLabel?: string;
 	settingsKey?: SettingsType extends object
-		? keyof PickByExtendsValue<SettingsType, ImagePickResult>
+		? PickKeyByExtendsValue<SettingsType, ImagePickResult>
 		: string;
 	imageWidth?: number | string;
 	imageHeight?: number | string;
