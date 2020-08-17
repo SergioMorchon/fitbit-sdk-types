@@ -152,3 +152,116 @@ type Option = {
 		/>
 	}
 />;
+
+// typed settings examples
+interface AdditiveOption { name:string, value:{
+	location: string,
+	icon: string,
+} }
+interface AdditiveListSettingsType {
+	validKey: AdditiveOption[],
+	assignableKey: {name:string}[],
+	invalidKey: string
+}
+
+<AdditiveList<AdditiveOption>
+	title="A list of TextImageRow"
+	settingsKey="select-list"
+	maxItems="5"
+	renderItem={({ name, value }) => (
+		<TextImageRow label={name} sublabel={value.location} icon={value.icon} />
+	)}
+	addAction={
+		<Select
+			label="Add Item"
+			options={[
+				{
+					name: 'Label1',
+					required: true,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+			]}
+		/>
+	}
+/>;
+
+<AdditiveList<AdditiveOption, AdditiveListSettingsType>
+	title="A list of TextImageRow"
+	settingsKey="validKey"
+	maxItems="5"
+	renderItem={({ name, value }) => (
+		<TextImageRow label={name} sublabel={value.location} icon={value.icon} />
+	)}
+	addAction={
+		<Select
+			label="Add Item"
+			options={[
+				{
+					name: 'Label1',
+					required: true,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+			]}
+		/>
+	}
+/>;
+
+<AdditiveList<AdditiveOption, AdditiveListSettingsType>
+	title="A list of TextImageRow"
+	settingsKey="assignableKey"
+	maxItems="5"
+	renderItem={({ name, value }) => (
+		<TextImageRow label={name} sublabel={value.location} icon={value.icon} />
+	)}
+	addAction={
+		<Select
+			label="Add Item"
+			options={[
+				{
+					name: 'Label1',
+					required: true,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+			]}
+		/>
+	}
+/>;
+
+/*
+
+// should not and do not work
+
+<AdditiveList<AdditiveOption, AdditiveListSettingsType>
+	title="A list of TextImageRow"
+	settingsKey="invalidKey"
+	maxItems="5"
+	renderItem={({ name, value }) => (
+		<TextImageRow label={name} sublabel={value.location} icon={value.icon} />
+	)}
+	addAction={
+		<Select
+			label="Add Item"
+			options={[
+				{
+					name: 'Label1',
+					required: true,
+					value: {
+						location: 'Sub-Label',
+						icon: 'https://tinyurl.com/ybbmpxxq',
+					},
+				},
+			]}
+		/>
+	}
+/>;
+
+*/

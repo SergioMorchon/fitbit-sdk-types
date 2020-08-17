@@ -21,3 +21,46 @@ declare const doSomethingWithImage;
 		doSomethingWithImage(image, imageSize)
 	}
 />;
+
+// with typed settings
+interface ImagePickerSettingsType {
+	validKey : {
+		imageUri:string,
+		imageSize: {
+			width:number,
+			height:number
+		}
+	},
+	assignableKey : {
+		imageUri:string,
+		imageSize: {
+			width:number,
+		},
+		somethingElse?:string
+	}, 
+	otherKey: 'something-else'
+}
+
+<ImagePicker<ImagePickerSettingsType>
+	settingsKey="validKey"
+	imageWidth="300"
+	imageHeight="300"
+/>;
+
+<ImagePicker<ImagePickerSettingsType>
+	settingsKey="assignableKey"
+	imageWidth="300"
+	imageHeight="300"
+/>;
+
+/*
+
+// should not and do not work
+
+<ImagePicker<ImagePickerSettingsType>
+	settingsKey="otherKey"
+	imageWidth="300"
+	imageHeight="300"
+/>;
+
+*/

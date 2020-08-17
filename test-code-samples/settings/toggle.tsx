@@ -12,3 +12,33 @@ declare const settings: any;
 		<Toggle settingsKey="hiddenToggle" />
 	);
 }
+
+// Work with typed settings
+
+interface ToggleSettingsType {
+	stringKey : string,
+	booleanKey : boolean,
+	assignableKey : boolean | string
+}
+
+<Toggle<ToggleSettingsType>
+	settingsKey="booleanKey"
+></Toggle>;
+
+<Toggle<ToggleSettingsType>
+	settingsKey="assignableKey"
+></Toggle>;
+
+/*
+
+// examples should not work
+
+<Toggle<ToggleSettingsType>
+	settingsKey="any other key should report an error"
+></Toggle>;
+
+<Toggle<ToggleSettingsType>
+	settingsKey="stringKey"
+></Toggle>;
+
+ */

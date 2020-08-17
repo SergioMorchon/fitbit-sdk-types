@@ -33,3 +33,127 @@
 	)}
 	onSelection={(selection) => console.log(selection)}
 />;
+
+// typed examples
+
+interface SelectOption {name:string, value:string}
+
+interface SelectSettingsType {
+	selectProp : {
+		values:SelectOption[],
+		selected:number[]
+	}
+	compatibleProp : {
+		values:SelectOption[],
+		selected:number[],
+		other?: string
+	}
+	incompatibleProp : {
+		values:{name:string, value:string, option:boolean}[],
+		selected:number[],
+		other: string
+	}
+	compatibleProp2 : {
+		values:{name:string}[],
+		selected:number[],
+		other?: string
+	},
+}
+
+<Select<SelectOption, SelectSettingsType>
+	label={`Multi-Selection`}
+	multiple
+	settingsKey="selectProp"
+	options={[
+		{ name: 'One', value: '1' },
+		{ name: 'Two', value: '2' },
+	]}
+	renderItem={(option) => (
+		<TextImageRow
+			label={option.name}
+			sublabel="Sub-Label"
+			icon="https://tinyurl.com/ybbmpxxq"
+		/>
+	)}
+	onSelection={(selection) => console.log(selection)}
+/>;
+
+<Select<SelectOption, SelectSettingsType>
+	label={`Multi-Selection`}
+	multiple
+	settingsKey="compatibleProp"
+	options={[
+		{ name: 'One', value: '1' },
+		{ name: 'Two', value: '2' },
+	]}
+	renderItem={(option) => (
+		<TextImageRow
+			label={option.name}
+			sublabel="Sub-Label"
+			icon="https://tinyurl.com/ybbmpxxq"
+		/>
+	)}
+	onSelection={(selection) => console.log(selection)}
+/>;
+
+<Select<SelectOption, SelectSettingsType>
+	label={`Multi-Selection`}
+	multiple
+	settingsKey="compatibleProp2"
+	options={[
+		{ name: 'One', value: '1' },
+		{ name: 'Two', value: '2' },
+	]}
+	renderItem={(option) => (
+		<TextImageRow
+			label={option.name}
+			sublabel="Sub-Label"
+			icon="https://tinyurl.com/ybbmpxxq"
+		/>
+	)}
+	onSelection={(selection) => console.log(selection)}
+/>;
+
+
+/*
+
+// examples should not and do not work
+
+
+<Select<SelectOption, SelectSettingsType>
+	label={`Multi-Selection`}
+	multiple
+	settingsKey="incompatibleProp"
+	options={[
+		{ name: 'One', value: '1' },
+		{ name: 'Two', value: '2' },
+	]}
+	renderItem={(option) => (
+		<TextImageRow
+			label={option.name}
+			sublabel="Sub-Label"
+			icon="https://tinyurl.com/ybbmpxxq"
+		/>
+	)}
+	onSelection={(selection) => console.log(selection)}
+/>;
+
+<Select<SelectOption, SelectSettingsType>
+	label={`Multi-Selection`}
+	multiple
+	settingsKey="anyKey"
+	options={[
+		{ name: 'One', value: '1' },
+		{ name: 'Two', value: '2' },
+	]}
+	renderItem={(option) => (
+		<TextImageRow
+			label={option.name}
+			sublabel="Sub-Label"
+			icon="https://tinyurl.com/ybbmpxxq"
+		/>
+	)}
+	onSelection={(selection) => console.log(selection)}
+/>;
+
+*/

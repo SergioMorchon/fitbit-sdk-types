@@ -8,3 +8,4 @@
 /// <reference path="../shared/i18n.d.ts" />
 /// <reference path="./components.d.ts" />
 /// <reference path="./jsx.d.ts" />
+/// <reference path="./utility-types.d.ts" />
