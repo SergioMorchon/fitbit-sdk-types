@@ -28,13 +28,16 @@
 />;
 
 // Work with typed settings
-interface ColorValue { align: string, number: string}
+interface ColorValue {
+	align: string;
+	number: string;
+}
 
 interface ColorSelectSettingsType {
-	validKey : ColorValue
-	anyKey: any
-	assignableKey : { align: string, number: string, option?:boolean }
-	incompatibleKey : string
+	validKey: ColorValue;
+	anyKey: any;
+	assignableKey: { align: string; number: string; option?: boolean };
+	incompatibleKey: string;
 }
 
 <ColorSelect<ColorValue, ColorSelectSettingsType>

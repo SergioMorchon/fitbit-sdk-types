@@ -34,13 +34,14 @@
 
 // Work with typed settings
 interface TextInputOption {
-	name:string, value?:string
+	name: string;
+	value?: string;
 }
 interface TextInputSettingsType {
-	validKey : TextInputOption,
-	otherKey : {name:string, value:string},
-	assignableKey : {name:string},
-	stringKey: string
+	validKey: TextInputOption;
+	otherKey: { name: string; value: string };
+	assignableKey: { name: string };
+	stringKey: string;
 }
 
 <TextInput<TextInputOption>
@@ -50,9 +51,7 @@ interface TextInputSettingsType {
 	action="Add Item"
 	settingsKey="anything"
 	onAutocomplete={(value) => {
-		const autoValues = [
-			{ name: 'red', value: '1' },
-		];
+		const autoValues = [{ name: 'red', value: '1' }];
 		return autoValues.filter((option) => option.name.indexOf(value) === 0);
 	}}
 />;
@@ -64,9 +63,7 @@ interface TextInputSettingsType {
 	action="Add Item"
 	settingsKey="validKey"
 	onAutocomplete={(value) => {
-		const autoValues = [
-			{ name: 'red', value: '1' },
-		];
+		const autoValues = [{ name: 'red', value: '1' }];
 		return autoValues.filter((option) => option.name.indexOf(value) === 0);
 	}}
 />;
@@ -78,9 +75,7 @@ interface TextInputSettingsType {
 	action="Add Item"
 	settingsKey="assignableKey"
 	onAutocomplete={(value) => {
-		const autoValues = [
-			{ name: 'red', value: '1' },
-		];
+		const autoValues = [{ name: 'red', value: '1' }];
 		return autoValues.filter((option) => option.name.indexOf(value) === 0);
 	}}
 />;

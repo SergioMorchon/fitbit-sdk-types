@@ -26,23 +26,26 @@ declare const Button: (props: {
 	onClick: (event: Event) => void;
 }) => JSX.Element;
 declare const Toggle: <SettingsType extends object>(props: {
-	settingsKey: (SettingsType extends object 
-		? PickKeyByExtendsValue<SettingsType, boolean> 
-		: string);
+	settingsKey: SettingsType extends object
+		? PickKeyByExtendsValue<SettingsType, boolean>
+		: string;
 	label?: JSX.Element;
 	onChange?: (newValue: boolean) => void;
 }) => JSX.Element;
 declare const Slider: <SettingsType extends object>(props: {
 	label?: JSX.Element;
-	settingsKey: (SettingsType extends object 
-		? PickKeyByExtendsValue<SettingsType, number> 
-		: string);
+	settingsKey: SettingsType extends object
+		? PickKeyByExtendsValue<SettingsType, number>
+		: string;
 	min: number | string;
 	max: number | string;
 	step?: number | string;
 	onChange?: (newValue: number) => void;
 }) => JSX.Element;
-declare const TextInput: <Option extends { name: string }|string, SettingsType extends object = any>(props: {
+declare const TextInput: <
+	Option extends { name: string } | string,
+	SettingsType extends object = any
+>(props: {
 	title?: string;
 	label?: string;
 	placeholder?: string;
@@ -50,9 +53,9 @@ declare const TextInput: <Option extends { name: string }|string, SettingsType e
 	type?: string;
 	value?: string;
 	disabled?: boolean;
-	settingsKey?: (SettingsType extends object 
-		? PickKeyByExtendsValue<SettingsType, Option>  // when autocomplete, an Option type can be preserved under the key
-		: string);
+	settingsKey?: SettingsType extends object
+		? PickKeyByExtendsValue<SettingsType, Option> // when autocomplete, an Option type can be preserved under the key
+		: string;
 	useSimpleValue?: boolean;
 	onChange?: (newValue: string) => void;
 	onAutocomplete?: (newValue: string) => ReadonlyArray<Option>;
@@ -62,25 +65,34 @@ declare const TextInput: <Option extends { name: string }|string, SettingsType e
 		newValue: string,
 	) => JSX.Element;
 }) => JSX.Element;
-declare const ColorSelect: <Value = string, SettingsType extends object = any>(props: {
+declare const ColorSelect: <
+	Value = string,
+	SettingsType extends object = any
+>(props: {
 	colors: ReadonlyArray<{ color: string; value?: Value }>;
 	centered?: boolean;
-	settingsKey?: (SettingsType extends object 
-		? PickKeyByExtendsValue<SettingsType, Value> 
-		: string);
+	settingsKey?: SettingsType extends object
+		? PickKeyByExtendsValue<SettingsType, Value>
+		: string;
 	value?: Value;
 	onSelection?: (value: Value) => void;
 }) => JSX.Element;
-declare const Select: <Option extends { name: string }, SettingsType extends object = any>(props: {
+declare const Select: <
+	Option extends { name: string },
+	SettingsType extends object = any
+>(props: {
 	title?: string;
 	selectViewTitle?: string;
 	label?: string;
-	settingsKey?: (SettingsType extends object 
-		? PickKeyByExtendsValue<SettingsType, {
-			values:Option[],
-			selected:number[]
-		}> 
-		: string);
+	settingsKey?: SettingsType extends object
+		? PickKeyByExtendsValue<
+				SettingsType,
+				{
+					values: Option[];
+					selected: number[];
+				}
+		  >
+		: string;
 	options: ReadonlyArray<Option>;
 	multiple?: boolean;
 	disabled?: boolean;
@@ -90,15 +102,18 @@ declare const Select: <Option extends { name: string }, SettingsType extends obj
 		values: ReadonlyArray<Option>;
 	}) => void;
 }) => JSX.Element;
-declare const AdditiveList: <Option extends {
+declare const AdditiveList: <
+	Option extends {
 		[k: string]: any;
 		name: string;
-	}, SettingsType extends object = any>(props: {
+	},
+	SettingsType extends object = any
+>(props: {
 	title?: string;
 	description?: string;
-	settingsKey?: (SettingsType extends object 
-		? PickKeyByExtendsValue<SettingsType, Option[]> 
-		: string);
+	settingsKey?: SettingsType extends object
+		? PickKeyByExtendsValue<SettingsType, Option[]>
+		: string;
 	minItems?: number | string;
 	maxItems?: number | string;
 	renderItem?: (item: Option) => JSX.Element;
@@ -140,13 +155,16 @@ declare const StravaLogin: (props: {
 	onAccessToken?: (accessToken: string, userInfo: any) => void;
 }) => JSX.Element;
 
-declare const ImagePicker: <SettingsType extends object = any, ImagePickResult = {
-	imageUri:string,
-	imageSize: {
-		width:number,
-		height:number
+declare const ImagePicker: <
+	SettingsType extends object = any,
+	ImagePickResult = {
+		imageUri: string;
+		imageSize: {
+			width: number;
+			height: number;
+		};
 	}
-}>(props: {
+>(props: {
 	title?: string;
 	description?: string;
 	label?: string;

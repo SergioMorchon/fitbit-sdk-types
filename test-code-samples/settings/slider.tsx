@@ -3,23 +3,25 @@
 // Work with typed settings
 
 interface SliderSettingsType {
-	stringKey : string,
-    booleanKey : boolean,
-    numberKey : number,
-    assignableKey: number | undefined,
+	stringKey: string;
+	booleanKey: boolean;
+	numberKey: number;
+	assignableKey: number | undefined;
 }
 
 <Slider<SliderSettingsType>
-    label="Example" 
-    settingsKey="numberKey" 
-    min="0" 
-    max="60" />;
+	label="Example"
+	settingsKey="numberKey"
+	min="0"
+	max="60"
+/>;
 
 <Slider<SliderSettingsType>
-    label="Example" 
-    settingsKey="assignableKey" 
-    min="0" 
-    max="60" />;
+	label="Example"
+	settingsKey="assignableKey"
+	min="0"
+	max="60"
+/>;
 
 /*
 

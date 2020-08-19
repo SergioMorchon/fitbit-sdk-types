@@ -36,28 +36,31 @@
 
 // typed examples
 
-interface SelectOption {name:string, value:string}
+interface SelectOption {
+	name: string;
+	value: string;
+}
 
 interface SelectSettingsType {
-	selectProp : {
-		values:SelectOption[],
-		selected:number[]
-	}
-	compatibleProp : {
-		values:SelectOption[],
-		selected:number[],
-		other?: string
-	}
-	incompatibleProp : {
-		values:{name:string, value:string, option:boolean}[],
-		selected:number[],
-		other: string
-	}
-	compatibleProp2 : {
-		values:{name:string}[],
-		selected:number[],
-		other?: string
-	},
+	selectProp: {
+		values: SelectOption[];
+		selected: number[];
+	};
+	compatibleProp: {
+		values: SelectOption[];
+		selected: number[];
+		other?: string;
+	};
+	incompatibleProp: {
+		values: { name: string; value: string; option: boolean }[];
+		selected: number[];
+		other: string;
+	};
+	compatibleProp2: {
+		values: { name: string }[];
+		selected: number[];
+		other?: string;
+	};
 }
 
 <Select<SelectOption, SelectSettingsType>
@@ -113,7 +116,6 @@ interface SelectSettingsType {
 	)}
 	onSelection={(selection) => console.log(selection)}
 />;
-
 
 /*
 

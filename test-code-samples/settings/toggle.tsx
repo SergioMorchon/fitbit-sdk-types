@@ -16,18 +16,14 @@ declare const settings: any;
 // Work with typed settings
 
 interface ToggleSettingsType {
-	stringKey : string,
-	booleanKey : boolean,
-	assignableKey : boolean | string
+	stringKey: string;
+	booleanKey: boolean;
+	assignableKey: boolean | string;
 }
 
-<Toggle<ToggleSettingsType>
-	settingsKey="booleanKey"
-></Toggle>;
+<Toggle<ToggleSettingsType> settingsKey="booleanKey"></Toggle>;
 
-<Toggle<ToggleSettingsType>
-	settingsKey="assignableKey"
-></Toggle>;
+<Toggle<ToggleSettingsType> settingsKey="assignableKey"></Toggle>;
 
 /*
 

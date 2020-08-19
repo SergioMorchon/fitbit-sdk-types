@@ -154,14 +154,17 @@ type Option = {
 />;
 
 // typed settings examples
-interface AdditiveOption { name:string, value:{
-	location: string,
-	icon: string,
-} }
+interface AdditiveOption {
+	name: string;
+	value: {
+		location: string;
+		icon: string;
+	};
+}
 interface AdditiveListSettingsType {
-	validKey: AdditiveOption[],
-	assignableKey: {name:string}[],
-	invalidKey: string
+	validKey: AdditiveOption[];
+	assignableKey: { name: string }[];
+	invalidKey: string;
 }
 
 <AdditiveList<AdditiveOption>

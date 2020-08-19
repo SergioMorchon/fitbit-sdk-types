@@ -24,21 +24,21 @@ declare const doSomethingWithImage;
 
 // with typed settings
 interface ImagePickerSettingsType {
-	validKey : {
-		imageUri:string,
+	validKey: {
+		imageUri: string;
 		imageSize: {
-			width:number,
-			height:number
-		}
-	},
-	assignableKey : {
-		imageUri:string,
+			width: number;
+			height: number;
+		};
+	};
+	assignableKey: {
+		imageUri: string;
 		imageSize: {
-			width:number,
-		},
-		somethingElse?:string
-	}, 
-	otherKey: 'something-else'
+			width: number;
+		};
+		somethingElse?: string;
+	};
+	otherKey: 'something-else';
 }
 
 <ImagePicker<ImagePickerSettingsType>
