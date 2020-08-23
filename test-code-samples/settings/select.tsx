@@ -3,6 +3,13 @@
 	settingsKey="selection"
 	options={[{ name: 'One' }, { name: 'Two' }, { name: 'Three' }]}
 />;
+
+<Select
+	label={<Text bold={true}>Embedded Text in Label</Text>}
+	settingsKey="selection"
+	options={[{ name: 'One' }, { name: 'Two' }, { name: 'Three' }]}
+/>;
+
 <Select
 	label={`Multi-Selection`}
 	multiple
