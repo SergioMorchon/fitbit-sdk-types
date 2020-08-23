@@ -6,6 +6,13 @@
 	settingsKey="textInput"
 	disabled={!(props.settings.toggleTextInput === 'true')}
 />;
+<TextInput
+	label={<Text bold={true}>Embedded Text in Label</Text>}
+	title={<Text bold={true}>Embedded Text in Label</Text>}
+	settingsKey="textInput"
+	disabled={!(props.settings.toggleTextInput === 'true')}
+/>;
+
 <Toggle label="Enable Text Input" settingsKey="toggleTextInput" />;
 <TextInput
 	title="Add List Item"

@@ -21,7 +21,7 @@ declare const TextImageRow: (props: {
 	icon?: string;
 }) => JSX.Element;
 declare const Button: (props: {
-	label?: string;
+	label?: JSX.Element;
 	list?: boolean;
 	onClick: (event: Event) => void;
 }) => JSX.Element;
@@ -39,8 +39,8 @@ declare const Slider: (props: {
 	onChange?: (newValue: number) => void;
 }) => JSX.Element;
 declare const TextInput: <Option extends { name: string }>(props: {
-	title?: string;
-	label?: string;
+	title?: JSX.Element;
+	label?: JSX.Element;
 	placeholder?: string;
 	action?: string;
 	type?: string;
@@ -64,9 +64,9 @@ declare const ColorSelect: <Value = string>(props: {
 	onSelection?: (value: Value) => void;
 }) => JSX.Element;
 declare const Select: <Option extends { name: string }>(props: {
-	title?: string;
-	selectViewTitle?: string;
-	label?: string;
+	title?: JSX.Element;
+	selectViewTitle?: JSX.Element;
+	label?: JSX.Element;
 	settingsKey?: string;
 	options: ReadonlyArray<Option>;
 	multiple?: boolean;
@@ -81,8 +81,8 @@ declare const AdditiveList: <Option extends {
 	[k: string]: any;
 	name: string;
 }>(props: {
-	title?: string;
-	description?: string;
+	title?: JSX.Element;
+	description?: JSX.Element;
 	settingsKey?: string;
 	minItems?: number | string;
 	maxItems?: number | string;
@@ -91,10 +91,10 @@ declare const AdditiveList: <Option extends {
 	onListChange?: (elements: ReadonlyArray<Option>) => void;
 }) => JSX.Element;
 declare const Oauth: (props: {
-	title?: string;
-	label?: string;
+	title?: JSX.Element;
+	label?: JSX.Element;
 	status?: string;
-	description?: string;
+	description?: JSX.Element;
 	settingsKey?: string;
 	authorizeUrl?: string;
 	requestTokenUrl?: string;
@@ -117,21 +117,21 @@ declare const Oauth: (props: {
 	onAccessToken?: (accessToken: string) => void;
 }) => JSX.Element;
 declare const StravaLogin: (props: {
-	title?: string;
-	description?: string;
+	title?: JSX.Element;
+	description?: JSX.Element;
 	settingsKey: string;
 	clientId?: string;
 	clientSecret?: string;
 	onAccessToken?: (accessToken: string, userInfo: any) => void;
 }) => JSX.Element;
 declare const ImagePicker: (props: {
-	title?: string;
-	description?: string;
-	label?: string;
-	sublabel?: string;
-	pickerTitle?: string;
-	pickerImageTitle?: string;
-	pickerLabel?: string;
+	title?: JSX.Element;
+	description?: JSX.Element;
+	label?: JSX.Element;
+	sublabel?: JSX.Element;
+	pickerTitle?: JSX.Element;
+	pickerImageTitle?: JSX.Element;
+	pickerLabel?: JSX.Element;
 	settingsKey?: string;
 	imageWidth?: number | string;
 	imageHeight?: number | string;
