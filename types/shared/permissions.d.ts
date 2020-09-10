@@ -7,6 +7,7 @@ type PermissionName =
 	| 'access_heart_rate'
 	| 'access_internet'
 	| 'access_location'
+	| 'access_sleep'
 	| 'access_user_profile'
 	| 'run_background';
 
