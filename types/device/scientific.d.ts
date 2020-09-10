@@ -26,4 +26,7 @@ declare module 'scientific' {
 	function sqrt(arr: Float32Array): Float32Array;
 	function square(arr: Float32Array): Float32Array;
 	function abs(arr: Float32Array): Float32Array;
+	function diff(arr: Float32Array): Float32Array;
+	function cumsum(arr: Float32Array): Float32Array;
+	function clip(arr: Float32Array, min?: number, max?: number): Float32Array;
 }
