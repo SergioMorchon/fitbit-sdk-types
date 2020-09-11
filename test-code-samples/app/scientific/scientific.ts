@@ -15,6 +15,9 @@ import {
 	sqrt,
 	square,
 	abs,
+	diff,
+	cumsum,
+	clip,
 } from 'scientific';
 const arr = new Float32Array([1, 2, 3, 4, 5]);
 const range1: Float32Array = range(3);
@@ -43,3 +46,8 @@ const add3: Float32Array = add(3, arr);
 const sqrt1: Float32Array = sqrt(arr);
 const square1: Float32Array = square(arr);
 const abs1: Float32Array = abs(arr);
+const diff1: Float32Array = diff(arr);
+const cumsum1: Float32Array = cumsum(arr);
+const clip1: Float32Array = clip(arr, 1, 2);
+const clip2: Float32Array = clip(arr, 1, undefined);
+const clip3: Float32Array = clip(arr, undefined, 2);
