@@ -1,21 +1,22 @@
 declare module 'user-activity' {
-	interface Goals extends EventTarget<{ reachgoal: Event }> {
-		readonly activeMinutes: number | undefined;
-		readonly calories: number | undefined;
-		readonly distance: number | undefined;
-		readonly elevationGain: number | undefined;
-		onreachgoal: (event: Event) => void;
-		readonly steps: number | undefined;
+	interface ActiveZoneMinutes {
+		readonly cardio: number | undefined;
+		readonly fatBurn: number | undefined;
+		readonly peak: number | undefined;
+		readonly total: number;
 	}
-	const goals: Goals;
 
 	interface Activity {
-		readonly activeMinutes: number | undefined;
+		readonly activeZoneMinutes: ActiveZoneMinutes | undefined;
 		readonly calories: number | undefined;
 		readonly distance: number | undefined;
 		readonly elevationGain: number | undefined;
 		readonly steps: number | undefined;
 	}
+	interface Goals extends Activity, EventTarget<{ reachgoal: Event }> {
+		onreachgoal: (event: Event) => void;
+	}
+	const goals: Goals;
 	interface Today {
 		readonly adjusted: Activity;
 		readonly local: Activity;
