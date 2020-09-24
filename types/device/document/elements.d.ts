@@ -60,18 +60,6 @@ interface ScrollIndicatorElement extends ContainerElement {
 	length: number;
 	setPosition(position: number, pageSize: number, viewSize: number): void;
 }
-interface ComboButtonEnableDisableOptions {
-	animate?: boolean;
-}
-interface ComboButtonShowHideOptions {
-	animate?: boolean;
-}
-interface ComboButton extends ContainerElement {
-	disable(options?: ComboButtonEnableDisableOptions): void;
-	enable(options?: ComboButtonEnableDisableOptions): void;
-	hide(options?: ComboButtonShowHideOptions): void;
-	show(options?: ComboButtonShowHideOptions): void;
-}
 interface VirtualTileListItemUpdateOptions {
 	redraw?: boolean;
 }

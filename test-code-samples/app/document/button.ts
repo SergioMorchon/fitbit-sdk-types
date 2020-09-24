@@ -1,10 +1,5 @@
 import document from 'document';
 
-let mybutton = document.getElementById('mybutton') as ComboButton;
-mybutton.onactivate = function (evt) {
-	console.log('CLICKED!');
-};
-
 let myPopup = document.getElementById('my-popup') as GraphicsElement;
 
 // Show the popup
