@@ -32,6 +32,7 @@ interface GlobalEvents
 		animationend: AnimationEvent;
 		animationiteration: AnimationEvent;
 		animationstart: AnimationEvent;
+		beforeunload: Event;
 		click: MouseEvent;
 		collapse: Event;
 		disable: Event;
@@ -60,6 +61,8 @@ interface GlobalEvents
 	onanimationend: (event: AnimationEvent) => void;
 	onanimationiteration: (event: AnimationEvent) => void;
 	onanimationstart: (event: AnimationEvent) => void;
+	/** @since 5.0 */
+	onbeforeunload: (event: Event) => void;
 	onclick: (event: MouseEvent) => void;
 	oncollapse: (event: Event) => void;
 	ondisable: (event: Event) => void;
