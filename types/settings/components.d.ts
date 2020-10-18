@@ -71,6 +71,7 @@ declare const Select: <Option extends { name: string }>(props: {
 	options: ReadonlyArray<Option>;
 	multiple?: boolean;
 	disabled?: boolean;
+	selected?: ReadonlyArray<number>;
 	renderItem?: (option: Option) => JSX.Element;
 	onSelection?: (selection: {
 		selected: ReadonlyArray<number>;
