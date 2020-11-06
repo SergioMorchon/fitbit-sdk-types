@@ -3,7 +3,9 @@
 	"version": "6.0.1",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
-	"bin": "scripts/index.js",
+	"bin": {
+		"fitbit-sdk-types": "scripts/index.js"
+	},
 	"files": [
 		"types/**/*.d.ts",
 		"scripts/**/*.js",
@@ -36,12 +38,12 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"@types/node": "^14.6.3",
-		"@typescript-eslint/eslint-plugin": "^4.0.1",
-		"@typescript-eslint/parser": "^4.0.1",
-		"eslint": "^7.8.1",
-		"eslint-config-prettier": "^6.11.0",
-		"prettier": "^2.1.1",
-		"typescript": "^4.0.2"
+		"@types/node": "^14.14.6",
+		"@typescript-eslint/eslint-plugin": "4.2",
+		"@typescript-eslint/parser": "4.2",
+		"eslint": "7.10",
+		"eslint-config-prettier": "6.12",
+		"prettier": "^2.1.2",
+		"typescript": "^4.0.5"
 	}
 }
