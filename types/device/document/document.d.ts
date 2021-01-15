@@ -66,7 +66,7 @@ declare module 'document' {
 		 */
 		replace(path: string): Promise<void>;
 	}
-	interface DocumentModule extends GlobalEvents {
+	export interface DocumentModule extends GlobalEvents {
 		readonly location: Location;
 		readonly history: History;
 		getEventHandler(elementType: string): EventHandler | null;
