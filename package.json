@@ -1,6 +1,6 @@
 {
 	"name": "fitbit-sdk-types",
-	"version": "6.0.2",
+	"version": "6.0.3",
 	"author": "Sergio Morchón Poveda <sergio.morchon@outlook.com>",
 	"description": "Types for Fitbit SDK.",
 	"bin": {
