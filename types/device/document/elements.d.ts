@@ -17,6 +17,7 @@ interface ElementSearch {
 	getElementsByTagName<TagName extends keyof ElementSearchMap>(
 		tagName: TagName,
 	): Array<ElementSearchMap[TagName]>;
+	getElementsByTypeName(typeName: string): Element[];
 }
 type EventName =
 	| 'activate'
