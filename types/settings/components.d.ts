@@ -82,7 +82,7 @@ declare const AdditiveList: <
 	Option extends {
 		[k: string]: any;
 		name: string;
-	}
+	},
 >(props: {
 	title?: JSX.Element;
 	description?: JSX.Element;
