@@ -77,10 +77,12 @@ declare const Select: <Option extends { name: string }>(props: {
 		values: ReadonlyArray<Option>;
 	}) => void;
 }) => JSX.Element;
-declare const AdditiveList: <Option extends {
-	[k: string]: any;
-	name: string;
-}>(props: {
+declare const AdditiveList: <
+	Option extends {
+		[k: string]: any;
+		name: string;
+	},
+>(props: {
 	title?: JSX.Element;
 	description?: JSX.Element;
 	settingsKey?: string;
