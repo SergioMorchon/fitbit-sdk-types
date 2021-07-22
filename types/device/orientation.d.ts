@@ -16,8 +16,7 @@ declare module 'orientation' {
 
 	type OrientationSensor = Sensor<
 		OrientationSensorReading,
-		BatchedOrientationSensorReading,
-		BatchedSensorOptions
+		BatchedOrientationSensorReading
 	>;
 
 	type OrientationSensorConstructor = new (

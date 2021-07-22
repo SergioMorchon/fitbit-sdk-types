@@ -1,6 +1,6 @@
 type BatchedSensorReading<Reading> = {
 	[P in keyof Reading]: Reading[P] extends number
-		? Float32Array
+		? Uint32Array
 		: Array<Reading[P]>;
 };
 
@@ -8,7 +8,7 @@ interface SensorReading {
 	readonly timestamp: number | null;
 }
 
-type Sensor<Reading extends SensorReading, BatchedReading, Options> = Reading &
+type Sensor<Reading extends SensorReading, BatchedReading> = Reading &
 	EventTarget<{
 		activate: Event;
 		error: SensorErrorEvent;
