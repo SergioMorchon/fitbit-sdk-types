@@ -1,4 +1,4 @@
-import { goals, today } from 'user-activity';
+import { goals, today, weekGoals, week } from 'user-activity';
 
 console.log(`${goals.activeZoneMinutes.total} activeZoneMinutes Goal`);
 
@@ -12,3 +12,8 @@ console.log(`${today.local.activeZoneMinutes.fatBurn}`);
 console.log(`${today.local.activeZoneMinutes.cardio}`);
 console.log(`${today.local.activeZoneMinutes.peak}`);
 console.log(`${today.adjusted.activeZoneMinutes.total}`);
+
+console.log(`${weekGoals.activeZoneMinutes} mins weekly AZM goal`);
+weekGoals.addEventListener('reachgoal', (evt) => {
+	// AZM Weekly Goal has been met
+});
