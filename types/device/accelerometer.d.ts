@@ -10,8 +10,7 @@ declare module 'accelerometer' {
 
 	type Accelerometer = Sensor<
 		AccelerometerReading,
-		BatchedAccelerometerReading,
-		BatchedSensorOptions
+		BatchedAccelerometerReading
 	>;
 
 	type AccelerometerConstructor = new (

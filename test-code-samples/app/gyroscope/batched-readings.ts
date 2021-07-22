@@ -17,9 +17,9 @@ if (Gyroscope) {
 	gyro.start();
 
 	const readTheReadingsArray = (
-		xArr: Float32Array,
-		yArr: Float32Array,
-		zArr: Float32Array,
+		xArr: Uint32Array,
+		yArr: Uint32Array,
+		zArr: Uint32Array,
 	) => {
 		xArr.map(function (x: number, i: number) {
 			return Math.sqrt(x * x + yArr[i] * yArr[i] + zArr[i] * zArr[i]);
