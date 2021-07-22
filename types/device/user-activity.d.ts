@@ -37,4 +37,19 @@ declare module 'user-activity' {
 	const dayHistory: ActivityHistory;
 	const minuteHistory: ActivityHistory;
 	const primaryGoal: keyof Activity;
+
+	interface WeekActivity {
+		readonly activeZoneMinutes: number | undefined;
+	}
+	interface Week {
+		readonly adjusted: WeekActivity;
+		readonly local: WeekActivity;
+	}
+	const week: Week;
+
+	interface WeekGoals extends WeekActivity, EventTarget<{ reachgoal: Event }> {
+		onreachgoal: (event: Event) => void;
+	}
+
+	const weekGoals: WeekGoals;
 }
