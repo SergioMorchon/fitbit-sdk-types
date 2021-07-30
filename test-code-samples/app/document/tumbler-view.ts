@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 let tumbler = document.getElementById('tumbler');
 

@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 const element = document.getElementById('some-element');
 

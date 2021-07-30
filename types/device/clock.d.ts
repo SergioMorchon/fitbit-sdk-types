@@ -10,6 +10,6 @@ declare module 'clock' {
 		ontick: (event: TickEvent) => void;
 	}
 
-	const clock: Clock;
+	export const clock: Clock;
 	export default clock;
 }

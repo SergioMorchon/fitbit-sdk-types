@@ -1,5 +1,5 @@
-import document from 'document';
-import clock from 'clock';
+import { document } from 'document';
+import { clock } from 'clock';
 
 let myClock = document.getElementById('myClock');
 

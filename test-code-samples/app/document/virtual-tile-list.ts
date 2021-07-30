@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 let VTList = document.getElementById('my-list') as VirtualTileList<{
 	type: string;

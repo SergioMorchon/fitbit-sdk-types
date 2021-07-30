@@ -1,4 +1,4 @@
-import clock from 'clock';
+import { clock } from 'clock';
 import { display } from 'display';
 import { me } from 'appbit';
 

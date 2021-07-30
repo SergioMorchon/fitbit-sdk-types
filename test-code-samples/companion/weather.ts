@@ -1,5 +1,5 @@
 import { me as companion } from 'companion';
-import weather, { TemperatureUnit } from 'weather';
+import { weather, TemperatureUnit } from 'weather';
 
 if (companion.permissions.granted('access_location')) {
 	weather

@@ -77,6 +77,5 @@ declare module 'weather' {
 	}
 
 	export const weather: WeatherProvider;
-
 	export default weather;
 }

@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 document.onkeypress = function (e) {
 	switch (e.key) {

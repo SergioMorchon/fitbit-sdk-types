@@ -74,6 +74,6 @@ declare module 'document' {
 		replaceSync(path: string): void;
 	}
 
-	const document: DocumentModule & ElementSearch;
+	export const document: DocumentModule & ElementSearch;
 	export default document;
 }

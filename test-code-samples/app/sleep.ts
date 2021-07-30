@@ -1,4 +1,4 @@
-import sleep from 'sleep';
+import { sleep } from 'sleep';
 import { me as appbit } from 'appbit';
 
 if (sleep && appbit.permissions.granted('access_sleep')) {

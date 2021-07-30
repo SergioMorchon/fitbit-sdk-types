@@ -1,5 +1,5 @@
 import { me } from 'companion';
-import calendars from 'calendars';
+import { calendars } from 'calendars';
 
 if (me.permissions.granted('access_calendar')) {
 	calendars

@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 // Get a handle on the instance
 var demoinstance = document.getElementById('demoinstance');

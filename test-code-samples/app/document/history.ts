@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 console.log(document.history.length);
 document.history.go(2);

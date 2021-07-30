@@ -91,7 +91,6 @@ declare module 'calendars' {
 		searchSources(): Promise<Source[]>;
 	}
 
-	const calendar: CalendarProvider;
-
-	export default calendar;
+	export const calendars: CalendarProvider;
+	export default calendars;
 }

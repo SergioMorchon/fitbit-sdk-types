@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 let list = document.getElementById('my-list');
 let items = list.getElementsByClassName('tile-list-item');

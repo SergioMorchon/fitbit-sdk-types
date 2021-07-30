@@ -1,11 +1,11 @@
 declare module 'sleep' {
-	interface ISleep
+	export interface ISleep
 		extends EventTarget<{
 			change: Event;
 		}> {
 		readonly state: 'awake' | 'asleep' | 'unknown';
 	}
 	export type Sleep = ISleep | undefined;
-	const sleep: Sleep;
+	export const sleep: Sleep;
 	export default sleep;
 }

@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 document.location.replace('another.view').then(() => {
 	// another view loaded

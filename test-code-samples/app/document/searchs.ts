@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 let demo = document.getElementById('demo');
 demo.text = 'Hello World!';

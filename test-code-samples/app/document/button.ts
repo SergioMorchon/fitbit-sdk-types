@@ -1,4 +1,4 @@
-import document from 'document';
+import { document } from 'document';
 
 let myPopup = document.getElementById('my-popup') as GraphicsElement;
 

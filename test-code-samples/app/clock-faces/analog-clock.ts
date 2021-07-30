@@ -1,5 +1,5 @@
-import clock from 'clock';
-import document from 'document';
+import { clock } from 'clock';
+import { document } from 'document';
 
 // Update the clock every second
 clock.granularity = 'seconds';
