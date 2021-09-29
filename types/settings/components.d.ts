@@ -13,6 +13,7 @@ declare const Text: (props: {
 	bold?: boolean;
 	italic?: boolean;
 	align?: 'left' | 'center' | 'right';
+	settingsKey?: string;
 	children: JSX.Element;
 }) => JSX.Element;
 declare const TextImageRow: (props: {
