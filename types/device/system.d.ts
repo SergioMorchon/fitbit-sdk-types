@@ -18,4 +18,5 @@ declare module 'system' {
 	}
 	const memory: Memory;
 	function launchApp(uuid: string, launchArguments?: any): void;
+	function isAppInstalled(uuid: string): boolean;
 }
