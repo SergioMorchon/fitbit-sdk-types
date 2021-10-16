@@ -45,6 +45,7 @@ interface Element extends ElementSearch, GlobalEvents {
 	readonly firstChild: Element | null;
 	readonly id: string;
 	readonly image: string;
+	href?: string;
 	layer: number;
 	mode: number | [number, number];
 	readonly nextSibling: Element | null;
@@ -101,6 +102,7 @@ interface TileListItem extends ContainerElement {
 	remove(options?: TileListItemOperationOptions): void;
 	show(options?: TileListItemOperationOptions): void;
 }
+// @ts-ignore
 interface GraphicsElement extends Element, Styled, Bounded {
 	getBBox(): DOMRect;
 }
