@@ -20,5 +20,6 @@ declare module 'image' {
 	}
 	const Image: {
 		from(imageUri: string): Promise<Image>;
+		from(Buffer: ArrayBuffer, mime: string): Promise<Image>;
 	};
 }
