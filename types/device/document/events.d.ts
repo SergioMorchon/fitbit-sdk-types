@@ -56,34 +56,4 @@ interface GlobalEvents
 		unhighlight: Event;
 		unload: Event;
 		unselect: Event;
-	}> {
-	onactivate: (event: Event) => void;
-	onanimationend: (event: AnimationEvent) => void;
-	onanimationiteration: (event: AnimationEvent) => void;
-	onanimationstart: (event: AnimationEvent) => void;
-	/** @since 5.0 */
-	onbeforeunload: (event: Event) => void;
-	onclick: (event: MouseEvent) => void;
-	oncollapse: (event: Event) => void;
-	ondisable: (event: Event) => void;
-	onenable: (event: Event) => void;
-	onexpand: (event: Event) => void;
-	onhighlight: (event: Event) => void;
-	onkeydown: (event: KeyboardEvent) => void;
-	onkeypress: (event: KeyboardEvent) => void;
-	onkeyup: (event: KeyboardEvent) => void;
-	onlistbackward: (event: ListScrollEvent) => void;
-	onlistforward: (event: ListScrollEvent) => void;
-	onload: (event: LoadEvent) => void;
-	onmousedown: (event: MouseEvent) => void;
-	onmousemove: (event: MouseEvent) => void;
-	onmouseout: (event: MouseEvent) => void;
-	onmouseover: (event: MouseEvent) => void;
-	onmouseup: (event: MouseEvent) => void;
-	onpagescroll: (event: PageScrollEvent) => void;
-	onreload: (event: Event) => void;
-	onselect: (event: Event) => void;
-	onunhighlight: (event: Event) => void;
-	onunload: (event: Event) => void;
-	onunselect: (event: Event) => void;
-}
+	}> {}

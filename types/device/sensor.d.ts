@@ -14,9 +14,6 @@ type Sensor<Reading extends SensorReading, BatchedReading> = Reading &
 		error: SensorErrorEvent;
 		reading: Event;
 	}> & {
-		onactivate: (event: Event) => void;
-		onerror: (event: SensorErrorEvent) => void;
-		onreading: (event: Event) => void;
 		readonly readings: BatchedReading;
 		readonly activated: boolean;
 		start(): void;
@@ -27,7 +24,7 @@ type Sensor<Reading extends SensorReading, BatchedReading> = Reading &
 interface SensorErrorEvent {
 	readonly defaultPrevented: boolean;
 	readonly error: Error;
-	readonly target: EventTarget;
+	readonly target: EventTarget<{}>;
 	readonly type: string;
 }
 

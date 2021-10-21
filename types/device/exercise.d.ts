@@ -48,8 +48,6 @@ declare module 'exercise' {
 		readonly state: 'started' | 'paused' | 'stopped';
 		readonly stats: ExerciseStats | undefined;
 		readonly type: string | undefined;
-		onstatechange(event: Event): void;
-		onswimlength(event: SwimLengthEvent): void;
 		pause(): void;
 		resume(): void;
 		splitLap(): ExerciseStats;

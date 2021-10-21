@@ -13,9 +13,7 @@ declare module 'user-activity' {
 		readonly elevationGain: number | undefined;
 		readonly steps: number | undefined;
 	}
-	interface Goals extends Activity, EventTarget<{ reachgoal: Event }> {
-		onreachgoal: (event: Event) => void;
-	}
+	interface Goals extends Activity, EventTarget<{ reachgoal: Event }> {}
 	const goals: Goals;
 	interface Today {
 		readonly adjusted: Activity;
@@ -47,9 +45,7 @@ declare module 'user-activity' {
 	}
 	const week: Week;
 
-	interface WeekGoals extends WeekActivity, EventTarget<{ reachgoal: Event }> {
-		onreachgoal: (event: Event) => void;
-	}
+	interface WeekGoals extends WeekActivity, EventTarget<{ reachgoal: Event }> {}
 
 	const weekGoals: WeekGoals;
 }
