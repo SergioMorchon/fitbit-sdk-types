@@ -8,7 +8,6 @@ declare module 'appbit' {
 		readonly buildId: string;
 		readonly launchArguments: any;
 		readonly permissions: Permissions;
-		onunload: (event: Event) => void;
 		exit(): void;
 	}
 

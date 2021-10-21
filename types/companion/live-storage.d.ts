@@ -7,6 +7,4 @@ interface LiveStorage
 	extends Storage,
 		EventTarget<{
 			change: StorageChangeEvent;
-		}> {
-	onchange: (event: StorageChangeEvent) => void;
-}
+		}> {}

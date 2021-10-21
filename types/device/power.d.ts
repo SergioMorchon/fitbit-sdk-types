@@ -5,7 +5,6 @@ declare module 'power' {
 		}> {
 		readonly chargeLevel: number;
 		readonly charging: boolean;
-		onchange: (event: Event) => void;
 		readonly timeUntilFull: number;
 	}
 	const battery: Battery;
@@ -14,7 +13,6 @@ declare module 'power' {
 			change: Event;
 		}> {
 		readonly connected: boolean;
-		onchange: (event: Event) => void;
 		readonly powerIsGood: boolean | undefined;
 	}
 	const charger: Charger;

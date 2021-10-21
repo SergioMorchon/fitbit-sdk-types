@@ -31,10 +31,6 @@ declare class WebSocket implements WebSocket {
 	readonly bufferedAmount: number;
 
 	binaryType: BinaryType;
-	onclose: ((event: CloseEvent) => void) | void;
-	onerror: ((event: Event) => void) | void;
-	onmessage: ((event: MessageEvent) => void) | void;
-	onopen: ((event: Event) => void) | void;
 
 	readonly readyState:
 		| WebSocket['CONNECTING']

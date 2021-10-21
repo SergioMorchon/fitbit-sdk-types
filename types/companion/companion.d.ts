@@ -24,12 +24,7 @@ declare module 'companion' {
 		readonly host: Host;
 		readonly permissions: Permissions;
 		readonly launchReasons: LaunchReasons;
-		onunload: (event: Event) => void;
 		monitorSignificantLocationChanges: boolean;
-		onsignificantlocationchange: (
-			event: SignificantLocationChangeEvent,
-		) => void;
-		onwakeinterval: (event: Event) => void;
 		wakeInterval: number | undefined;
 		yield(): void;
 	}

@@ -5,7 +5,6 @@ declare module 'file-transfer' {
 			change: Event;
 		}> {
 		readonly name: string;
-		onchange: (event: Event) => void;
 		readonly readyState:
 			| 'canceled'
 			| 'error'
@@ -38,7 +37,6 @@ declare module 'file-transfer' {
 		extends EventTarget<{
 			newfile: Event;
 		}> {
-		onnewfile: (event: Event) => void;
 		pop(): Promise<InboxItem>;
 	}
 

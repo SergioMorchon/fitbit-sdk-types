@@ -11,7 +11,6 @@ declare module 'display' {
 		autoOff: boolean;
 		brightnessOverride: 'dim' | 'normal' | 'max' | void;
 		on: boolean;
-		onchange: (event: Event) => void;
 		poke(): void;
 	}
 

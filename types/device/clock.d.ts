@@ -7,7 +7,6 @@ declare module 'clock' {
 			tick: TickEvent;
 		}> {
 		granularity: 'off' | 'seconds' | 'minutes' | 'hours';
-		ontick: (event: TickEvent) => void;
 	}
 
 	const clock: Clock;

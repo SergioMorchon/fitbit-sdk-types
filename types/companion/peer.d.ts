@@ -4,7 +4,6 @@ declare module 'peer' {
 		extends EventTarget<{
 			readystatechange: Event;
 		}> {
-		onreadystatechange: (event: Event) => void;
 		readonly readyState: ReadyState;
 	}
 	const app: PeerApp;

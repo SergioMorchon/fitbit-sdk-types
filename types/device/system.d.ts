@@ -3,7 +3,6 @@ declare module 'system' {
 		extends EventTarget<{
 			memorypressurechange: Event;
 		}> {
-		onmemorypressurechange: (event: Event) => void;
 		readonly pressure: 'normal' | 'high' | 'critical';
 	}
 	interface MemoryUsage {
