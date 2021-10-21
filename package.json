@@ -36,12 +36,13 @@
 		"prepublishOnly": "npm run check-code && npm test"
 	},
 	"devDependencies": {
-		"@types/node": "^16.10.2",
-		"@typescript-eslint/eslint-plugin": "^4.32.0",
-		"@typescript-eslint/parser": "^4.32.0",
-		"eslint": "^7.32.0",
+		"@types/node": "^16.11.2",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
+		"eslint": "^8.0.1",
 		"eslint-config-prettier": "^8.3.0",
 		"prettier": "^2.4.1",
-		"typescript": "^4.4.3"
-	}
+		"typescript": "^4.4.4"
+	},
+	"packageManager": "yarn@3.0.2"
 }
