@@ -12,12 +12,12 @@ interface ElementSearchMap {
 	g: GroupElement;
 }
 interface ElementSearch {
-	getElementById(id: string): Element | null;
-	getElementsByClassName(className: string): Element[];
+	getElementById<T extends Element>(id: string): T | null;
+	getElementsByClassName<T extends Element>(className: string): T[];
 	getElementsByTagName<TagName extends keyof ElementSearchMap>(
 		tagName: TagName,
 	): Array<ElementSearchMap[TagName]>;
-	getElementsByTypeName(typeName: string): Element[];
+	getElementsByTypeName<T extends Element>(typeName: string): T[];
 }
 type EventName =
 	| 'activate'
