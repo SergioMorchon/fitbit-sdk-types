@@ -9,17 +9,11 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [windows-latest]
-        node_version: [16]
-    name: CI on NodeJS v${{ matrix.node_version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
-      - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: 16
       - run: yarn install --immutable --immutable-cache
       - run: yarn prepublishOnly
