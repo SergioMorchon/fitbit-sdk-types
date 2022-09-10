@@ -3,8 +3,8 @@
 		"allowJs": true,
 		"checkJs": true,
 		"downlevelIteration": true,
-		"module": "commonjs",
-		"resolveJsonModule": true,
+		"module": "esnext",
+		"moduleResolution": "node",
 		"strict": true,
 		"noEmit": true
 	}

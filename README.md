@@ -7,9 +7,20 @@ Add types to your Fitbit CLI project and work safely with TypeScript preventing 
 
 ## ⚙ How to use in your app project
 
-1. First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
-2. Then, from that project root, run `npx fitbit-sdk-types` to enhance your existing Fitbit project with autocomplete and code checks.
-3. Take a look at the [FAQ](./FAQ.md).
+1.  First, create your Fitbit CLI project following the official instructions at https://dev.fitbit.com/build/guides/command-line-interface/.
+1.  Then, from that project root, run `npx fitbit-sdk-types install`. Also you acn use the following optional flags to customize your TypeScript and Visual Studio Code integrations.
+
+    - `--vscode`: add a few tweaks to integrate with Visual Studio Code
+
+      - Background tasks
+        ![Visual Studio Code problems integration](./doc/img/vscode-background-tasks.png)
+
+      - Problems report
+        ![Visual Studio Code problems integration](./doc/img/vscode-problems-integration.png)
+
+    - `--migrate`: rename all the `.js` files to `.ts`.
+
+1.  Take a look at the [FAQ](./FAQ.md).
 
 ## Benefits of using types
 
