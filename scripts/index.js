@@ -1,25 +1,26 @@
 #!/usr/bin/env node
 
-import { parseArgs } from 'node:util';
 import { install } from './install.js';
 import { help } from './help.js';
 
-const {
-	values: { migrate = false, vscode = false },
-	positionals: [command],
-} = parseArgs({
-	strict: true,
-	options: {
-		migrate: { type: 'boolean' },
-		vscode: { type: 'boolean' },
-	},
-	allowPositionals: true,
-});
+const [, , command, ...args] = process.argv;
+
+const INSTALL_COMMAND = 'install';
+
+const MIGRATE_ARG = '--migrate';
+const VSCODE_ARG = '--vscode';
 
 switch (command) {
-	case 'install':
-		install({ migrate, vscode });
+	case INSTALL_COMMAND:
+		install({
+			migrate: args.includes(MIGRATE_ARG),
+			vscode: args.includes(VSCODE_ARG),
+		});
 		break;
 	default:
-		help();
+		help({
+			install: INSTALL_COMMAND,
+			migrate: MIGRATE_ARG,
+			vscode: VSCODE_ARG,
+		});
 }
