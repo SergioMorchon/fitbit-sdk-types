@@ -8,9 +8,9 @@ type EventTarget<EventMap> = {
 		eventListener: (event: EventMap[EventName]) => void,
 	): void;
 } & {
-	[EventName in keyof EventMap as `on${string & EventName}`]? : (
+	[EventName in keyof EventMap as `on${string & EventName}`] : ((
 		event: EventMap[EventName],
-	) => void;
+	) => void) | null;
 };
 
 declare class Event {
