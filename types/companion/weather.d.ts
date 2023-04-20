@@ -43,7 +43,7 @@ declare module 'weather' {
 	};
 
 	export type WeatherCondition =
-		typeof WeatherCondition[keyof typeof WeatherCondition];
+		(typeof WeatherCondition)[keyof typeof WeatherCondition];
 
 	export interface CurrentWeather {
 		readonly epochTime: number;
@@ -63,7 +63,7 @@ declare module 'weather' {
 	};
 
 	export type TemperatureUnit =
-		typeof TemperatureUnit[keyof typeof TemperatureUnit];
+		(typeof TemperatureUnit)[keyof typeof TemperatureUnit];
 
 	export interface WeatherData {
 		readonly temperatureUnit: TemperatureUnit;
